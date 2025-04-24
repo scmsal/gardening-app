@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_KEY, plantNamesList } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
+import plantObjectsList from "../components/PlantObjectsList";
 
 export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",

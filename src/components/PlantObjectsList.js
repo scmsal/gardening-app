@@ -2,7 +2,7 @@ import { edibleParts } from "../constants";
 
 // Perenual
 
-const plantList = [
+const plantObjectsList = [
   {
     basil: {
       general_name: "basil",
@@ -67,7 +67,7 @@ const plantList = [
     },
     kale: {
       general_name: "kale",
-      common_name: kale,
+      common_name: "kale",
       scientific_name: "Brassica oleracea (Acephala Group) 'Redbor'",
       id: 8,
       API_id: 1320,
@@ -140,6 +140,8 @@ const plantList = [
     },
   },
 ];
+
+export default plantObjectsList;
 // [plantName]: {
 //             name: plant.common_name || "Unknown",
 //             id: index + 1,

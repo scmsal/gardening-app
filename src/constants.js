@@ -24,4 +24,4 @@ const PerenualAPISearchEndpoint =
 
 const edibleParts = ["any", "tubers/bulbs", "leaves/stems", "fruit/pods/seeds"];
 
-export { plantNamesList, API_KEY, edibleParts };
+export { plantNamesList, API_KEY, edibleParts, PerenualAPISearchEndpoint };
