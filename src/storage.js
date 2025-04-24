@@ -1,11 +1,14 @@
 // app/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import plantReducer from "./features/plantsSlice";
+import persistPlantData from "./middleware/persistPlantData";
 
 const store = configureStore({
   reducer: {
     plants: plantReducer,
   },
+  middleware: (getDefaultMiddleWare) =>
+    getDefaultMiddleWare().concat(persistPlantData),
 });
 
 export default store;
