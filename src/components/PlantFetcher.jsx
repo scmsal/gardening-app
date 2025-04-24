@@ -11,11 +11,11 @@ function PlantFetcher() {
 
   const selectedPlant = useSelector((state) => state.plants.selectedPlant);
 
-  useEffect(() => {
-    if (plantNames.length > 0) {
-      dispatch(fetchPlants(plantNames));
-    }
-  }, [dispatch, plantNames]);
+  // useEffect(() => {
+  //   if (plantNames.length > 0) {
+  //     dispatch(fetchPlants(plantNames));
+  //   }
+  // }, [dispatch, plantNames]);
 
   return (
     // <div>
@@ -23,10 +23,10 @@ function PlantFetcher() {
     //   <pre>{JSON.stringify(plantData, null, 2)}</pre>
     // </div>
     <Card>
-      <Card.Img></Card.Img>
+      <Card.Img>{}</Card.Img>
       <Card.Body>
-        <Card.Title></Card.Title>
-        <h3></h3>
+        <Card.Title>{selectedPlant.common_name}</Card.Title>
+        <h3>{selectedPlant.scientific_name}</h3>
       </Card.Body>
     </Card>
   );

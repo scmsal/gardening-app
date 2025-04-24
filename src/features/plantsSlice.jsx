@@ -7,11 +7,12 @@ import plantObjectsList from "../components/PlantObjectsList";
 
 export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",
-  async (plantName, { getState }) => {
+  async (plantName, { getState, dispatch }) => {
     const state = getState();
-    if (state.plants.plantData[plantName]) {
-      return null;
-    }
+    const currPlantNames = state.plants.plantNames;
+
+    if (currPlantNames.includes(plantName) && state.plants.plantData[plantName])
+      return;
 
     const response = await axios.get(
       `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
@@ -20,7 +21,7 @@ export const addPlantByName = createAsyncThunk(
     const plant = res.data.data?.[0];
     if (!plant) return null;
 
-    return {
+    const newPlant = {
       [plantName]: {
         common_name: plant.common_name,
         scientific_name: plant.scientific_name,
@@ -32,6 +33,8 @@ export const addPlantByName = createAsyncThunk(
         enriched: false,
       },
     };
+    dispatch(addPlant(newPlant));
+    dispatch(addPlantName(plantName));
   }
 );
 
@@ -66,42 +69,42 @@ export const enrichPlantDetails = createAsyncThunk(
 );
 
 //This thunk was for mapping over a list of plant names to pull data from the API and create a list of objects to store that plant data in. No longer needed.
-export const fetchPlants = createAsyncThunk(
-  "plants/fetchPlants",
-  async (plantNamesList, thunkAPI) => {
-    const results = await Promise.all(
-      plantNamesList.map(async (plantName, index) => {
-        console.log(
-          `Fetching: https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
-        );
-        const res = await axios.get(
-          `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
-        );
-        const plant = res.data.data?.[0];
-        if (!plant) return null;
+// export const fetchPlants = createAsyncThunk(
+//   "plants/fetchPlants",
+//   async (plantNamesList, thunkAPI) => {
+//     const results = await Promise.all(
+//       plantNamesList.map(async (plantName, index) => {
+//         console.log(
+//           `Fetching: https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
+//         );
+//         const res = await axios.get(
+//           `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
+//         );
+//         const plant = res.data.data?.[0];
+//         if (!plant) return null;
 
-        return {
-          [plant.id]: {
-            name: plant.common_name || "Unknown",
-            id: index + 1,
-            API_id: plant.id,
-            scientific_name: plant.scientific_name,
-            hardiness_zone: plant.hardiness,
-            edible: plant.edible,
-            duration: plant.cycle || "Unknown",
-            sunlight: plant.sunlight || "Unknown",
-            watering: plant.watering || "Unknown",
-            flowering_season: plant.flowering_season || "Unknown",
-            growth_rate: plant.growth_rate || "Unknown",
-            care_level: plant.care_level || "Unknown",
-            image: plant.default_image?.medium_url || null,
-          },
-        };
-      })
-    );
-    return Object.assign({}, ...results.filter(Boolean));
-  }
-);
+//         return {
+//           [plant.id]: {
+//             name: plant.common_name || "Unknown",
+//             id: index + 1,
+//             API_id: plant.id,
+//             scientific_name: plant.scientific_name,
+//             hardiness_zone: plant.hardiness,
+//             edible: plant.edible,
+//             duration: plant.cycle || "Unknown",
+//             sunlight: plant.sunlight || "Unknown",
+//             watering: plant.watering || "Unknown",
+//             flowering_season: plant.flowering_season || "Unknown",
+//             growth_rate: plant.growth_rate || "Unknown",
+//             care_level: plant.care_level || "Unknown",
+//             image: plant.default_image?.medium_url || null,
+//           },
+//         };
+//       })
+//     );
+//     return Object.assign({}, ...results.filter(Boolean));
+//   }
+// );
 
 //create the slice
 const plantsSlice = createSlice({
@@ -117,23 +120,27 @@ const plantsSlice = createSlice({
     setPlantNames: (state, action) => {
       state.plantNames = action.payload;
     },
-    //CHECK IF I NEED TO UPDATE THIS ONE TO CONNECT PlantNamesList AND PlantObjectsList
-    // addPlantName: (state, action) => {
-    //   //if action payload isn't already an array, then make it into one.
-    //   const newNames = Array.isArray(action.payload)
-    //     ? action.payload
-    //     : [action.payload];
-    //   const uniqueNames = newNames.filter(
-    //     (name) => !state.plantNames.includes(name)
-    //   );
 
-    //   state.plantNames = [...state.plantNames, ...uniqueNames];
-    // },
+    addPlantName: (state, action) => {
+      //if action payload isn't already an array, then make it into one.
+      const name = action.payload;
+      if (!state.plantNames.includes(name)) {
+        state.plantNames.push(name);
+      }
+    },
+
     removePlantName: (state, action) => {
       state.plantNames = state.plantNames.filter(
         (name) => name !== action.payload
       );
     },
+    //Would only need this if adding plant and data manually through a component
+    // addPlantData: (state, action) => {
+    //   state.plantData = {
+    //     ...state.plantData,
+    //     [action.payload.plantName]: action.payload,
+    //   };
+    // },
     setSelectedPlant: (state, action) => {
       state.selectedPlant = action.payload;
     },
