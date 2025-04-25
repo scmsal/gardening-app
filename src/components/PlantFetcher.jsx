@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { fetchPlants } from "../features/plantsSlice";
 import { Card } from "react-bootstrap";
 
 function PlantFetcher() {
   const dispatch = useDispatch();
-  // const plantNames = useSelector((state) => state.plants.plantNames);
 
   const plantData = useSelector((state) => state.plants.plantData);
 

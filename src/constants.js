@@ -17,7 +17,7 @@ const plantNamesList = [
   "zucchini",
 ];
 
-const API_KEY = "0000"; //import.meta.env.VITE_PERENUAL_API_KEY;
+const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY;
 
 const PerenualAPISearchEndpoint =
   "https://perenual.com/plant-species-database-search-finder/species/";
