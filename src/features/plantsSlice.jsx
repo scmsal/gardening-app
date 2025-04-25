@@ -56,14 +56,33 @@ export const addPlantByName = createAsyncThunk(
     const plant = response.data.data?.[0];
     if (!plant) return null;
 
+    const {
+      common_name,
+      scientific_name,
+      API_id,
+      edible,
+      poisonous,
+      watering,
+      sunlight,
+      cycle,
+      hardiness,
+      default_image,
+    } = plant;
+
     const newPlant = {
       general_name: plantName,
-      common_name: plant.common_name,
-      scientific_name: plant.scientific_name,
+      common_name,
+      scientific_name,
       // id: 1,
-      API_id: 5497,
-      edible_part: "unknown",
-      image: plant.default_image?.small_url || null,
+      API_id,
+      // edible_part: "unknown",
+      watering,
+      sunlight,
+      cycle,
+      edible,
+      poisonous,
+      hardiness,
+      image: default_image?.small_url || null,
       guideURL: PerenualAPISearchEndpoint + plant.id,
       enriched: false,
     };
@@ -86,18 +105,13 @@ export const enrichPlantDetails = createAsyncThunk(
       plantName,
       details: {
         care_level: details.care_level,
-        duration: details.cycle,
-        edible: details.edible,
         enriched: true,
         flowering_season: details.flowering_season,
         flowers: details.flowers,
         growth_rate: details.growth_rate,
-        hardiness_zone: details.hardiness,
         harvest_season: details.harvest_season,
         drought_tolerant: details.drought_tolerant,
-        sunlight: details.sunlight,
         type: details.type,
-        watering: details.watering,
       },
     };
   }

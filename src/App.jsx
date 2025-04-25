@@ -24,6 +24,9 @@ function App() {
     });
   }, [dispatch]);
 
+  //to clear cache for testing
+  //localStorage.removeItem("enrichedPlantData");
+
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
