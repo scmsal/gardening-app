@@ -1,9 +1,43 @@
 // features/plants/plantSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY, plantNamesList } from "../constants";
+import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
-import plantObjectsList from "../components/PlantObjectsList";
+// import plantObjectsList from "../components/PlantObjectsList";
+
+//later add logic to cache plant data in localStorage and look for it on load without repeating API calls or file fetches
+
+// export const loadStarterPlants = createAsyncThunk(
+//   "plants/loadStarterPlants",
+//   async (_, thunkAPI) => {
+//     console.log("loadStarterPlants thunk is firing");
+//     const response = await fetch("/starterplants.json");
+//     if (!response.ok) {
+//       throw new Error(`Fetch failed with status ${response.status}`);
+//     }
+//     const data = await response.json();
+//     console.log(data);
+//     return data;
+//   }
+// );
+export const loadStarterPlants = createAsyncThunk(
+  "plants/loadStarterPlants",
+  async (_, thunkAPI) => {
+    console.log("loadStarterPlants thunk is firing");
+    try {
+      const response = await fetch("/starterPlants.json");
+      if (!response.ok) {
+        throw new Error(`Failed to load: ${response.statusText}`);
+      }
+      const data = await response.json();
+      console.log("Starter plants data:", data);
+      return data;
+    } catch (error) {
+      console.error("loadStarterPlants error:", error);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",
@@ -18,23 +52,22 @@ export const addPlantByName = createAsyncThunk(
       `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
     );
 
-    const plant = res.data.data?.[0];
+    const plant = response.data.data?.[0];
     if (!plant) return null;
 
     const newPlant = {
-      [plantName]: {
-        common_name: plant.common_name,
-        scientific_name: plant.scientific_name,
-        // id: 1,
-        API_id: 5497,
-        edible_part: "unknown",
-        image: plant.default_image?.small_url || null,
-        guideURL: PerenualAPISearchEndpoint + plant.id,
-        enriched: false,
-      },
+      short_name: plantName,
+      common_name: plant.common_name,
+      scientific_name: plant.scientific_name,
+      // id: 1,
+      API_id: 5497,
+      edible_part: "unknown",
+      image: plant.default_image?.small_url || null,
+      guideURL: PerenualAPISearchEndpoint + plant.id,
+      enriched: false,
     };
     dispatch(addPlant(newPlant));
-    dispatch(addPlantName(plantName));
+    // dispatch(addPlantName(plantName)); //no longer necessary?
   }
 );
 
@@ -68,7 +101,7 @@ export const enrichPlantDetails = createAsyncThunk(
   }
 );
 
-//This thunk was for mapping over a list of plant names to pull data from the API and create a list of objects to store that plant data in. No longer needed.
+//This thunk was for mapping over a list of plant names to pull data from the API and create a list of objects to store that plant data in. No longer needed right now as I created a JSON file starterPlants.json, but I'll save it for future use.
 // export const fetchPlants = createAsyncThunk(
 //   "plants/fetchPlants",
 //   async (plantNamesList, thunkAPI) => {
@@ -110,9 +143,12 @@ export const enrichPlantDetails = createAsyncThunk(
 const plantsSlice = createSlice({
   name: "plants",
   initialState: {
-    plantNames: plantNamesList, //user-defined list
-    plantData: [],
-    selectedPlant: "",
+    plantData: [], //used to be plantObjectsList.
+    plantNames: [],
+    // plantObjectsList.map((plant) =>
+    //   plant.common_name.toLowerCase()
+    // ),
+    selectedPlant: null,
     loading: false,
     error: null,
   },
@@ -147,21 +183,22 @@ const plantsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // .addCase(fetchPlants.pending, (state) => {
-      //   state.loading = true;
-      //   state.error = null;
-      // })
-      // .addCase(fetchPlants.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.plantData = {
-      //     ...state.plantData, //details already fetched from Perenual.com API
-      //     ...action.payload, //merges new data
-      //   };
-      // })
-      // .addCase(fetchPlants.rejected, (state, action) => {
-      //   state.loading = false;
-      //   state.error = action.error.message;
-      // })
+      .addCase(loadStarterPlants.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(loadStarterPlants.fulfilled, (state, action) => {
+        state.loading = false;
+        state.plantData = action.payload;
+        state.plantNames = action.payload.map(
+          (plant) => plant.general_name.toLowerCase()
+          //review why it should be () or nothing, not {}
+        );
+      })
+      .addCase(loadStarterPlants.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
       .addCase(addPlantByName.fulfilled, (state, action) => {
         if (!action.payload) return;
         state.plantData = {
