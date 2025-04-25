@@ -6,26 +6,27 @@ import QueryForm from "./components/QueryForm";
 import DisplayGroup from "./components/DisplayGroup";
 import PlantFetcher from "./components/PlantFetcher";
 import { Row, Col } from "react-bootstrap";
-import { useEffect } from "react";
-import { loadStarterPlants } from "./features/plantsSlice";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import {
+  enrichAllPlantDetails,
+  loadStarterPlants,
+} from "./features/plantsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+  const plantData = useSelector((state) => state.plants.plantData);
+  const detailsEnriched = useSelector((state) => state.plants.detailsEnriched);
 
   useEffect(() => {
-    const testFetch = async () => {
-      try {
-        const response = await fetch("/test.txt");
-        const text = await response.text();
-        console.log("test file content:", text);
-      } catch (error) {
-        console.error("Error fetching test file:", error);
-      }
-    };
-    testFetch();
     dispatch(loadStarterPlants());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (plantData.length > 0 && !detailsEnriched) {
+      dispatch(enrichAllPlantDetails());
+    }
+  }, [dispatch, plantData, detailsEnriched]);
 
   return (
     <div className="d-flex flex-column min-vh-100">

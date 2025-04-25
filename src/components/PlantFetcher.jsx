@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // import { fetchPlants } from "../features/plantsSlice";
 import { Card } from "react-bootstrap";
-import { loadStarterPlants, setSelectedPlant } from "../features/plantsSlice";
 
 function PlantFetcher() {
   const dispatch = useDispatch();
@@ -26,10 +25,6 @@ function PlantFetcher() {
   // }, [dispatch, plantNames]);
 
   return (
-    // <div>
-    //   <h1>Plant Data</h1>
-    //   <pre>{JSON.stringify(plantData, null, 2)}</pre>
-    // </div>
     <Card>
       {image && <Card.Img variant="top" src={image} />}
       <Card.Body>

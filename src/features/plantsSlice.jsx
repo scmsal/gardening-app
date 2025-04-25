@@ -101,6 +101,29 @@ export const enrichPlantDetails = createAsyncThunk(
   }
 );
 
+export const enrichAllPlantDetails = createAsyncThunk(
+  "plants/enrichAllPlantDetails",
+
+  async (_, { getState, dispatch }) => {
+    const state = getState();
+    const plantData = state.plants.plantData;
+
+    await Promise.all(
+      plantData
+        .filter((plant) => plant.API_id && !plant.enriched)
+        .map((plant) =>
+          dispatch(
+            enrichPlantDetails({
+              plantName: plant.common_name.toLowerCase(),
+              API_id: plant.API_id,
+            })
+          )
+        )
+    );
+    dispatch(setDetailsEnriched(true));
+  }
+);
+
 //This thunk was for mapping over a list of plant names to pull data from the API and create a list of objects to store that plant data in. No longer needed right now as I created a JSON file starterPlants.json, but I'll save it for future use.
 // export const fetchPlants = createAsyncThunk(
 //   "plants/fetchPlants",
@@ -151,6 +174,7 @@ const plantsSlice = createSlice({
     selectedPlant: null,
     loading: false,
     error: null,
+    detailsEnriched: false,
   },
   reducers: {
     setPlantNames: (state, action) => {
@@ -179,6 +203,9 @@ const plantsSlice = createSlice({
     // },
     setSelectedPlant: (state, action) => {
       state.selectedPlant = action.payload;
+    },
+    setDetailsEnriched: (state, action) => {
+      state.detailsEnriched = action.payload;
     },
   },
   extraReducers: (builder) => {

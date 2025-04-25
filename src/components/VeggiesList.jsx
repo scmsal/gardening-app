@@ -2,16 +2,10 @@ import { Container, ListGroup, ListGroupItem } from "react-bootstrap";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedPlant } from "../features/plantsSlice";
-import { API_KEY } from "../constants";
-import plantObjectsList from "./PlantObjectsList";
-
-// const setSelectedPlant = (event.target) =>{
-
-// }
 
 const VeggiesList = () => {
   const dispatch = useDispatch();
-  const plantNames = useSelector((state) => state.plants.plantNames);
+
   const selectedPlant = useSelector((state) => state.plants.selectedPlant);
   const plantData = useSelector((state) => state.plants.plantData);
 
