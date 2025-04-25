@@ -4,7 +4,9 @@ const persistPlantData = (storeAPI) => (next) => (action) => {
   const actionsToWatch = [
     "plants/addPlantByName/fulfilled",
     "plants/enrichPlantDetails/fulfilled",
-    "plants/removePlantName",
+    "plants/enrichAllPlantDetails/fulfilled",
+    "plants/addPlant",
+    "plants/removePlant",
   ];
   if (actionsToWatch.includes(action.type)) {
     const { plantData } = storeAPI.getState().plants;

@@ -43,10 +43,11 @@ export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",
   async (plantName, { getState, dispatch }) => {
     const state = getState();
-    const currPlantNames = state.plants.plantNames;
+    const exists = state.plants.plantData.some(
+      (plant) => plant.general_name.toLowerCase() === plantName.toLowerCase()
+    );
 
-    if (currPlantNames.includes(plantName) && state.plants.plantData[plantName])
-      return;
+    if (exists) return;
 
     const response = await axios.get(
       `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
@@ -56,7 +57,7 @@ export const addPlantByName = createAsyncThunk(
     if (!plant) return null;
 
     const newPlant = {
-      short_name: plantName,
+      general_name: plantName,
       common_name: plant.common_name,
       scientific_name: plant.scientific_name,
       // id: 1,
@@ -67,7 +68,7 @@ export const addPlantByName = createAsyncThunk(
       enriched: false,
     };
     dispatch(addPlant(newPlant));
-    // dispatch(addPlantName(plantName)); //no longer necessary?
+    dispatch(enrichPlantDetails({ plantName, API_id: plant.id }));
   }
 );
 
@@ -105,20 +106,19 @@ export const enrichAllPlantDetails = createAsyncThunk(
   "plants/enrichAllPlantDetails",
 
   async (_, { getState, dispatch }) => {
-    const state = getState();
-    const plantData = state.plants.plantData;
+    const { plantData } = getState().plants;
 
     await Promise.all(
       plantData
         .filter((plant) => plant.API_id && !plant.enriched)
-        .map((plant) =>
-          dispatch(
+        .map(async (plant) => {
+          await dispatch(
             enrichPlantDetails({
               plantName: plant.common_name.toLowerCase(),
               API_id: plant.API_id,
             })
-          )
-        )
+          );
+        })
     );
     dispatch(setDetailsEnriched(true));
   }
@@ -163,37 +163,42 @@ export const enrichAllPlantDetails = createAsyncThunk(
 // );
 
 //create the slice
+
+const cachedPlantData = JSON.parse(localStorage.getItem("plantData")) || [];
+
+const cachedDetailsEnriched =
+  JSON.parse(localStorage.getItem("detailsEnriched")) || false;
+
+const initialState = {
+  plantData: cachedPlantData,
+  selectedPlant: null,
+  loading: false,
+  error: null,
+  detailsEnriched: cachedDetailsEnriched,
+};
+
 const plantsSlice = createSlice({
   name: "plants",
-  initialState: {
-    plantData: [], //used to be plantObjectsList.
-    plantNames: [],
-    // plantObjectsList.map((plant) =>
-    //   plant.common_name.toLowerCase()
-    // ),
-    selectedPlant: null,
-    loading: false,
-    error: null,
-    detailsEnriched: false,
-  },
+  initialState,
   reducers: {
-    setPlantNames: (state, action) => {
-      state.plantNames = action.payload;
-    },
+    //obsolete now that plantNames is derived from plantData:
+    // setPlantNames: (state, action) => {
+    //   state.plantNames = action.payload;
+    // },
 
-    addPlantName: (state, action) => {
-      //if action payload isn't already an array, then make it into one.
-      const name = action.payload;
-      if (!state.plantNames.includes(name)) {
-        state.plantNames.push(name);
-      }
-    },
+    // addPlantName: (state, action) => {
+    //   //if action payload isn't already an array, then make it into one.
+    //   const name = action.payload;
+    //   if (!state.plantNames.includes(name)) {
+    //     state.plantNames.push(name);
+    //   }
+    // },
 
-    removePlantName: (state, action) => {
-      state.plantNames = state.plantNames.filter(
-        (name) => name !== action.payload
-      );
-    },
+    // removePlantName: (state, action) => {
+    //   state.plantNames = state.plantNames.filter(
+    //     (name) => name !== action.payload
+    //   );
+    // },
     //Would only need this if adding plant and data manually through a component
     // addPlantData: (state, action) => {
     //   state.plantData = {
@@ -201,6 +206,17 @@ const plantsSlice = createSlice({
     //     [action.payload.plantName]: action.payload,
     //   };
     // },
+    addPlant: (state, action) => {
+      state.plantData.push(action.payload);
+    },
+
+    removePlant: (state, action) => {
+      const plantToRemove = action.payload.toLowerCase();
+      state.plantData = state.plantData.filter(
+        (plant) => plant.common_name.toLowerCase() !== plantToRemove //check if should use general_name instead
+      );
+    },
+
     setSelectedPlant: (state, action) => {
       state.selectedPlant = action.payload;
     },
@@ -246,12 +262,7 @@ const plantsSlice = createSlice({
   },
 });
 // Export the actions for use in components
-export const {
-  setPlantNames,
-  addPlantName,
-  removePlantName,
-  setSelectedPlant,
-} = plantsSlice.actions;
+export const { setSelectedPlant, addPlant, removePlant } = plantsSlice.actions;
 
 // Export the reducer to use in configureStore()
 export default plantsSlice.reducer;

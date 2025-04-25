@@ -23,13 +23,13 @@ function PlantFetcher() {
   //     dispatch(fetchPlants(plantNames));
   //   }
   // }, [dispatch, plantNames]);
-
+  console.log(image);
   return (
     <Card>
       {image && <Card.Img variant="top" src={image} />}
       <Card.Body>
-        <Card.Title>{common_name}</Card.Title>
-        <h3>{scientific_name}</h3>
+        <Card.Title className="text-center">{common_name}</Card.Title>
+        <h6 className="text-center">{scientific_name}</h6>
       </Card.Body>
     </Card>
   );

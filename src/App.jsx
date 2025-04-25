@@ -19,14 +19,10 @@ function App() {
   const detailsEnriched = useSelector((state) => state.plants.detailsEnriched);
 
   useEffect(() => {
-    dispatch(loadStarterPlants());
+    dispatch(loadStarterPlants()).then(() => {
+      dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
+    });
   }, [dispatch]);
-
-  useEffect(() => {
-    if (plantData.length > 0 && !detailsEnriched) {
-      dispatch(enrichAllPlantDetails());
-    }
-  }, [dispatch, plantData, detailsEnriched]);
 
   return (
     <div className="d-flex flex-column min-vh-100">
