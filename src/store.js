@@ -1,4 +1,3 @@
-// app/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import plantReducer from "./features/plantsSlice";
 import persistPlantData from "./middleware/persistPlantData";
