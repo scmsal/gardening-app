@@ -74,6 +74,7 @@ export const addPlantByName = createAsyncThunk(
 
 //This thunk is to add info from the details pages of the plants by ID (not available in the species-list endpoint) into the basic info list (i.e. enrich the data)
 
+//for a single plant
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
   async ({ plantName, API_id }) => {
@@ -102,65 +103,28 @@ export const enrichPlantDetails = createAsyncThunk(
   }
 );
 
+//for all the plants on the plantData list at once
 export const enrichAllPlantDetails = createAsyncThunk(
   "plants/enrichAllPlantDetails",
 
   async (_, { getState, dispatch }) => {
     const { plantData } = getState().plants;
 
-    await Promise.all(
-      plantData
-        .filter((plant) => plant.API_id && !plant.enriched)
-        .map(async (plant) => {
-          await dispatch(
-            enrichPlantDetails({
-              plantName: plant.common_name.toLowerCase(),
-              API_id: plant.API_id,
-            })
-          );
-        })
-    );
+    for (const plant of plantData) {
+      if (plant.API_id && !plant.enriched) {
+        await dispatch(
+          enrichPlantDetails({
+            plantName: plant.common_name.toLowerCase(),
+            API_id: plant.API_id,
+          })
+        );
+        await delay(1500);
+      }
+    }
+
     dispatch(setDetailsEnriched(true));
   }
 );
-
-//This thunk was for mapping over a list of plant names to pull data from the API and create a list of objects to store that plant data in. No longer needed right now as I created a JSON file starterPlants.json, but I'll save it for future use.
-// export const fetchPlants = createAsyncThunk(
-//   "plants/fetchPlants",
-//   async (plantNamesList, thunkAPI) => {
-//     const results = await Promise.all(
-//       plantNamesList.map(async (plantName, index) => {
-//         console.log(
-//           `Fetching: https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
-//         );
-//         const res = await axios.get(
-//           `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
-//         );
-//         const plant = res.data.data?.[0];
-//         if (!plant) return null;
-
-//         return {
-//           [plant.id]: {
-//             name: plant.common_name || "Unknown",
-//             id: index + 1,
-//             API_id: plant.id,
-//             scientific_name: plant.scientific_name,
-//             hardiness_zone: plant.hardiness,
-//             edible: plant.edible,
-//             duration: plant.cycle || "Unknown",
-//             sunlight: plant.sunlight || "Unknown",
-//             watering: plant.watering || "Unknown",
-//             flowering_season: plant.flowering_season || "Unknown",
-//             growth_rate: plant.growth_rate || "Unknown",
-//             care_level: plant.care_level || "Unknown",
-//             image: plant.default_image?.medium_url || null,
-//           },
-//         };
-//       })
-//     );
-//     return Object.assign({}, ...results.filter(Boolean));
-//   }
-// );
 
 //create the slice
 
