@@ -22,3 +22,7 @@ async function fetchData() {
 }
 
 fetchData();
+
+//eventually integrate data from here: https://github.com/waldoj/frostline to a) get temperatures for each zone and b) generate maps.
+
+//otherwise, link to https://planthardiness.ars.usda.gov/ that shows all that info searchable by zip code.
