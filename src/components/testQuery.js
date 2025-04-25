@@ -1,7 +1,7 @@
 // filename: testTrefle.js
 import axios from "axios";
 
-import { veggieList } from "../storage.js";
+import { veggieList } from "../store.js";
 
 const API_TOKEN = "PksvPxd3wVwo32iIA4jjOaC04qHxC9-8a9ETmWTRQJo";
 const queryVeg = "wheat";
