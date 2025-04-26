@@ -154,7 +154,7 @@ export const enrichPlantDetails = createAsyncThunk(
       };
     } catch (error) {
       console.error(`Failed to enrich ${plantName}:`, error);
-      return thunkAPI.rejectWithValue({ plantName, reason: error.message });
+      return null;
     }
   }
 );
@@ -169,17 +169,20 @@ export const enrichAllPlantDetails = createAsyncThunk(
 
     for (const plant of plantData) {
       if (plant.API_id && !plant.enriched) {
-        await dispatch(
-          enrichPlantDetails({
-            plantName: plant.common_name.toLowerCase(),
-            API_id: plant.API_id,
-          })
-        );
-        await delay(1200);
+        try {
+          await dispatch(
+            enrichPlantDetails({
+              plantName: plant.common_name.toLowerCase(),
+              API_id: plant.API_id,
+            })
+          );
+          await delay(1200);
+        } catch (error) {
+          console.warn(`Skipping plant ${plant.common_name}:`, error);
+        }
       }
+      dispatch(setDetailsEnriched(true));
     }
-
-    dispatch(setDetailsEnriched(true));
   }
 );
 

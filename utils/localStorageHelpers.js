@@ -20,22 +20,26 @@ export const saveDetailsEnriched = (detailsEnriched) => {
 
 export const loadState = () => {
   try {
-    const plantData = JSON.parse(localStorage.getItem("plantData") || []);
-    const detailsEnriched = JSON.parse(
-      localStorage.getItem("detailsEnriched") || false
-    );
+    const serializedPlantData = localStorage.getItem("plantData");
+    const serializedDetailsEnriched = localStorage.getItem("detailsEnriched");
 
+    const plantData = serializedPlantData
+      ? JSON.parse(serializedPlantData)
+      : [];
+    const detailsEnriched = serializedDetailsEnriched
+      ? JSON.parse(serializedDetailsEnriched)
+      : false;
     return {
-      plants: plantData,
-      detailsEnriched,
-      selectedPlant: null,
-      loading: false,
-      error: null,
+      plants: {
+        plantData,
+        detailsEnriched,
+        selectedPlant: null,
+        loading: false,
+        error: null,
+      },
     };
   } catch (error) {
-    console.log(error)("Failed to load state from localStorage", err);
+    console.log(error)("Failed to load state from localStorage", error);
     return undefined;
   }
 };
-
-export { loadState, saveDetailsEnriched, savePlantData };

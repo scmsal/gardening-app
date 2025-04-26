@@ -3,7 +3,7 @@
 import {
   savePlantData,
   saveDetailsEnriched,
-} from "../utils/localStorageHelpers";
+} from "../../utils/localStorageHelpers";
 
 const persistPlantData = (storeAPI) => (next) => (action) => {
   const result = next(action);
