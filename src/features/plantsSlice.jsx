@@ -82,7 +82,8 @@ export const addPlantByName = createAsyncThunk(
       edible,
       poisonous,
       hardiness,
-      image: default_image?.small_url || null,
+      image: default_image?.small_url || "No image available", //see if that works instead of nullb  b bn                 bu
+
       guideURL: PerenualAPISearchEndpoint + plant.id,
       enriched: false,
     };
@@ -96,24 +97,37 @@ export const addPlantByName = createAsyncThunk(
 //for a single plant
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
+
   async ({ plantName, API_id }) => {
-    const response = await axios.get(
-      `https://perenual.com/api/species/details/${API_id}?key=${API_KEY}`
-    );
-    const details = response.data;
-    return {
-      plantName,
-      details: {
-        care_level: details.care_level,
-        enriched: true,
-        flowering_season: details.flowering_season,
-        flowers: details.flowers,
-        growth_rate: details.growth_rate,
-        harvest_season: details.harvest_season,
-        drought_tolerant: details.drought_tolerant,
-        type: details.type,
-      },
-    };
+    if (API_id >= 3000) {
+      console.warn(
+        `Skipping enrichment for ${plantName}, API_id too high: ${API_id}`
+      );
+      return thunkAPI.rejectWithValue({ plantName, reason: "API_id >= 3000" });
+    }
+
+    try {
+      const response = await axios.get(
+        `https://perenual.com/api/species/details/${API_id}?key=${API_KEY}`
+      );
+      const details = response.data;
+      return {
+        plantName,
+        details: {
+          care_level: details.care_level,
+          enriched: true,
+          flowering_season: details.flowering_season,
+          flowers: details.flowers,
+          growth_rate: details.growth_rate,
+          harvest_season: details.harvest_season,
+          drought_tolerant: details.drought_tolerant,
+          type: details.type,
+        },
+      };
+    } catch (error) {
+      console.error(`Failed to enrich ${plantName}:`, error);
+      return thunkAPI.rejectWithValue({ plantName, reason: error.message });
+    }
   }
 );
 
