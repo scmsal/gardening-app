@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
 import placeholderImg from "../assets/icons8-plant-80.png";
+import delay from "../../utils/delay";
 // import plantObjectsList from "../components/PlantObjectsList";
 
 const persistState = (plantData, detailsEnriched) => {
