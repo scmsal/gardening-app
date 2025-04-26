@@ -1,5 +1,23 @@
 [
   {
+    "general_name": "basil",
+    "common_name": "sweet basil",
+    "scientific_name": "Ocimum basilicum",
+    "id": 1,
+    "API_id": 5497,
+    "edible_part": "leaves",
+    "guideURL": "https://perenual.com/plant-species-database-search-finder/species/5497"
+  },
+  {
+    "general_name": "bean",
+    "common_name": "broad bean, fava bean",
+    "scientific_name": "Vicia faba",
+    "id": 2,
+    "API_id": 8788,
+    "edible_part": "pods",
+    "guideURL": "https://perenual.com/plant-species-database-search-finder/species/8788"
+  },
+  {
     "general_name": "bell pepper",
     "common_name": "sweet bell pepper",
     "scientific_name": "Capsicum annuum 'Park's Early Thickset'",
@@ -45,7 +63,15 @@
     "edible_part": "leaves",
     "guideURL": "https://perenual.com/plant-species-database-search-finder/species/1320"
   },
-
+  {
+    "general_name": "lettuce",
+    "common_name": "lettuce",
+    "scientific_name": "Lactuca sativa",
+    "id": 9,
+    "API_id": 4626,
+    "edible_part": "leaves",
+    "guideURL": " https://perenual.com/plant-species-database-search-finder/species/4626}"
+  },
   {
     "general_name": "onion",
     "common_name": "onion",
@@ -56,6 +82,34 @@
     "guideURL": "https://perenual.com/plant-species-database-search-finder/species/663"
   },
 
+  {
+    "general_name": "potato",
+    "common_name": "potato",
+    "scientific_name": "Solanum tuberosum",
+    "id": 12,
+    "API_id": 7409,
+    "edible_part": "tuber",
+    "guideURL": "https://perenual.com/plant-species-database-search-finder/species/7409"
+  },
+  {
+    "general_name": "sage",
+    "common_name": "common sage",
+    "scientific_name": "Salvia officinalis 'Aurea'",
+    "id": 13,
+    "API_id": 7095,
+    "edible_part": "leaves",
+    "guideURL": "https://perenual.com/plant-species-database-search-finder/species/7095"
+  },
+
+  {
+    "general_name": "tomato",
+    "common_name": "tomato",
+    "scientific_name": "Lycopersicon esculentum",
+    "id": 15,
+    "API_id": 5021,
+    "edible_part": "fruit",
+    "guideURL": "https://perenual.com/plant-species-database-search-finder/species/5021"
+  },
   {
     "general_name": "zucchini",
     "common_name": "summer squash / zucchini",
