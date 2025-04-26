@@ -11,9 +11,8 @@ const VeggiesList = () => {
 
   const handlePlantSelect = (plant) => {
     dispatch(setSelectedPlant(plant === selectedPlant ? null : plant));
+    console.log("Selected plant in handlePlantSelect:", selectedPlant);
   };
-
-  console.log(plantData);
 
   if (!plantData || plantData.length === 0) {
     return <div> Loading plant data...</div>;

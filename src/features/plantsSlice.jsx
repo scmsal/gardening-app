@@ -82,8 +82,7 @@ export const addPlantByName = createAsyncThunk(
       edible,
       poisonous,
       hardiness,
-      image: default_image?.small_url || "No image available", //see if that works instead of nullb  b bn                 bu
-
+      image: default_image?.small_url || null, //see if that works instead of null
       guideURL: PerenualAPISearchEndpoint + plant.id,
       enriched: false,
     };
@@ -98,19 +97,22 @@ export const addPlantByName = createAsyncThunk(
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
 
-  async ({ plantName, API_id }) => {
-    if (API_id >= 3000) {
+  async ({ plantName, API_id }, thunkAPI) => {
+    console.log("enrichPlantDetails has fired.");
+    if (API_id > 3000) {
       console.warn(
         `Skipping enrichment for ${plantName}, API_id too high: ${API_id}`
       );
-      return thunkAPI.rejectWithValue({ plantName, reason: "API_id >= 3000" });
+      return thunkAPI.rejectWithValue({ plantName, reason: "API_id > 3000" });
     }
-
+    console.log("About to call API for", API_id);
     try {
       const response = await axios.get(
         `https://perenual.com/api/species/details/${API_id}?key=${API_KEY}`
       );
       const details = response.data;
+      console.log("details:", details);
+      console.log("Received:", { plantName, API_id });
       return {
         plantName,
         details: {
@@ -136,6 +138,7 @@ export const enrichAllPlantDetails = createAsyncThunk(
   "plants/enrichAllPlantDetails",
 
   async (_, { getState, dispatch }) => {
+    console.log("enrichAllPlantDetails has fired.");
     const { plantData } = getState().plants;
 
     for (const plant of plantData) {

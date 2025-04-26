@@ -15,8 +15,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
-  const plantData = useSelector((state) => state.plants.plantData);
-  const detailsEnriched = useSelector((state) => state.plants.detailsEnriched);
 
   useEffect(() => {
     dispatch(loadStarterPlants()).then(() => {
