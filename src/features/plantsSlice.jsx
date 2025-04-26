@@ -3,23 +3,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
+import placeholderImg from "../assets/icons8-plant-80.png";
 // import plantObjectsList from "../components/PlantObjectsList";
 
-//later add logic to cache plant data in localStorage and look for it on load without repeating API calls or file fetches
+const persistState = (plantData, detailsEnriched) => {
+  localStorage.setItem("plantData", JSON.stringify(plantData));
+  localStorage.setItem("detailsEnriched", JSON.stringify(detailsEnriched));
+};
 
-// export const loadStarterPlants = createAsyncThunk(
-//   "plants/loadStarterPlants",
-//   async (_, thunkAPI) => {
-//     console.log("loadStarterPlants thunk is firing");
-//     const response = await fetch("/starterplants.json");
-//     if (!response.ok) {
-//       throw new Error(`Fetch failed with status ${response.status}`);
-//     }
-//     const data = await response.json();
-//     console.log(data);
-//     return data;
-//   }
-// );
 export const loadStarterPlants = createAsyncThunk(
   "plants/loadStarterPlants",
   async (_, thunkAPI) => {
@@ -91,19 +82,53 @@ export const addPlantByName = createAsyncThunk(
   }
 );
 
+export const addBasicPlantDetails = createAsyncThunk(
+  "plants/addBasicPlantDetails",
+  async ({ plantName, API_id }, thunkAPI) => {
+    if (API_id > 3000) {
+      console.warn(
+        `Skipping addBasicPlantDetails for ${plantName}, API_id too high: ${API_id}`
+      );
+      return null;
+    }
+    try {
+      const response = await axios.get(
+        `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
+      );
+      const plant = response.data.data[0];
+      if (!plant) return null;
+
+      console.log("details:", details);
+      console.log("Received:", { plantName, API_id });
+      return {
+        API_id,
+        watering: plant.watering,
+        sunlight: plant.sunlight,
+        cycle: plant.cycle,
+        edible: plant.edible,
+        poisonous: plant.poisonous,
+        hardiness: plant.hardiness,
+        image: plant.default_image?.small_url || placeholderImg,
+      };
+    } catch (error) {
+      console.error(`Failed to add basic details for ${plantName}:`, error);
+      return null;
+    }
+  }
+);
+
 //This thunk is to add info from the details pages of the plants by ID (not available in the species-list endpoint) into the basic info list (i.e. enrich the data)
 
 //for a single plant
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
-
   async ({ plantName, API_id }, thunkAPI) => {
-    console.log("enrichPlantDetails has fired.");
+    console.log("enrichPlantDetails has fired with: ", plantName, API_id);
     if (API_id > 3000) {
       console.warn(
         `Skipping enrichment for ${plantName}, API_id too high: ${API_id}`
       );
-      return thunkAPI.rejectWithValue({ plantName, reason: "API_id > 3000" });
+      return null;
     }
     console.log("About to call API for", API_id);
     try {
@@ -115,6 +140,7 @@ export const enrichPlantDetails = createAsyncThunk(
       console.log("Received:", { plantName, API_id });
       return {
         plantName,
+        API_id,
         details: {
           care_level: details.care_level,
           enriched: true,
@@ -149,7 +175,7 @@ export const enrichAllPlantDetails = createAsyncThunk(
             API_id: plant.API_id,
           })
         );
-        await delay(1500);
+        await delay(1200);
       }
     }
 
@@ -176,31 +202,6 @@ const plantsSlice = createSlice({
   name: "plants",
   initialState,
   reducers: {
-    //obsolete now that plantNames is derived from plantData:
-    // setPlantNames: (state, action) => {
-    //   state.plantNames = action.payload;
-    // },
-
-    // addPlantName: (state, action) => {
-    //   //if action payload isn't already an array, then make it into one.
-    //   const name = action.payload;
-    //   if (!state.plantNames.includes(name)) {
-    //     state.plantNames.push(name);
-    //   }
-    // },
-
-    // removePlantName: (state, action) => {
-    //   state.plantNames = state.plantNames.filter(
-    //     (name) => name !== action.payload
-    //   );
-    // },
-    //Would only need this if adding plant and data manually through a component
-    // addPlantData: (state, action) => {
-    //   state.plantData = {
-    //     ...state.plantData,
-    //     [action.payload.plantName]: action.payload,
-    //   };
-    // },
     addPlant: (state, action) => {
       state.plantData.push(action.payload);
     },
@@ -217,6 +218,7 @@ const plantsSlice = createSlice({
     },
     setDetailsEnriched: (state, action) => {
       state.detailsEnriched = action.payload;
+      saveDetailsEnriched(state.detailsEnriched);
     },
   },
   extraReducers: (builder) => {
@@ -228,36 +230,39 @@ const plantsSlice = createSlice({
       .addCase(loadStarterPlants.fulfilled, (state, action) => {
         state.loading = false;
         state.plantData = action.payload;
-        state.plantNames = action.payload.map(
-          (plant) => plant.general_name.toLowerCase()
-          //review why it should be () or nothing, not {}
-        );
+        persistState(state.plantData, state.detailsEnriched);
       })
+      //review why it should be () or nothing, not {}
+
       .addCase(loadStarterPlants.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })
-      .addCase(addPlantByName.fulfilled, (state, action) => {
-        if (!action.payload) return;
-        state.plantData = {
-          ...state.plantData,
-          ...action.payload,
-        };
+      //deleted addCase(addPlantByName.fulfilled because it dispatches addPlant, so not needed.
+
+      .addCase(addBasicPlantDetails.fulfilled, (state, action) => {
+        persistState(state.plantData, state.detailsEnriched);
       })
       .addCase(enrichPlantDetails.fulfilled, (state, action) => {
         if (!action.payload) return; //not sure if I need this
-        const { plantName, details } = action.payload;
-        if (state.plantData[plantName]) {
-          state.plantData[plantName] = {
-            ...state.plantData[plantName],
+        const { plantName, API_id, details } = action.payload;
+        const index = state.plantData.findIndex(
+          (plant) => plant.API_id === API_id
+        );
+        if (index !== -1) {
+          state.plantData[index] = {
+            ...state.plantData[index],
             ...details,
           };
+          //Persist to localStorage
+          persistState(state.plantData, state.detailsEnriched);
         }
       });
   },
 });
 // Export the actions for use in components
-export const { setSelectedPlant, addPlant, removePlant } = plantsSlice.actions;
+export const { setSelectedPlant, addPlant, removePlant, setDetailsEnriched } =
+  plantsSlice.actions;
 
 // Export the reducer to use in configureStore()
 export default plantsSlice.reducer;

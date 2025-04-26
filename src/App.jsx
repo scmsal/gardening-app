@@ -8,18 +8,23 @@ import PlantFetcher from "./components/PlantFetcher";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
+  addBasicPlantDetails,
   enrichAllPlantDetails,
   loadStarterPlants,
 } from "./features/plantsSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadStarterPlants()).then(() => {
-      dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
-    });
+    dispatch(loadStarterPlants())
+      .then(() => {
+        dispatch(addBasicPlantDetails());
+      })
+      .then(() => {
+        dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
+      });
   }, [dispatch]);
 
   //to clear cache for testing
