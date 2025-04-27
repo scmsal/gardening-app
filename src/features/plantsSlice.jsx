@@ -1,11 +1,11 @@
-// features/plants/plantSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
 import placeholderImg from "../assets/icons8-plant-80.png";
 import delay from "../../utils/delay";
-import { saveDetailsEnriched } from "../../utils/localStorageHelpers";
+import { saveDetailsEnriched } from "../../utils/localStorageHelpers"; //check if still needed
+import { API_CALLS_ENABLED } from "../config";
 
 const persistState = (plantData, detailsEnriched) => {
   localStorage.setItem("plantData", JSON.stringify(plantData));
@@ -34,6 +34,11 @@ export const loadStarterPlants = createAsyncThunk(
 export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",
   async (general_name, { getState, dispatch }) => {
+    if (!API_CALLS_ENABLED) {
+      console.warn("API calls are currently disabled.");
+      return thunkAPI.rejectWithValue("API calls disabled manually.");
+    }
+
     const state = getState();
     const exists = state.plants.plantData.some(
       (plant) => plant.general_name.toLowerCase() === general_name.toLowerCase()
@@ -124,6 +129,11 @@ export const addPlantByName = createAsyncThunk(
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
   async ({ general_name, API_id }, thunkAPI) => {
+    if (!API_CALLS_ENABLED) {
+      console.warn("API calls are currently disabled.");
+      return thunkAPI.rejectWithValue("API calls disabled manually.");
+    }
+
     console.log("enrichPlantDetails has fired with: ", general_name, API_id); //check if need plant.general_name
     if (API_id > 3000) {
       console.warn(
@@ -172,6 +182,11 @@ export const enrichAllPlantDetails = createAsyncThunk(
   "plants/enrichAllPlantDetails",
 
   async (_, { getState, dispatch }) => {
+    if (!API_CALLS_ENABLED) {
+      console.warn("API calls are currently disabled.");
+      return thunkAPI.rejectWithValue("API calls disabled manually.");
+    }
+
     console.log("enrichAllPlantDetails has fired.");
     const { plantData } = getState().plants;
 
@@ -250,7 +265,6 @@ const plantsSlice = createSlice({
         state.plantData = action.payload;
         persistState(state.plantData, state.detailsEnriched);
       })
-      //review why it should be () or nothing, not {}
 
       .addCase(loadStarterPlants.rejected, (state, action) => {
         state.loading = false;
