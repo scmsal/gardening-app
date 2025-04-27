@@ -1,4 +1,4 @@
-import { edibleParts } from "../constants";
+import { edibleParts } from "../config";
 
 // Perenual
 

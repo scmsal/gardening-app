@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY } from "../constants";
-import { PerenualAPISearchEndpoint } from "../constants";
+import { API_KEY } from "../config";
+import { PerenualAPISearchEndpoint } from "../config";
 import placeholderImg from "../assets/icons8-plant-80.png";
 import delay from "../../utils/delay";
 import { saveDetailsEnriched } from "../../utils/localStorageHelpers"; //check if still needed
