@@ -5,7 +5,6 @@ import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
 import placeholderImg from "../assets/icons8-plant-80.png";
 import delay from "../../utils/delay";
-// import plantObjectsList from "../components/PlantObjectsList";
 
 const persistState = (plantData, detailsEnriched) => {
   localStorage.setItem("plantData", JSON.stringify(plantData));
@@ -170,20 +169,29 @@ export const enrichAllPlantDetails = createAsyncThunk(
 
     for (const plant of plantData) {
       if (plant.API_id && !plant.enriched) {
-        try {
-          await dispatch(
-            enrichPlantDetails({
-              plantName: plant.common_name.toLowerCase(),
-              API_id: plant.API_id,
-            })
+        const actionResult = await dispatch(
+          enrichPlantDetails({
+            plantName: plant.common_name.toLowerCase(),
+            API_id: plant.API_id,
+          })
+        );
+
+        if (enrichPlantDetails.fulfilled.match(actionResult)) {
+          if (actionResult.payload === null) {
+            console.log(`Skipped enrichment for ${plantName}`);
+            continue;
+          }
+        } else {
+          console.error(
+            `Failed enrichment for ${plantName}`,
+            actionResult.error
           );
-          await delay(1200);
-        } catch (error) {
-          console.warn(`Skipping plant ${plant.common_name}:`, error);
+          continue;
         }
+        await delay(1200);
       }
-      dispatch(setDetailsEnriched(true));
     }
+    dispatch(setDetailsEnriched(true));
   }
 );
 
