@@ -1,0 +1,1107 @@
+{
+  "data": [
+    {
+      "id": 8834,
+      "common_name": "Aleutian Maidenhair Fern",
+      "scientific_name": ["Adiantum aleuticum"],
+      "other_name": ["Western Maidenhair", "Five Finger Fern"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 29,
+      "common_name": "Alpenweiss Variegated Dwarf Japanese Maple*",
+      "scientific_name": ["Acer palmatum 'Alpenweiss'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": null
+    },
+    {
+      "id": 31,
+      "common_name": "Aoyagi Japanese Maple*",
+      "scientific_name": ["Acer palmatum 'Aoyagi'"],
+      "other_name": ["Green Coral Japanese Maple"],
+      "cycle": "Perennial",
+      "watering": "Frequent",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/species_image/31_acer_palmatum_aoyagi/og/acer_palmatum_japanese_maples_trees_red_red_leaves_blue_sky_blue_white-1126158.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/31_acer_palmatum_aoyagi/regular/acer_palmatum_japanese_maples_trees_red_red_leaves_blue_sky_blue_white-1126158.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/31_acer_palmatum_aoyagi/medium/acer_palmatum_japanese_maples_trees_red_red_leaves_blue_sky_blue_white-1126158.jpg",
+        "small_url": "https://perenual.com/storage/species_image/31_acer_palmatum_aoyagi/small/acer_palmatum_japanese_maples_trees_red_red_leaves_blue_sky_blue_white-1126158.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/31_acer_palmatum_aoyagi/thumbnail/acer_palmatum_japanese_maples_trees_red_red_leaves_blue_sky_blue_white-1126158.jpg"
+      }
+    },
+    {
+      "id": 32,
+      "common_name": "Arakawa Cork Bark Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Arakawa'"],
+      "other_name": ["Rough-Bark Japanese Maple", "Arakawa Ukon"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", "part shade"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/32_acer_palmatum_arakawa/og/2560px-Montagnac-Acer-palmatum_04.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/32_acer_palmatum_arakawa/regular/2560px-Montagnac-Acer-palmatum_04.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/32_acer_palmatum_arakawa/medium/2560px-Montagnac-Acer-palmatum_04.jpg",
+        "small_url": "https://perenual.com/storage/species_image/32_acer_palmatum_arakawa/small/2560px-Montagnac-Acer-palmatum_04.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/32_acer_palmatum_arakawa/thumbnail/2560px-Montagnac-Acer-palmatum_04.jpg"
+      }
+    },
+    {
+      "id": 8541,
+      "common_name": "Arizona cypress",
+      "scientific_name": ["Cupressus arizonica"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 33,
+      "common_name": "Asahi Zuru Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Asahi Zuru'"],
+      "other_name": ["Rising Sun", "Dawn Swan"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": null
+    },
+    {
+      "id": 8496,
+      "common_name": "atlas broom",
+      "scientific_name": ["Argyrocytisus battandieri"],
+      "other_name": ["pineapple broom"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 37,
+      "common_name": "Autumn Fire Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Autumn Fire'"],
+      "other_name": ["Herbstfeuer"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/37_acer_palmatum_autumn_fire/og/2560px-Acer_palmatum_fall_foliage_01.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/37_acer_palmatum_autumn_fire/regular/2560px-Acer_palmatum_fall_foliage_01.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/37_acer_palmatum_autumn_fire/medium/2560px-Acer_palmatum_fall_foliage_01.jpg",
+        "small_url": "https://perenual.com/storage/species_image/37_acer_palmatum_autumn_fire/small/2560px-Acer_palmatum_fall_foliage_01.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/37_acer_palmatum_autumn_fire/thumbnail/2560px-Acer_palmatum_fall_foliage_01.jpg"
+      }
+    },
+    {
+      "id": 8752,
+      "common_name": "autumn stonecrop",
+      "scientific_name": ["Sedum telephium (incl. hybrid cvs.)"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8740,
+      "common_name": "baby sage",
+      "scientific_name": ["Salvia microphylla"],
+      "other_name": ["Hot Lips salvia"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 40,
+      "common_name": "Beni Otake Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Beni Otake'"],
+      "other_name": ["Big Red Bamboo"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/og/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/regular/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/medium/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+        "small_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/small/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/thumbnail/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg"
+      }
+    },
+    {
+      "id": 41,
+      "common_name": "Beni Schichihenge Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Beni Schichihenge'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": null
+    },
+    {
+      "id": 1112,
+      "common_name": "bishop's hat",
+      "scientific_name": ["Astrophytum myriostigma"],
+      "other_name": [],
+      "cycle": "Herbaceous Perennial",
+      "watering": "Minimum",
+      "sunlight": ["Full sun"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/1112_astrophytum_myriostigma/og/23699641203_dea4f5b6ea_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/1112_astrophytum_myriostigma/regular/23699641203_dea4f5b6ea_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/1112_astrophytum_myriostigma/medium/23699641203_dea4f5b6ea_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/1112_astrophytum_myriostigma/small/23699641203_dea4f5b6ea_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/1112_astrophytum_myriostigma/thumbnail/23699641203_dea4f5b6ea_b.jpg"
+      }
+    },
+    {
+      "id": 8687,
+      "common_name": "blackstem bamboo",
+      "scientific_name": ["Phyllostachys nigra"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 200,
+      "common_name": "Blue Atlas Cedar",
+      "scientific_name": ["Cedrus atlantica 'Glauca'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/200_cedrus_atlantica_glauca/og/3269092691_4eb979cf4f_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/200_cedrus_atlantica_glauca/regular/3269092691_4eb979cf4f_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/200_cedrus_atlantica_glauca/medium/3269092691_4eb979cf4f_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/200_cedrus_atlantica_glauca/small/3269092691_4eb979cf4f_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/200_cedrus_atlantica_glauca/thumbnail/3269092691_4eb979cf4f_b.jpg"
+      }
+    },
+    {
+      "id": 8,
+      "common_name": "Blue Spanish Fir",
+      "scientific_name": ["Abies pinsapo 'Glauca'"],
+      "other_name": ["Glaucous Spanish Fir"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", "part shade"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/og/21657514018_c0d9fed9f4_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/regular/21657514018_c0d9fed9f4_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/medium/21657514018_c0d9fed9f4_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/small/21657514018_c0d9fed9f4_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/thumbnail/21657514018_c0d9fed9f4_b.jpg"
+      }
+    },
+    {
+      "id": 44,
+      "common_name": "Bonfire Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Bonfire'"],
+      "other_name": ["Seigai"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/species_image/44_acer_palmatum_bonfire/og/sk3776-image-kwvuoab1.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/44_acer_palmatum_bonfire/regular/sk3776-image-kwvuoab1.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/44_acer_palmatum_bonfire/medium/sk3776-image-kwvuoab1.jpg",
+        "small_url": "https://perenual.com/storage/species_image/44_acer_palmatum_bonfire/small/sk3776-image-kwvuoab1.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/44_acer_palmatum_bonfire/thumbnail/sk3776-image-kwvuoab1.jpg"
+      }
+    },
+    {
+      "id": 8731,
+      "common_name": "boysenberry",
+      "scientific_name": ["Rubus ursinus x idaeus"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 46,
+      "common_name": "Burgundy Lace Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Burgundy Lace'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 5,
+        "license_name": "Attribution-ShareAlike License",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/46_acer_palmatum_burgundy_lace/og/50082938346_1040fdd690_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/46_acer_palmatum_burgundy_lace/regular/50082938346_1040fdd690_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/46_acer_palmatum_burgundy_lace/medium/50082938346_1040fdd690_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/46_acer_palmatum_burgundy_lace/small/50082938346_1040fdd690_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/46_acer_palmatum_burgundy_lace/thumbnail/50082938346_1040fdd690_b.jpg"
+      }
+    },
+    {
+      "id": 203,
+      "common_name": "Bush's Electra Deodar Cedar",
+      "scientific_name": ["Cedrus deodara 'Bush's Electra'"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part sun/part shade"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/203_cedrus_deodara_bushs_electra/og/Cedrus_deodara_11zz.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/203_cedrus_deodara_bushs_electra/regular/Cedrus_deodara_11zz.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/203_cedrus_deodara_bushs_electra/medium/Cedrus_deodara_11zz.jpg",
+        "small_url": "https://perenual.com/storage/species_image/203_cedrus_deodara_bushs_electra/small/Cedrus_deodara_11zz.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/203_cedrus_deodara_bushs_electra/thumbnail/Cedrus_deodara_11zz.jpg"
+      }
+    },
+    {
+      "id": 8686,
+      "common_name": "cape fuchsia",
+      "scientific_name": ["Phygelius x rectus"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8578,
+      "common_name": "cascara",
+      "scientific_name": ["Frangula purshiana ( syn. Rhamnus )"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8646,
+      "common_name": "charity mahonia",
+      "scientific_name": ["Mahonia x media 'Charity'"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8767,
+      "common_name": "Chinese fighazel",
+      "scientific_name": ["Sycopsis sinensis"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8657,
+      "common_name": "Chinese parasol",
+      "scientific_name": ["Melliodendron xylocarpum"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8753,
+      "common_name": "clubmoss",
+      "scientific_name": ["Selaginella kraussiana"],
+      "other_name": ["Irish moss", "spike moss"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 51,
+      "common_name": "Coonara Pygmy Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Coonara Pygmy'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/species_image/51_acer_palmatum_coonara_pygmy/og/japan-maple-maple-leaf-red-leaf-nature.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/51_acer_palmatum_coonara_pygmy/regular/japan-maple-maple-leaf-red-leaf-nature.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/51_acer_palmatum_coonara_pygmy/medium/japan-maple-maple-leaf-red-leaf-nature.jpg",
+        "small_url": "https://perenual.com/storage/species_image/51_acer_palmatum_coonara_pygmy/small/japan-maple-maple-leaf-red-leaf-nature.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/51_acer_palmatum_coonara_pygmy/thumbnail/japan-maple-maple-leaf-red-leaf-nature.jpg"
+      }
+    },
+    {
+      "id": 8626,
+      "common_name": "corkscrew rush",
+      "scientific_name": ["Juncus effusus 'Spiralis'"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8609,
+      "common_name": "crimson flag ",
+      "scientific_name": ["Hesperantha coccinea"],
+      "other_name": ["river lily"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 201,
+      "common_name": "Deodar Cedar",
+      "scientific_name": ["Cedrus deodara"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun"],
+      "default_image": {
+        "license": 5,
+        "license_name": "Attribution-ShareAlike License",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/og/48834607038_84597f56f4_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/regular/48834607038_84597f56f4_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/medium/48834607038_84597f56f4_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/201_cedrus_deodara/small/48834607038_84597f56f4_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/201_cedrus_deodara/thumbnail/48834607038_84597f56f4_b.jpg"
+      }
+    },
+    {
+      "id": 10079,
+      "common_name": "Edible Thistle",
+      "scientific_name": ["Cirsium edule"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8552,
+      "common_name": "elaeagnus",
+      "scientific_name": ["Elaeagnus x ebbingei"],
+      "other_name": ["Ebbinge's silverberry"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 204,
+      "common_name": "Electra Blue Deodar Cedar",
+      "scientific_name": ["Cedrus deodara 'Electra Blue'"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun"],
+      "default_image": null
+    },
+    {
+      "id": 141,
+      "common_name": "Emperor I Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Wolff'"],
+      "other_name": ["Emperor 1"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 5,
+        "license_name": "Attribution-ShareAlike License",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/141_acer_palmatum_wolff/og/47923603098_bdbd6f53f0_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/141_acer_palmatum_wolff/regular/47923603098_bdbd6f53f0_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/141_acer_palmatum_wolff/medium/47923603098_bdbd6f53f0_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/141_acer_palmatum_wolff/small/47923603098_bdbd6f53f0_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/141_acer_palmatum_wolff/thumbnail/47923603098_bdbd6f53f0_b.jpg"
+      }
+    },
+    {
+      "id": 8589,
+      "common_name": "Endres's cranesbill",
+      "scientific_name": ["Geranium endressii"],
+      "other_name": ["French cranesbill"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 1,
+      "common_name": "European Silver Fir",
+      "scientific_name": ["Abies alba"],
+      "other_name": ["Common Silver Fir"],
+      "cycle": "Perennial",
+      "watering": "Frequent",
+      "sunlight": ["full sun"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/1_abies_alba/og/1536px-Abies_alba_SkalitC3A9.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/1_abies_alba/regular/1536px-Abies_alba_SkalitC3A9.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/1_abies_alba/medium/1536px-Abies_alba_SkalitC3A9.jpg",
+        "small_url": "https://perenual.com/storage/species_image/1_abies_alba/small/1536px-Abies_alba_SkalitC3A9.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/1_abies_alba/thumbnail/1536px-Abies_alba_SkalitC3A9.jpg"
+      }
+    },
+    {
+      "id": 2956,
+      "common_name": "fig",
+      "scientific_name": ["Ficus carica 'Brown Turkey'"],
+      "other_name": ["garden fig"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/2956_ficus_carica_brown_turkey/og/24950994930_238a64dd6b_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/2956_ficus_carica_brown_turkey/regular/24950994930_238a64dd6b_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/2956_ficus_carica_brown_turkey/medium/24950994930_238a64dd6b_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/2956_ficus_carica_brown_turkey/small/24950994930_238a64dd6b_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/2956_ficus_carica_brown_turkey/thumbnail/24950994930_238a64dd6b_b.jpg"
+      }
+    },
+    {
+      "id": 8721,
+      "common_name": "Garry oak",
+      "scientific_name": ["Quercus garryana"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 202,
+      "common_name": "Golden Deodar Cedar",
+      "scientific_name": ["Cedrus deodara 'Aurea'"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/202_cedrus_deodara_aurea/og/Cedrus_deodara_Aurea_1zz.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/202_cedrus_deodara_aurea/regular/Cedrus_deodara_Aurea_1zz.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/202_cedrus_deodara_aurea/medium/Cedrus_deodara_Aurea_1zz.jpg",
+        "small_url": "https://perenual.com/storage/species_image/202_cedrus_deodara_aurea/small/Cedrus_deodara_Aurea_1zz.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/202_cedrus_deodara_aurea/thumbnail/Cedrus_deodara_Aurea_1zz.jpg"
+      }
+    },
+    {
+      "id": 9054,
+      "common_name": "Hairy Manzanita",
+      "scientific_name": ["Arctostaphylos columbiana"],
+      "other_name": ["Bristly Manzanita"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8581,
+      "common_name": "hardy fuchsia",
+      "scientific_name": ["Fuchsia magellanica var. macrostema 'Tricolor'"],
+      "other_name": ["lady's eardrops"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8612,
+      "common_name": "hardy hibiscus",
+      "scientific_name": ["Hibiscus moscheutos (incl. hybrid cvs.)"],
+      "other_name": ["swamp rose mallow"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8678,
+      "common_name": "Henryana parthenocissus",
+      "scientific_name": ["Parthenocissus henryana"],
+      "other_name": ["Chinese Virginia creeper"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 60,
+      "common_name": "Higasa Yama Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Higasa Yama'"],
+      "other_name": ["Higasayama"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["part sun/part shade", "part shade"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/60_acer_palmatum_higasa_yama/og/51522802351_37623328e0_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/60_acer_palmatum_higasa_yama/regular/51522802351_37623328e0_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/60_acer_palmatum_higasa_yama/medium/51522802351_37623328e0_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/60_acer_palmatum_higasa_yama/small/51522802351_37623328e0_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/60_acer_palmatum_higasa_yama/thumbnail/51522802351_37623328e0_b.jpg"
+      }
+    },
+    {
+      "id": 61,
+      "common_name": "Hogyoku Japanese Maple",
+      "scientific_name": ["Acer palmatum 'Hogyoku'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part shade"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/og/2560px-Kyoto_Japan0431.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/regular/2560px-Kyoto_Japan0431.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/medium/2560px-Kyoto_Japan0431.jpg",
+        "small_url": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/small/2560px-Kyoto_Japan0431.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/thumbnail/2560px-Kyoto_Japan0431.jpg"
+      }
+    },
+    {
+      "id": 8773,
+      "common_name": "Irish yew",
+      "scientific_name": ["Taxus baccata 'Fastigiata'"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 266,
+      "common_name": "Japanese Cedar",
+      "scientific_name": ["Cryptomeria japonica"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", " Part sun/part shade", " Sheltered"],
+      "default_image": {
+        "license": 5,
+        "license_name": "Attribution-ShareAlike License",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/266_cryptomeria_japonica/og/51941933370_9cda81ee96_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/266_cryptomeria_japonica/regular/51941933370_9cda81ee96_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/266_cryptomeria_japonica/medium/51941933370_9cda81ee96_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/266_cryptomeria_japonica/small/51941933370_9cda81ee96_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/266_cryptomeria_japonica/thumbnail/51941933370_9cda81ee96_b.jpg"
+      }
+    },
+    {
+      "id": 2245,
+      "common_name": "Japanese cedar",
+      "scientific_name": ["Cryptomeria japonica 'Elegans Nana'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", " Part sun/part shade", " Sheltered"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/2245_cryptomeria_japonica_elegans_nana/og/450px-Cryptomeria_japonica_27Elegans_nana27_in_Morris_Arboretum.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/2245_cryptomeria_japonica_elegans_nana/regular/450px-Cryptomeria_japonica_27Elegans_nana27_in_Morris_Arboretum.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/2245_cryptomeria_japonica_elegans_nana/medium/450px-Cryptomeria_japonica_27Elegans_nana27_in_Morris_Arboretum.jpg",
+        "small_url": "https://perenual.com/storage/species_image/2245_cryptomeria_japonica_elegans_nana/small/450px-Cryptomeria_japonica_27Elegans_nana27_in_Morris_Arboretum.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/2245_cryptomeria_japonica_elegans_nana/thumbnail/450px-Cryptomeria_japonica_27Elegans_nana27_in_Morris_Arboretum.jpg"
+      }
+    },
+    {
+      "id": 2246,
+      "common_name": "Japanese cedar",
+      "scientific_name": ["Cryptomeria japonica 'Radicans'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", " Part sun/part shade", " Sheltered"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/2246_cryptomeria_japonica_radicans/og/Starr_031108-2113_Pinus_elliottii.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/2246_cryptomeria_japonica_radicans/regular/Starr_031108-2113_Pinus_elliottii.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/2246_cryptomeria_japonica_radicans/medium/Starr_031108-2113_Pinus_elliottii.jpg",
+        "small_url": "https://perenual.com/storage/species_image/2246_cryptomeria_japonica_radicans/small/Starr_031108-2113_Pinus_elliottii.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/2246_cryptomeria_japonica_radicans/thumbnail/Starr_031108-2113_Pinus_elliottii.jpg"
+      }
+    },
+    {
+      "id": 2247,
+      "common_name": "Japanese cedar",
+      "scientific_name": ["Cryptomeria japonica 'Spiralis'"],
+      "other_name": [],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun", " Part sun/part shade", " Sheltered"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/2247_cryptomeria_japonica_spiralis/og/4375503014_a18138e98d_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/2247_cryptomeria_japonica_spiralis/regular/4375503014_a18138e98d_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/2247_cryptomeria_japonica_spiralis/medium/4375503014_a18138e98d_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/2247_cryptomeria_japonica_spiralis/small/4375503014_a18138e98d_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/2247_cryptomeria_japonica_spiralis/thumbnail/4375503014_a18138e98d_b.jpg"
+      }
+    },
+    {
+      "id": 205,
+      "common_name": "Karl Fuchs Deodar Cedar",
+      "scientific_name": ["Cedrus deodara 'Karl Fuchs'"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["full sun", "part sun/part shade"],
+      "default_image": null
+    },
+    {
+      "id": 206,
+      "common_name": "Kashmir Deodar Cedar",
+      "scientific_name": ["Cedrus deodara 'Kashmir'"],
+      "other_name": ["Himalayan Cedar"],
+      "cycle": "Perennial",
+      "watering": "Average",
+      "sunlight": ["Full sun"],
+      "default_image": {
+        "license": 45,
+        "license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "original_url": "https://perenual.com/storage/species_image/206_cedrus_deodara_kashmir/og/Cedrus_deodar_Kashmir_1zz.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/206_cedrus_deodara_kashmir/regular/Cedrus_deodar_Kashmir_1zz.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/206_cedrus_deodara_kashmir/medium/Cedrus_deodar_Kashmir_1zz.jpg",
+        "small_url": "https://perenual.com/storage/species_image/206_cedrus_deodara_kashmir/small/Cedrus_deodar_Kashmir_1zz.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/206_cedrus_deodara_kashmir/thumbnail/Cedrus_deodar_Kashmir_1zz.jpg"
+      }
+    },
+    {
+      "id": 8586,
+      "common_name": "lydia genista",
+      "scientific_name": ["Genista lydia"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8661,
+      "common_name": "monkey flower",
+      "scientific_name": ["Mimulus aurantiacus"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8697,
+      "common_name": "narrow-leaved plantain",
+      "scientific_name": ["Plantago lanceolata"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 317,
+      "common_name": "Near East Crapemyrtle",
+      "scientific_name": ["Lagerstroemia indica 'Near East'"],
+      "other_name": ["Crape Myrtle", "Crepe Myrtle"],
+      "cycle": "Perennial",
+      "watering": "Frequent",
+      "sunlight": ["full sun"],
+      "default_image": {
+        "license": 4,
+        "license_name": "Attribution License",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "original_url": "https://perenual.com/storage/species_image/317_lagerstroemia_indica_near_east/og/3584863665_1fc057a714_b.jpg",
+        "regular_url": "https://perenual.com/storage/species_image/317_lagerstroemia_indica_near_east/regular/3584863665_1fc057a714_b.jpg",
+        "medium_url": "https://perenual.com/storage/species_image/317_lagerstroemia_indica_near_east/medium/3584863665_1fc057a714_b.jpg",
+        "small_url": "https://perenual.com/storage/species_image/317_lagerstroemia_indica_near_east/small/3584863665_1fc057a714_b.jpg",
+        "thumbnail": "https://perenual.com/storage/species_image/317_lagerstroemia_indica_near_east/thumbnail/3584863665_1fc057a714_b.jpg"
+      }
+    },
+    {
+      "id": 8492,
+      "common_name": "New Zealand wind grass",
+      "scientific_name": ["Anemanthele lessoniana"],
+      "other_name": ["wind grass", "pheasant grass"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8684,
+      "common_name": "orange stonecrop",
+      "scientific_name": [
+        "Phedimus kamtschaticus ( syn. Sedum kamtschaticum )"
+      ],
+      "other_name": ["Russian stonecrop"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8714,
+      "common_name": "Portugal laurel",
+      "scientific_name": ["Prunus lusitanica"],
+      "other_name": [],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    },
+    {
+      "id": 8466,
+      "common_name": "Red-Flowering Currant",
+      "scientific_name": ["Ribes sanguineum"],
+      "other_name": ["winter currant"],
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    }
+  ],
+  "to": 60,
+  "per_page": 30,
+  "current_page": 2,
+  "from": 31,
+  "last_page": 3,
+  "total": 73
+}
