@@ -55,7 +55,7 @@ function App() {
           <Col className="col-4">
             <PlantFetcher />
           </Col>
-          <Col>
+          <Col className="col-4">
             <QueryForm />
             <DisplayGroup />
           </Col>

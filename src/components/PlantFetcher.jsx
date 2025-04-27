@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import placeholderImg from "../assets/icons8-potted-plant-96.png";
 
 function PlantFetcher() {
@@ -12,18 +12,19 @@ function PlantFetcher() {
     return <p>No plant selected</p>;
   }
 
-  const { common_name, scientific_name, image } = selectedPlant;
+  const { common_name, scientific_name, image, guideURL } = selectedPlant;
 
   console.log("image: ", image);
 
   return (
     <Container className="mx-3 mb-3">
-      <Card style={{ width: "18rem" }}>
+      <Card>
         <Card.Img
           variant="top"
           src={image || placeholderImg}
           alt={image ? { common_name } : "Fallback plant image"}
-          // className={"img-fluid"}
+          className="img-fluid mx-auto d-block"
+          style={{ width: "50%" }}
         />
 
         {!image && (
@@ -34,6 +35,9 @@ function PlantFetcher() {
         <Card.Body>
           <Card.Title className="text-center">{common_name}</Card.Title>
           <h6 className="text-center">{scientific_name}</h6>
+          <Button src={guideURL} variant="outline-success">
+            Go to Plant Guide
+          </Button>
         </Card.Body>
       </Card>
     </Container>
