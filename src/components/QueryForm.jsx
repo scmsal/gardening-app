@@ -13,7 +13,7 @@ const QueryForm = () => {
 
   return (
     <Container className="mx-3 mb-3">
-      <label className="form-label d-block mb-2" id="ediblePart">
+      {/* <label className="form-label d-block mb-2" id="ediblePart">
         What part do I want to eat?
       </label>
       <ButtonGroup>
@@ -26,7 +26,7 @@ const QueryForm = () => {
             {part}
           </Button>
         ))}
-      </ButtonGroup>
+      </ButtonGroup> */}
     </Container>
   );
 };

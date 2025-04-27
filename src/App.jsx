@@ -53,9 +53,11 @@ function App() {
             <VeggiesList />
           </Col>
           <Col className="col-4">
+            <PlantFetcher />
+          </Col>
+          <Col>
             <QueryForm />
             <DisplayGroup />
-            <PlantFetcher />
           </Col>
         </Row>
       </main>

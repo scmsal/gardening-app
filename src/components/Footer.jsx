@@ -23,6 +23,23 @@ const Footer = () => {
               via GIPHY
             </a>
           </Col>
+          <Col className="text-end">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://icons8.com/icon/106124/potted-plant"
+            >
+              Potted Plant
+            </a>
+            <span> icon by </span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://icons8.com"
+            >
+              Icons8
+            </a>
+          </Col>
         </Row>
       </Container>
     </footer>
