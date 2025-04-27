@@ -18,6 +18,7 @@ const plantNamesList = [
 ];
 
 const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY;
+const RAPDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 
 const API_CALLS_ENABLED = false; // set to true when you want to enable again
 
@@ -30,6 +31,7 @@ const edibleParts = ["any", "tubers/bulbs", "leaves/stems", "fruit/pods/seeds"];
 export {
   plantNamesList,
   API_KEY,
+  RAPDAPI_KEY,
   edibleParts,
   PerenualAPISearchEndpoint,
   API_CALLS_ENABLED,
