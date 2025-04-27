@@ -237,7 +237,6 @@ const plantsSlice = createSlice({
     },
     setDetailsEnriched: (state, action) => {
       state.detailsEnriched = action.payload;
-      saveDetailsEnriched(state.detailsEnriched);
     },
   },
   extraReducers: (builder) => {
