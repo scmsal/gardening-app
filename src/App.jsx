@@ -8,7 +8,7 @@ import PlantFetcher from "./components/PlantFetcher";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
-  addBasicPlantDetails,
+  // addBasicPlantDetails,
   enrichAllPlantDetails,
   loadStarterPlants,
 } from "./features/plantsSlice";
@@ -18,15 +18,29 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadStarterPlants())
-      .then(() => {
-        dispatch(addBasicPlantDetails());
-      })
-      .then(() => {
-        dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
-      });
-  }, [dispatch]);
+    //   dispatch(loadStarterPlants())
+    //     .then(() => {
+    //       dispatch(addBasicPlantDetails());
+    //     })
+    //     .then(() => {
+    //       dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
+    //     });
+    // }, [dispatch]);
 
+    const loadAndEnrich = async () => {
+      try {
+        await dispatch(loadStarterPlants()).unwrap();
+        console.log("Starterplants loaded.");
+
+        await dispatch(enrichAllPlantDetails()).unwrap();
+        console.log("All plant details enriched");
+      } catch (error) {
+        console.log("Error during loading or enriching:", error);
+      }
+    };
+
+    loadAndEnrich();
+  }, [dispatch]);
   //to clear cache for testing
   //localStorage.removeItem("enrichedPlantData");
 

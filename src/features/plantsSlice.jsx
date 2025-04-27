@@ -5,6 +5,7 @@ import { API_KEY } from "../constants";
 import { PerenualAPISearchEndpoint } from "../constants";
 import placeholderImg from "../assets/icons8-plant-80.png";
 import delay from "../../utils/delay";
+import { saveDetailsEnriched } from "../../utils/localStorageHelpers";
 
 const persistState = (plantData, detailsEnriched) => {
   localStorage.setItem("plantData", JSON.stringify(plantData));
@@ -32,16 +33,16 @@ export const loadStarterPlants = createAsyncThunk(
 
 export const addPlantByName = createAsyncThunk(
   "plants/addPlantByName",
-  async (plantName, { getState, dispatch }) => {
+  async (general_name, { getState, dispatch }) => {
     const state = getState();
     const exists = state.plants.plantData.some(
-      (plant) => plant.general_name.toLowerCase() === plantName.toLowerCase()
+      (plant) => plant.general_name.toLowerCase() === general_name.toLowerCase()
     );
 
     if (exists) return;
 
     const response = await axios.get(
-      `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
+      `https://perenual.com/api/species-list?key=${API_KEY}&q=${general_name}`
     );
 
     const plant = response.data.data?.[0];
@@ -61,7 +62,7 @@ export const addPlantByName = createAsyncThunk(
     } = plant;
 
     const newPlant = {
-      general_name: plantName,
+      general_name, //check if needs to be :general_name
       common_name,
       scientific_name,
       // id: 1,
@@ -78,55 +79,55 @@ export const addPlantByName = createAsyncThunk(
       enriched: false,
     };
     dispatch(addPlant(newPlant));
-    dispatch(enrichPlantDetails({ plantName, API_id: plant.id }));
+    dispatch(enrichPlantDetails({ general_name, API_id: plant.id })); //check general_name
   }
 );
+//Might be unnecessary. I thought it could work for the plants with aPI_id > 3000, but it won't. I'l pull all the info from /details
+// export const addBasicPlantDetails = createAsyncThunk(
+//   "plants/addBasicPlantDetails",
+//   async ({ general_name, API_id }, thunkAPI) => {
+//     if (API_id > 3000) {
+//       console.warn(
+//         `Skipping addBasicPlantDetails for ${general_name}, API_id too high: ${API_id}`
+//       );
+//       return null;
+//     }
+//     try {
+//       const response = await axios.get(
+//         `https://perenual.com/api/species-list?key=${API_KEY}&q=${general_name}}`
+//       );
+//       const plant = response.data.data[0];
+//       if (!plant) return null;
 
-export const addBasicPlantDetails = createAsyncThunk(
-  "plants/addBasicPlantDetails",
-  async ({ plantName, API_id }, thunkAPI) => {
-    if (API_id > 3000) {
-      console.warn(
-        `Skipping addBasicPlantDetails for ${plantName}, API_id too high: ${API_id}`
-      );
-      return null;
-    }
-    try {
-      const response = await axios.get(
-        `https://perenual.com/api/species-list?key=${API_KEY}&q=${plantName}`
-      );
-      const plant = response.data.data[0];
-      if (!plant) return null;
-
-      console.log("details:", details);
-      console.log("Received:", { plantName, API_id });
-      return {
-        API_id,
-        watering: plant.watering,
-        sunlight: plant.sunlight,
-        cycle: plant.cycle,
-        edible: plant.edible,
-        poisonous: plant.poisonous,
-        hardiness: plant.hardiness,
-        image: plant.default_image?.small_url || placeholderImg,
-      };
-    } catch (error) {
-      console.error(`Failed to add basic details for ${plantName}:`, error);
-      return null;
-    }
-  }
-);
+//       console.log("details:", details);
+//       console.log("Received:", { general_name, API_id });
+//       return {
+//         API_id,
+//         watering: plant.watering,
+//         sunlight: plant.sunlight,
+//         cycle: plant.cycle,
+//         edible: plant.edible,
+//         poisonous: plant.poisonous,
+//         hardiness: plant.hardiness,
+//         image: plant.default_image?.small_url || placeholderImg,
+//       };
+//     } catch (error) {
+//       console.error(`Failed to add basic details for ${general_name}:`, error);
+//       return null;
+//     }
+//   }
+// );
 
 //This thunk is to add info from the details pages of the plants by ID (not available in the species-list endpoint) into the basic info list (i.e. enrich the data)
 
 //for a single plant
 export const enrichPlantDetails = createAsyncThunk(
   "plants/enrichPlantDetails",
-  async ({ plantName, API_id }, thunkAPI) => {
-    console.log("enrichPlantDetails has fired with: ", plantName, API_id);
+  async ({ general_name, API_id }, thunkAPI) => {
+    console.log("enrichPlantDetails has fired with: ", general_name, API_id); //check if need plant.general_name
     if (API_id > 3000) {
       console.warn(
-        `Skipping enrichment for ${plantName}, API_id too high: ${API_id}`
+        `Skipping enrichment for ${general_name}, API_id too high: ${API_id}` //check if need plant.general_name
       );
       return null;
     }
@@ -137,23 +138,30 @@ export const enrichPlantDetails = createAsyncThunk(
       );
       const details = response.data;
       console.log("details:", details);
-      console.log("Received:", { plantName, API_id });
+      console.log("Received:", { general_name, API_id });
       return {
-        plantName,
-        API_id,
+        general_name: details.general_name,
+        API_id: details.API_id,
         details: {
           care_level: details.care_level,
+          cycle: details.cycle,
+          drought_tolerant: details.drought_tolerant,
+          edible: details.edible,
           enriched: true,
           flowering_season: details.flowering_season,
           flowers: details.flowers,
           growth_rate: details.growth_rate,
+          hardiness: details.hardiness,
           harvest_season: details.harvest_season,
-          drought_tolerant: details.drought_tolerant,
+          image: details.default_image?.small_url || placeholderImg,
+          poisonous: details.poisonous,
+          sunlight: details.sunlight,
           type: details.type,
+          watering: details.watering,
         },
       };
     } catch (error) {
-      console.error(`Failed to enrich ${plantName}:`, error);
+      console.error(`Failed to enrich ${details.general_name}:`, error); //check if need just eneral_name
       return null;
     }
   }
@@ -171,19 +179,19 @@ export const enrichAllPlantDetails = createAsyncThunk(
       if (plant.API_id && !plant.enriched) {
         const actionResult = await dispatch(
           enrichPlantDetails({
-            plantName: plant.common_name.toLowerCase(),
+            general_name: plant.general_name.toLowerCase(),
             API_id: plant.API_id,
           })
         );
 
         if (enrichPlantDetails.fulfilled.match(actionResult)) {
           if (actionResult.payload === null) {
-            console.log(`Skipped enrichment for ${plantName}`);
+            console.log(`Skipped enrichment for ${plant.general_name}`);
             continue;
           }
         } else {
           console.error(
-            `Failed enrichment for ${plantName}`,
+            `Failed enrichment for ${plant.general_name}`,
             actionResult.error
           );
           continue;
@@ -194,8 +202,6 @@ export const enrichAllPlantDetails = createAsyncThunk(
     dispatch(setDetailsEnriched(true));
   }
 );
-
-//create the slice
 
 const cachedPlantData = JSON.parse(localStorage.getItem("plantData")) || [];
 
@@ -210,6 +216,7 @@ const initialState = {
   detailsEnriched: cachedDetailsEnriched,
 };
 
+//create the slice
 const plantsSlice = createSlice({
   name: "plants",
   initialState,
@@ -252,12 +259,12 @@ const plantsSlice = createSlice({
       })
       //deleted addCase(addPlantByName.fulfilled because it dispatches addPlant, so not needed.
 
-      .addCase(addBasicPlantDetails.fulfilled, (state, action) => {
-        persistState(state.plantData, state.detailsEnriched);
-      })
+      // .addCase(addBasicPlantDetails.fulfilled, (state, action) => {
+      //   persistState(state.plantData, state.detailsEnriched);
+      // })
       .addCase(enrichPlantDetails.fulfilled, (state, action) => {
         if (!action.payload) return; //not sure if I need this
-        const { plantName, API_id, details } = action.payload;
+        const { general_name, API_id, details } = action.payload;
         const index = state.plantData.findIndex(
           (plant) => plant.API_id === API_id
         );
