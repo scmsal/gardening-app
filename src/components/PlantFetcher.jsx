@@ -23,8 +23,7 @@ function PlantFetcher() {
           variant="top"
           src={image || placeholderImg}
           alt={image ? { common_name } : "Fallback plant image"}
-          className="img-fluid mx-auto d-block"
-          style={{ width: "50%" }}
+          className="img-fluid mx-auto d-block w-50"
         />
 
         {!image && (
@@ -35,9 +34,11 @@ function PlantFetcher() {
         <Card.Body>
           <Card.Title className="text-center">{common_name}</Card.Title>
           <h6 className="text-center">{scientific_name}</h6>
-          <Button src={guideURL} variant="outline-success">
-            Go to Plant Guide
-          </Button>
+          <a href={guideURL} target="_blank" rel="noopener noreferrer">
+            <Button src={guideURL} variant="outline-success">
+              Go to Plant Guide
+            </Button>
+          </a>
         </Card.Body>
       </Card>
     </Container>

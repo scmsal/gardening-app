@@ -25,4 +25,4 @@ dist-ssr
 
 # Private data
 .env
-snippetsForFutureUse.txt
+src/misc/*
