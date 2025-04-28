@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Image } from "react-bootstrap";
 import placeholderImg from "../assets/icons8-potted-plant-96.png";
+import gardenImg from "../assets/garden-7028181_1280.jpg";
 
 function PlantFetcher() {
   const selectedPlant = useSelector((state) => state.plants.selectedPlant);
@@ -11,7 +12,24 @@ function PlantFetcher() {
   if (!selectedPlant) {
     return (
       <Container className="mx-3 mb-3 auto">
-        <p>Select a plant from the list to see more details</p>
+        <p className="text-center">
+          Select a plant from the list to see more details
+        </p>
+        <Image
+          src={gardenImg}
+          alt="vegetable garden with a wheelbarrow"
+          className="img-fluid mx-auto d-block w-75"
+        />
+        <p className="text-center">
+          Image by{" "}
+          <a href="https://pixabay.com/users/alison506-4668088/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7028181">
+            Alison Innes
+          </a>{" "}
+          from{" "}
+          <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7028181">
+            Pixabay
+          </a>
+        </p>
       </Container>
     );
   }
