@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import APICallCounter from "./APIcallCounter";
 
 const Footer = () => {
   return (
@@ -6,6 +7,9 @@ const Footer = () => {
       <Container fluid>
         <Row>
           <Col>Copyright &copy; 2025</Col>
+          <Col>
+            <APICallCounter />
+          </Col>
           <Col className="text-center">
             Data: {"  "}
             <a

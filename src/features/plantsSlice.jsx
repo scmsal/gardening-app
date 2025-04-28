@@ -49,6 +49,7 @@ export const addPlantByName = createAsyncThunk(
     const response = await axios.get(
       `https://perenual.com/api/species-list?key=${API_KEY}&q=${general_name}`
     );
+    dispatch(incrementAPICallCount());
 
     const plant = response.data.data?.[0];
     if (!plant) return null;
@@ -87,42 +88,6 @@ export const addPlantByName = createAsyncThunk(
     dispatch(enrichPlantDetails({ general_name, API_id: plant.id })); //check general_name
   }
 );
-//Might be unnecessary. I thought it could work for the plants with aPI_id > 3000, but it won't. I'l pull all the info from /details
-// export const addBasicPlantDetails = createAsyncThunk(
-//   "plants/addBasicPlantDetails",
-//   async ({ general_name, API_id }, thunkAPI) => {
-//     if (API_id > 3000) {
-//       console.warn(
-//         `Skipping addBasicPlantDetails for ${general_name}, API_id too high: ${API_id}`
-//       );
-//       return null;
-//     }
-//     try {
-//       const response = await axios.get(
-//         `https://perenual.com/api/species-list?key=${API_KEY}&q=${general_name}}`
-//       );
-//       const plant = response.data.data[0];
-//       if (!plant) return null;
-
-//       console.log("details:", details);
-//       console.log("Received:", { general_name, API_id });
-//       return {
-//         API_id,
-//         watering: plant.watering,
-//         sunlight: plant.sunlight,
-//         cycle: plant.cycle,
-//         edible: plant.edible,
-//         poisonous: plant.poisonous,
-//         hardiness: plant.hardiness,
-//         image: plant.default_image?.small_url || placeholderImg,
-//       };
-//     } catch (error) {
-//       console.error(`Failed to add basic details for ${general_name}:`, error);
-//       return null;
-//     }
-//   }
-// );
-
 //This thunk is to add info from the details pages of the plants by ID (not available in the species-list endpoint) into the basic info list (i.e. enrich the data)
 
 //for a single plant
@@ -146,6 +111,8 @@ export const enrichPlantDetails = createAsyncThunk(
       const response = await axios.get(
         `https://perenual.com/api/species/details/${API_id}?key=${API_KEY}`
       );
+      dispatch(incrementAPICallCount());
+
       const details = response.data;
       console.log("details:", details);
       console.log("Received:", { general_name, API_id });
@@ -171,7 +138,7 @@ export const enrichPlantDetails = createAsyncThunk(
         },
       };
     } catch (error) {
-      console.error(`Failed to enrich ${details.general_name}:`, error); //check if need just eneral_name
+      console.error(`Failed to enrich ${details.general_name}:`, error); //check if need just general_name
       return null;
     }
   }
@@ -229,6 +196,7 @@ const initialState = {
   loading: false,
   error: null,
   detailsEnriched: cachedDetailsEnriched,
+  perenualAPICallCount: 0,
 };
 
 //create the slice
@@ -236,6 +204,9 @@ const plantsSlice = createSlice({
   name: "plants",
   initialState,
   reducers: {
+    incrementAPICallCount: (state) => {
+      state.perenualAPICallCount += 1;
+    },
     addPlant: (state, action) => {
       state.plantData.push(action.payload);
     },
@@ -293,8 +264,13 @@ const plantsSlice = createSlice({
   },
 });
 // Export the actions for use in components
-export const { setSelectedPlant, addPlant, removePlant, setDetailsEnriched } =
-  plantsSlice.actions;
+export const {
+  setSelectedPlant,
+  addPlant,
+  removePlant,
+  setDetailsEnriched,
+  incrementAPICallCount,
+} = plantsSlice.actions;
 
 // Export the reducer to use in configureStore()
 export default plantsSlice.reducer;
