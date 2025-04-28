@@ -45,7 +45,8 @@ function PlantFetcher() {
           variant="top"
           src={image || placeholderImg}
           alt={image ? { common_name } : "Fallback plant image"}
-          className="img-fluid mx-auto d-block w-50"
+          className="img-fluid mx-auto d-block w-100 h-50"
+          // style={{ maxHeight: "300px", objectFit: "cover" }}
         />
 
         {!image && (
