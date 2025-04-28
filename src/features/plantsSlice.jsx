@@ -113,28 +113,28 @@ export const enrichPlantDetails = createAsyncThunk(
       );
       dispatch(incrementAPICallCount());
 
-      const details = response.data;
-      console.log("details:", details);
+      const plantDetails = response.data;
+      console.log("details:", plantDetails);
       console.log("Received:", { general_name, API_id });
       return {
-        general_name: details.general_name,
-        API_id: details.API_id,
+        general_name: plantDetails.general_name,
+        API_id: plantDetails.API_id,
         details: {
-          care_level: details.care_level,
-          cycle: details.cycle,
-          drought_tolerant: details.drought_tolerant,
-          edible: details.edible,
+          care_level: plantDetails.care_level,
+          cycle: plantDetails.cycle,
+          drought_tolerant: plantDetails.drought_tolerant,
+          edible: plantDetails.edible,
           enriched: true,
-          flowering_season: details.flowering_season,
-          flowers: details.flowers,
-          growth_rate: details.growth_rate,
-          hardiness: details.hardiness,
-          harvest_season: details.harvest_season,
-          image: details.default_image?.small_url || placeholderImg,
-          poisonous: details.poisonous,
-          sunlight: details.sunlight,
-          type: details.type,
-          watering: details.watering,
+          flowering_season: plantDetails.flowering_season,
+          flowers: plantDetails.flowers,
+          growth_rate: plantDetails.growth_rate,
+          hardiness: plantDetails.hardiness,
+          harvest_season: plantDetails.harvest_season,
+          image: plantDetails.default_image?.small_url || placeholderImg,
+          poisonous: plantDetails.poisonous,
+          sunlight: plantDetails.sunlight,
+          type: plantDetails.type,
+          watering: plantDetails.watering,
         },
       };
     } catch (error) {
