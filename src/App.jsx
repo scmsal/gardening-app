@@ -13,7 +13,7 @@ import {
   loadStarterPlants,
 } from "./features/plantsSlice";
 import { useDispatch } from "react-redux";
-import FindZoneByZip from "./components/findZoneByZip";
+import FindZoneByZip from "./components/FindZoneByZip";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,8 +33,8 @@ function App() {
         await dispatch(loadStarterPlants()).unwrap();
         console.log("Starterplants loaded.");
 
-        await dispatch(enrichAllPlantDetails()).unwrap();
-        console.log("All plant details enriched");
+        // await dispatch(enrichAllPlantDetails()).unwrap();
+        // console.log("All plant details enriched");
       } catch (error) {
         console.log("Error during loading or enriching:", error);
       }
