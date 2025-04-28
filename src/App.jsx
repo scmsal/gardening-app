@@ -13,6 +13,7 @@ import {
   loadStarterPlants,
 } from "./features/plantsSlice";
 import { useDispatch } from "react-redux";
+import FindZoneByZip from "./components/findZoneByZip";
 
 function App() {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ function App() {
             <PlantFetcher />
           </Col>
           <Col className="col-4">
+            <FindZoneByZip />
             <QueryForm />
             <DisplayGroup />
           </Col>

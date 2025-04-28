@@ -36,7 +36,7 @@ export const fetchHardinessZone = createAsyncThunk(
 );
 
 const hardinessZoneSlice = createSlice({
-  name: hardinessZone,
+  name: "hardinessZone",
   initialState: {
     zipCode: "",
     zone: null,
