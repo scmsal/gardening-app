@@ -51,6 +51,7 @@ function App() {
       <main className="flex-grow-1 pt-5">
         <Row>
           <Col className="col-4">
+            <h2>Some ideas...</h2>
             <VeggiesList />
           </Col>
           <Col className="col-4">

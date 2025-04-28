@@ -9,7 +9,11 @@ function PlantFetcher() {
   console.log("Selected Plant: ", selectedPlant);
 
   if (!selectedPlant) {
-    return <p>No plant selected</p>;
+    return (
+      <Container className="mx-3 mb-3 auto">
+        <p>Select a plant from the list to see more details</p>
+      </Container>
+    );
   }
 
   const { common_name, scientific_name, image, guideURL } = selectedPlant;

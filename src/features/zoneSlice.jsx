@@ -8,8 +8,8 @@ const HARDINESS_API_URL =
   "https://plant-hardiness-zone.p.rapidapi.com/zipcodes";
 
 export const fetchHardinessZone = createAsyncThunk(
-  "hardinessZone/fetchZone",
-  async (zipCode, thunkAPI) => {
+  "hardinessZone/fetchHardinessZone",
+  async (zip, thunkAPI) => {
     // if (!API_CALLS_ENABLED) {
     //   console.warn("API calls are currently disabled.");
     //   return thunkAPI.rejectWithValue("API calls disabled manually.");
@@ -26,11 +26,11 @@ export const fetchHardinessZone = createAsyncThunk(
         },
       };
       const response = await axios.request(options);
-      console.log(response.data.hardiness_zone);
-      return response.data.zone;
+      console.log(response.data.hardiness_zone); //update?
+      return response.data.zone; //double check shape of actual response data
     } catch (error) {
       console.error(error);
-      // return thunkAPI.rejectWithValue(error.message); //check as it might just stop the whole app.
+      return rejectWithValue(error.response?.data || error.message); //check as it might just stop the whole app.
     }
   }
 );
@@ -38,34 +38,30 @@ export const fetchHardinessZone = createAsyncThunk(
 const hardinessZoneSlice = createSlice({
   name: "hardinessZone",
   initialState: {
-    zipCode: "",
     zone: null,
     loading: false,
     error: null,
   },
   reducers: {
-    setZipCode: (state, action) => {
-      state.zipCode = action.payload;
+    extrareducers: (builder) => {
+      builder
+        .addCase(fetchHardinessZone.pending, (state) => {
+          state.loading = true;
+          state.error = false;
+          state.zone = null; //clears the zone during new search
+        })
+        .addCase(fetchHardinessZone.fulfilled, (state) => {
+          state.loading = false;
+          state.zone = action.payload;
+        })
+        .addCase(fetchHardinessZone.rejected, (state) => {
+          state.loading = false;
+          state.error = action.payload;
+        });
     },
-  },
-  extrareducers: (builder) => {
-    builder
-      .addCase(fetchHardinessZone.pending, (state) => {
-        state.loading = true;
-        state.error = false;
-      })
-      .addCase(fetchHardinessZone.fulfilled, (state) => {
-        state.loading = false;
-        state.zone = action.payload;
-      })
-      .addCase(fetchHardinessZone.rejected, (state) => {
-        state.loading = false;
-        state.error = action.payload;
-      });
   },
 });
 
-export const { setZipCode } = hardinessZoneSlice.actions;
 export default hardinessZoneSlice.reducer;
 
 //eventually integrate data from here: https://github.com/waldoj/frostline to a) get temperatures for each zone and b) generate maps.
