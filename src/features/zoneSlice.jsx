@@ -27,7 +27,7 @@ export const fetchHardinessZone = createAsyncThunk(
       };
       const response = await axios.request(options);
       console.log(response.data.hardiness_zone); //update?
-      return response.data.zone; //double check shape of actual response data
+      return response.data.hardiness_zone; //double check shape of actual response data
     } catch (error) {
       console.error(error);
       return rejectWithValue(error.response?.data || error.message); //check as it might just stop the whole app.
@@ -42,23 +42,22 @@ const hardinessZoneSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {
-    extrareducers: (builder) => {
-      builder
-        .addCase(fetchHardinessZone.pending, (state) => {
-          state.loading = true;
-          state.error = false;
-          state.zone = null; //clears the zone during new search
-        })
-        .addCase(fetchHardinessZone.fulfilled, (state) => {
-          state.loading = false;
-          state.zone = action.payload;
-        })
-        .addCase(fetchHardinessZone.rejected, (state) => {
-          state.loading = false;
-          state.error = action.payload;
-        });
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchHardinessZone.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+        state.zone = null; //clears the zone during new search
+      })
+      .addCase(fetchHardinessZone.fulfilled, (state) => {
+        state.loading = false;
+        state.zone = action.payload;
+      })
+      .addCase(fetchHardinessZone.rejected, (state) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
