@@ -5,6 +5,7 @@ import VeggiesList from "./components/VeggiesList";
 import QueryForm from "./components/QueryForm";
 import DisplayGroup from "./components/DisplayGroup";
 import PlantFetcher from "./components/PlantFetcher";
+import LinksToResources from "./components/LinksToResources";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
@@ -51,7 +52,7 @@ function App() {
       <main className="flex-grow-1 pt-5">
         <Row>
           <Col className="col-4">
-            <h2>Some ideas...</h2>
+            <h2 className="text-success ms-3">Some ideas...</h2>
             <VeggiesList />
           </Col>
           <Col className="col-4">
@@ -60,7 +61,8 @@ function App() {
           <Col className="col-4">
             <FindZoneByZip />
             <QueryForm />
-            <DisplayGroup />
+            {/* <DisplayGroup /> */}
+            <LinksToResources />
           </Col>
         </Row>
       </main>

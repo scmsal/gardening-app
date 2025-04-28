@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHardinessZone } from "../features/zoneSlice";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import { Spinner } from "react-bootstrap";
 
 const FindZoneByZip = () => {
   const dispatch = useDispatch();
