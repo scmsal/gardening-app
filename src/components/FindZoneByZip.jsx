@@ -21,14 +21,18 @@ const FindZoneByZip = () => {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearch} placeholder="Enter zip code" />
+      <SearchBar
+        onSearch={handleSearch}
+        placeholder="Enter zip code"
+        label="Find my zone:"
+      />
 
       {loading && <Spinner as="span" animation="border" size="sm" />}
       {zone && (
         <div className="mt-3">
-          <h5>
+          <p className="ms-3">
             The hardiness zone for zip {zipInput} is <b>{zone}</b>
-          </h5>
+          </p>
         </div>
       )}
 

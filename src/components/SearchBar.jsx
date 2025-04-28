@@ -6,6 +6,7 @@ const SearchBar = ({
   onSearch,
   loading,
   placeholder = "Enter search term",
+  label,
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -20,7 +21,7 @@ const SearchBar = ({
   return (
     <Form onSubmit={handleSubmit} className="mx-3">
       <InputGroup className="mb-3 d-flex align-items-center">
-        <Form.Label className="me-1">My plant hardiness zone: </Form.Label>
+        <Form.Label className="me-1">{label} </Form.Label>
         <Form.Control
           type="text"
           value={inputValue}
