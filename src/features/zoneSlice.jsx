@@ -1,3 +1,5 @@
+//Credit: https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RAPDAPI_KEY } from "../config";
@@ -65,3 +67,7 @@ const hardinessZoneSlice = createSlice({
 
 export const { setZipCode } = hardinessZoneSlice.actions;
 export default hardinessZoneSlice.reducer;
+
+//eventually integrate data from here: https://github.com/waldoj/frostline to a) get temperatures for each zone and b) generate maps.
+
+//otherwise, link to https://planthardiness.ars.usda.gov/ that shows all that info searchable by zip code.
