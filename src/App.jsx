@@ -34,15 +34,14 @@ function App() {
         await dispatch(loadStarterPlants()).unwrap();
         console.log("Starterplants loaded.");
 
-        // await dispatch(enrichAllPlantDetails()).unwrap();
-        // console.log("All plant details enriched");
+        await dispatch(enrichAllPlantDetails()).unwrap();
       } catch (error) {
         console.log("Error during loading or enriching:", error);
       }
     };
 
     loadAndEnrich();
-  }, [dispatch]);
+  }, []);
   //to clear cache for testing
   //localStorage.removeItem("enrichedPlantData");
 
