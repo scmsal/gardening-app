@@ -1,4 +1,4 @@
-//another suggestion by ChatGPT to hydrate store and localStorage
+//suggestion by ChatGPT to hydrate store and localStorage
 
 export const savePlantData = (plantData) => {
   try {

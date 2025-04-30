@@ -20,7 +20,7 @@ const plantNamesList = [
 const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY;
 const RAPDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 
-const API_CALLS_ENABLED = true; // set to true when you want to enable again
+const API_CALLS_ENABLED = true; // Toggles ability to make calls to Perenual API
 
 const PerenualAPISearchEndpoint =
   "https://perenual.com/plant-species-database-search-finder/species/";
