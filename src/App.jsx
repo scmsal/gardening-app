@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import VeggiesList from "./components/VeggiesList";
-import QueryForm from "./components/QueryForm";
 import DisplayGroup from "./components/DisplayGroup";
 import PlantFetcher from "./components/PlantFetcher";
 import LinksToResources from "./components/LinksToResources";
@@ -20,23 +19,14 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //   dispatch(loadStarterPlants())
-    //     .then(() => {
-    //       dispatch(addBasicPlantDetails());
-    //     })
-    //     .then(() => {
-    //       dispatch(enrichAllPlantDetails()); //I want them all to load at the beginning for data manipulation (grouping, etc). Otherwise, I'd only fetch the enriched data on selecting a plant to display its details.
-    //     });
-    // }, [dispatch]);
-
     const loadAndEnrich = async () => {
       try {
         await dispatch(loadStarterPlants()).unwrap();
         console.log("Starterplants loaded.");
 
-        await dispatch(enrichAllPlantDetails()).unwrap();
+        //   await dispatch(enrichAllPlantDetails()).unwrap();
       } catch (error) {
-        console.log("Error during loading or enriching:", error);
+        console.log("Error during loading:", error); //change to "loading or enriching" when previous line enabled
       }
     };
 
@@ -59,7 +49,7 @@ function App() {
           </Col>
           <Col className="col-4">
             <FindZoneByZip />
-            <QueryForm />
+
             {/* <DisplayGroup /> */}
             <LinksToResources />
           </Col>
