@@ -15,17 +15,15 @@ const persistState = (plantData, detailsEnriched) => {
 export const loadStarterPlants = createAsyncThunk(
   "plants/loadStarterPlants",
   async (_, thunkAPI) => {
-    console.log("loadStarterPlants thunk is firing");
     try {
       const response = await fetch("/starterPlants.json");
       if (!response.ok) {
         throw new Error(`Failed to load: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log("Starter plants data:", data);
+
       return data;
     } catch (error) {
-      console.error("loadStarterPlants error:", error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -68,7 +66,7 @@ export const addPlantByName = createAsyncThunk(
     } = plant;
 
     const newPlant = {
-      general_name, //check if needs to be :general_name
+      general_name,
       common_name,
       scientific_name,
       // id: 1,
@@ -85,7 +83,7 @@ export const addPlantByName = createAsyncThunk(
       enriched: false,
     };
     dispatch(addPlant(newPlant));
-    dispatch(enrichPlantDetails({ general_name, API_id: plant.id })); //check general_name
+    dispatch(enrichPlantDetails({ general_name, API_id: plant.id }));
   }
 );
 //This thunk is to add info from the details pages of the plants by ID (not available in the species-list endpoint) into the basic info list (i.e. enrich the data)
@@ -99,14 +97,14 @@ export const enrichPlantDetails = createAsyncThunk(
       return thunkAPI.rejectWithValue("API calls disabled manually.");
     }
 
-    console.log("enrichPlantDetails has fired with: ", general_name, API_id); //check if need plant.general_name
+    console.log("enrichPlantDetails has fired with: ", general_name, API_id);
     if (API_id > 3000) {
       console.warn(
-        `Skipping enrichment for ${general_name}, API_id too high: ${API_id}` //check if need plant.general_name
+        `Skipping enrichment for ${general_name}, API_id too high: ${API_id}`
       );
       return null;
     }
-    console.log("About to call API for", API_id);
+
     try {
       const response = await axios.get(
         `https://perenual.com/api/species/details/${API_id}?key=${API_KEY}`
@@ -138,7 +136,7 @@ export const enrichPlantDetails = createAsyncThunk(
         },
       };
     } catch (error) {
-      console.error(`Failed to enrich ${details.general_name}:`, error); //check if need just general_name
+      console.error(`Failed to enrich ${general_name}:`, error);
       return null;
     }
   }
