@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <footer className="text-green py-3 w-100 footer-bottom">
-      <Container fluid bg="green-100">
+    <footer className="bg-success bg-opacity-10 py-3 w-100 footer-bottom">
+      <Container fluid>
         <Row>
           <Col>Copyright &copy; 2025</Col>
           {/* <Col>

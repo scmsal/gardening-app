@@ -46,13 +46,7 @@ function PlantFetcher() {
           src={image || placeholderImg}
           alt={image ? { common_name } : "Fallback plant image"}
           className="img-fluid mx-auto d-block w-100 h-50"
-          // style={{ maxHeight: "300px", objectFit: "cover" }}
-
-          style={{
-            height: "250px", // or whatever fixed height works best
-            objectFit: "cover", // or "contain" depending on desired crop
-            width: "100%", // keep full width
-          }}
+          style={{ maxHeight: "300px", objectFit: "cover" }}
         />
 
         {!image && (

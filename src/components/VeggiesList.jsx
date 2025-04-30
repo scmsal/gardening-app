@@ -19,7 +19,7 @@ const VeggiesList = () => {
   } //maybe add spinner
 
   return (
-    <Container className="mx-3">
+    <Container className="mx-3 mb-3">
       <ListGroup>
         {plantData.map((plant) => (
           <ListGroupItem
@@ -40,30 +40,3 @@ const VeggiesList = () => {
 };
 
 export default VeggiesList;
-
-// return (
-//     <Container className="mx-3">
-//       <ListGroup>
-//         {plantNames.map((plantName) => (
-//           <ListGroupItem
-//             key={plantName}
-//             action
-//             className="custom-hover"
-//             variant={
-//               selectedPlant === plantName ? "success" : "outline-success"
-//             }
-//             onClick={() => {
-//               if (selectedPlant === plant) {
-//                 dispatch(setSelectedPlant(null));
-//               } else {
-//                 dispatch(setSelectedPlant(plant));
-//               }
-//             }}
-//           >
-//             {plant}
-//           </ListGroupItem>
-//         ))}
-//       </ListGroup>
-//     </Container>
-//   );
-// };

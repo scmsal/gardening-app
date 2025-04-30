@@ -16,7 +16,7 @@ const Header = () => {
             <iframe
               src="https://giphy.com/embed/EGzDfFUauCo6nDgfpk"
               width="100"
-              height="100"
+              height="70"
               className="giphy-embed ms-1"
               allowFullScreen
             ></iframe>
