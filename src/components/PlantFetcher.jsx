@@ -52,6 +52,22 @@ function PlantFetcher() {
         {!image && (
           <div className="text-center mt-2">
             <small className="d-block">Image not available</small>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://icons8.com/icon/106124/potted-plant"
+            >
+              Potted Plant
+            </a>
+            <span> icon by </span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://icons8.com"
+            >
+              Icons8
+            </a>
           </div>
         )}
         <Card.Body>
