@@ -57,11 +57,13 @@ function PlantFetcher() {
         <Card.Body>
           <Card.Title className="text-center">{common_name}</Card.Title>
           <h6 className="text-center">{scientific_name}</h6>
-          <a href={guideURL} target="_blank" rel="noopener noreferrer">
-            <Button src={guideURL} variant="outline-success">
-              Go to Plant Guide
-            </Button>
-          </a>
+          <div className="d-flex justify-content-center">
+            <a href={guideURL} target="_blank" rel="noopener noreferrer">
+              <Button src={guideURL} variant="outline-success" className="">
+                Go to Plant Guide
+              </Button>
+            </a>
+          </div>
         </Card.Body>
       </Card>
     </Container>
