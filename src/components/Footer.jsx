@@ -10,8 +10,8 @@ const Footer = () => {
           {/* <Col>
             <APICallCounter />
           </Col> */}
-          <Col className="text-center">
-            Data: {"  "}
+          <Col className="text-end">
+            Plant Data: {"  "}
             <a
               href="https://perenual.com"
               target="_blank"
@@ -19,6 +19,16 @@ const Footer = () => {
               // className="ps-5"
             >
               Perenual.com
+            </a>
+          </Col>
+          <Col className="text-end">
+            Plant hardiness zones: {""}
+            <a
+              href="https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              RapidAPI
             </a>
           </Col>
           <Col className="text-end">
