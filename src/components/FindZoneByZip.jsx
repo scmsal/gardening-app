@@ -9,11 +9,6 @@ const FindZoneByZip = () => {
   const { zone, loading, error } = useSelector((state) => state.hardinessZone);
   const [zipInput, setZipInput] = useState("");
 
-  /* double check I don't need to rework like this:
- const zone = useSelector((state) => state.hardinessZone.zone); // however you store it
-  const loading = useSelector((state) => state.hardinessZone.loading)
-  */
-
   const handleSearch = (zipCode) => {
     setZipInput(zipCode);
     dispatch(fetchHardinessZone(zipCode));
