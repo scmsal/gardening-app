@@ -2,5 +2,5 @@ Although I have completed a number of projects as coursework or as extensions of
 
 Update end of April 2025:  I might need to rework this to avoid persistant data storage from the API.
 
-Update 5/21/25: To overcome the limitations of database APIs, I am currently working on accessing the open source database from https://github.com/openfarmcc/OpenFarm that was archived on April 22, 2025. The application is in Ruby (which I've never used before) and I've had to rework it to run on a Mac with Apple Silicone, with guidance from ChatGPT.
+Update 5/21/25: To overcome the limitations of database APIs, I spent time accessing the open source database from https://github.com/openfarmcc/OpenFarm that was archived on April 22, 2025. The application is in Ruby (which I've never used before) and I've had to rework it to run on a Mac with Apple Silicone, with guidance from ChatGPT. Unfortunately, it turned out to only contain essentially a list of plants' common and scientific names. I'll have to find another solution for data for my project.
 
