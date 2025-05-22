@@ -17,11 +17,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "beans.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Common_beans.jpg/800px-Common_beans.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Moderate",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 5,
+      "max": 10
+    },
     "days_to_harvest": 50,
     "method": "Direct seed",
     "min_soil_temp": 60,
@@ -29,10 +32,30 @@
     "planting_season": "Spring",
     "spacing": "4-6 inches",
     "planting_depth": "1 inch",
-    "height": "1-6 feet (bush/pole)",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 6
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Corn",
+      "Carrots",
+      "Cucumber",
+      "Potatoes",
+      "Radish",
+      "Strawberry",
+      "Celery",
+      "Marigolds",
+      "Rosemary"
+    ],
+    "incompatible_plants": ["Onion", "Garlic", "Chives", "Fennel"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Beets",
@@ -52,11 +75,14 @@
       "max": 10
     },
     "harvest_season": "Summer to Fall",
-    "image": "beets.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Beetroot_and_leaves.jpg/800px-Beetroot_and_leaves.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Moderate",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 5,
+      "max": 10
+    },
     "days_to_harvest": 55,
     "method": "Direct seed",
     "min_soil_temp": 50,
@@ -64,10 +90,28 @@
     "planting_season": "Spring, Fall",
     "spacing": "3-4 inches",
     "planting_depth": "0.5 inch",
-    "height": "1-2 feet",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Well-drained, rich",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Bush beans",
+      "Brassicas (Cabbage, Broccoli)",
+      "Kohlrabi",
+      "Lettuce",
+      "Mint",
+      "Onion",
+      "Garlic"
+    ],
+    "incompatible_plants": ["Pole beans"],
+    "type": "Vegetable",
+    "set_out_after_frost": "2-4 weeks before last frost"
   },
   {
     "Common name": "Broccoli",
@@ -87,11 +131,14 @@
       "max": 10
     },
     "harvest_season": "Spring, Fall",
-    "image": "broccoli.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_on_white_background.jpg/800px-Broccoli_on_white_background.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 60,
     "method": "Start indoors and transplant",
     "min_soil_temp": 50,
@@ -99,10 +146,30 @@
     "planting_season": "Spring, Fall",
     "spacing": "12-24 inches",
     "planting_depth": "0.5 inch (seed)",
-    "height": "1-3 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Potatoes",
+      "Onion",
+      "Garlic",
+      "Chamomile",
+      "Dill",
+      "Mint",
+      "Rosemary",
+      "Sage",
+      "Thyme"
+    ],
+    "incompatible_plants": ["Beans", "Strawberries", "Tomatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost (transplant)"
   },
   {
     "Common name": "Brussel Sprouts",
@@ -122,11 +189,14 @@
       "max": 9
     },
     "harvest_season": "Fall, Winter",
-    "image": "brussel-sprouts.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Brussels_sprouts.jpg/800px-Brussels_sprouts.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 90,
     "method": "Start indoors and transplant",
     "min_soil_temp": 50,
@@ -134,10 +204,27 @@
     "planting_season": "Summer",
     "spacing": "18-24 inches",
     "planting_depth": "0.5 inch (seed)",
-    "height": "2-4 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Marigolds",
+      "Nasturtiums",
+      "Mint",
+      "Rosemary",
+      "Sage",
+      "Thyme"
+    ],
+    "incompatible_plants": ["Tomatoes", "Strawberries", "Pole beans"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost (transplant)"
   },
   {
     "Common name": "Cabbage",
@@ -157,11 +244,14 @@
       "max": 10
     },
     "harvest_season": "Spring, Fall, Winter",
-    "image": "cabbage.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Cabbage_in_vegetable_garden.jpg/800px-Cabbage_in_vegetable_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 70,
     "method": "Start indoors and transplant",
     "min_soil_temp": 45,
@@ -169,10 +259,30 @@
     "planting_season": "Spring, Summer, Fall",
     "spacing": "12-24 inches",
     "planting_depth": "0.5 inch (seed)",
-    "height": "1-2 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 1.5,
+      "max": 3
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Chamomile",
+      "Dill",
+      "Mint",
+      "Rosemary",
+      "Sage",
+      "Thyme",
+      "Celery",
+      "Onion",
+      "Potatoes"
+    ],
+    "incompatible_plants": ["Tomatoes", "Strawberries", "Pole beans", "Radish"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost (transplant)"
   },
   {
     "Common name": "Carrots",
@@ -192,11 +302,14 @@
       "max": 11
     },
     "harvest_season": "Summer, Fall",
-    "image": "carrots.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Carrots_in_garden.jpg/800px-Carrots_in_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 14,
+    "days_to_germinate": {
+      "min": 10,
+      "max": 21
+    },
     "days_to_harvest": 70,
     "method": "Direct seed",
     "min_soil_temp": 45,
@@ -204,10 +317,29 @@
     "planting_season": "Spring, Summer, Fall",
     "spacing": "2-3 inches",
     "planting_depth": "0.25-0.5 inch",
-    "height": "0.5-1.5 feet",
-    "width": "0.5 feet",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 0.25,
+      "max": 1
+    },
     "soil_type": "Loose, well-drained, sandy",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Lettuce",
+      "Rosemary",
+      "Sage",
+      "Radish",
+      "Beans",
+      "Peas",
+      "Tomatoes",
+      "Chives"
+    ],
+    "incompatible_plants": ["Dill", "Fennel", "Celery"],
+    "type": "Vegetable",
+    "set_out_after_frost": "2-4 weeks before last frost"
   },
   {
     "Common name": "Cauliflower",
@@ -227,11 +359,14 @@
       "max": 10
     },
     "harvest_season": "Spring, Fall",
-    "image": "cauliflower.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cauliflower_head.jpg/800px-Cauliflower_head.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 70,
     "method": "Start indoors and transplant",
     "min_soil_temp": 50,
@@ -239,10 +374,28 @@
     "planting_season": "Spring, Fall",
     "spacing": "18-24 inches",
     "planting_depth": "0.5 inch (seed)",
-    "height": "1-2 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 2.5
+    },
+    "width": {
+      "min": 1.5,
+      "max": 2.5
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Celery",
+      "Dill",
+      "Mint",
+      "Rosemary",
+      "Sage",
+      "Thyme",
+      "Potatoes"
+    ],
+    "incompatible_plants": ["Beans", "Strawberries", "Tomatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost (transplant)"
   },
   {
     "Common name": "Corn (Sweet)",
@@ -262,11 +415,14 @@
       "max": 11
     },
     "harvest_season": "Summer",
-    "image": "sweet-corn.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Sweet_corn.jpg/800px-Sweet_corn.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 5,
+      "max": 10
+    },
     "days_to_harvest": 70,
     "method": "Direct seed",
     "min_soil_temp": 60,
@@ -274,10 +430,28 @@
     "planting_season": "Spring",
     "spacing": "8-12 inches",
     "planting_depth": "1 inch",
-    "height": "5-10 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 5,
+      "max": 10
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Fertile, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Beans",
+      "Pumpkin",
+      "Squash",
+      "Cucumber",
+      "Melons",
+      "Potatoes",
+      "Peas"
+    ],
+    "incompatible_plants": ["Tomatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Cucumber",
@@ -297,11 +471,14 @@
       "max": 11
     },
     "harvest_season": "Summer",
-    "image": "cucumber.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cucumbers_on_the_plant.jpg/800px-Cucumbers_on_the_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 4,
+      "max": 13
+    },
     "days_to_harvest": 50,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 60,
@@ -309,10 +486,28 @@
     "planting_season": "Spring",
     "spacing": "12-36 inches",
     "planting_depth": "1 inch",
-    "height": "1-6 feet (bush/vining)",
-    "width": "2-6 feet",
+    "height": {
+      "min": 1,
+      "max": 6
+    },
+    "width": {
+      "min": 2,
+      "max": 6
+    },
     "soil_type": "Well-drained, rich",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Beans",
+      "Corn",
+      "Peas",
+      "Radish",
+      "Sunflower",
+      "Marigolds",
+      "Nasturtiums"
+    ],
+    "incompatible_plants": ["Aromatic herbs (e.g., Sage, Thyme)", "Potatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Eggplant",
@@ -332,11 +527,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "eggplant.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Eggplant_-_Solanum_melongena.jpg/800px-Eggplant_-_Solanum_melongena.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 70,
     "method": "Start indoors and transplant",
     "min_soil_temp": 70,
@@ -344,14 +542,32 @@
     "planting_season": "Spring",
     "spacing": "18-24 inches",
     "planting_depth": "0.25 inch (seed)",
-    "height": "2-4 feet",
-    "width": "1-3 feet",
+    "height": {
+      "min": 2,
+      "max": 4
+    },
+    "width": {
+      "min": 1,
+      "max": 3
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Beans",
+      "Peppers",
+      "Tomatoes",
+      "Spinach",
+      "Thyme",
+      "Marigolds",
+      "Nasturtiums"
+    ],
+    "incompatible_plants": ["Fennel"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Greens",
-    "Scientific name": "Various (e.g., Mustard Greens, Collard Greens)",
+    "Scientific name": "Various (e.g., Brassica oleracea var. viridis - Collard Greens)",
     "id": "greens-001",
     "edible part": "Leaves",
     "care_level": "Easy",
@@ -367,11 +583,14 @@
       "max": 10
     },
     "harvest_season": "Spring, Fall",
-    "image": "greens.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Collard_greens_in_garden.jpg/800px-Collard_greens_in_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 30,
     "method": "Direct seed",
     "min_soil_temp": 40,
@@ -379,10 +598,28 @@
     "planting_season": "Spring, Fall",
     "spacing": "6-12 inches",
     "planting_depth": "0.25-0.5 inch",
-    "height": "0.5-2 feet",
-    "width": "0.5-1.5 feet",
+    "height": {
+      "min": 0.5,
+      "max": 2
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1.5
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Dill",
+      "Mint",
+      "Rosemary",
+      "Sage",
+      "Thyme",
+      "Onion",
+      "Potatoes"
+    ],
+    "incompatible_plants": ["Strawberries", "Tomatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Kale",
@@ -402,11 +639,14 @@
       "max": 10
     },
     "harvest_season": "Fall, Winter, Spring",
-    "image": "kale.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Curly_kale.jpg/800px-Curly_kale.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Moderate",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 60,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 45,
@@ -414,10 +654,31 @@
     "planting_season": "Spring, Fall",
     "spacing": "12-18 inches",
     "planting_depth": "0.25-0.5 inch",
-    "height": "1-3 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Beets",
+      "Celery",
+      "Dill",
+      "Garlic",
+      "Mint",
+      "Onion",
+      "Potatoes",
+      "Rosemary",
+      "Sage",
+      "Thyme"
+    ],
+    "incompatible_plants": ["Beans", "Strawberries", "Tomatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost (transplant)"
   },
   {
     "Common name": "Lettuce",
@@ -437,11 +698,14 @@
       "max": 9
     },
     "harvest_season": "Spring, Fall",
-    "image": "lettuce.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Romaine_Lettuce.jpg/800px-Romaine_Lettuce.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 3,
+      "max": 10
+    },
     "days_to_harvest": 40,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 40,
@@ -449,10 +713,20 @@
     "planting_season": "Spring, Fall",
     "spacing": "6-12 inches",
     "planting_depth": "0.125-0.25 inch",
-    "height": "0.5-1 foot",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 0.5,
+      "max": 1
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Well-drained, rich",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Carrots", "Radish", "Strawberries", "Mint", "Chives"],
+    "incompatible_plants": ["Broccoli", "Cabbage"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Melon",
@@ -472,11 +746,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "melon.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cantaloupe.jpg/800px-Cantaloupe.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent, especially during fruiting",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 4,
+      "max": 10
+    },
     "days_to_harvest": 80,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 65,
@@ -484,10 +761,20 @@
     "planting_season": "Spring",
     "spacing": "3-6 feet",
     "planting_depth": "1 inch",
-    "height": "1-2 feet (vining)",
-    "width": "6-20 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 6,
+      "max": 20
+    },
     "soil_type": "Rich, well-drained, sandy loam",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Corn", "Radish", "Marigolds", "Nasturtiums"],
+    "incompatible_plants": ["Potatoes"],
+    "type": "Fruit",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Okra",
@@ -507,11 +794,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "okra.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Okra_plant.jpg/800px-Okra_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Moderate",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 50,
     "method": "Direct seed",
     "min_soil_temp": 65,
@@ -519,10 +809,20 @@
     "planting_season": "Spring",
     "spacing": "6-12 inches",
     "planting_depth": "1 inch",
-    "height": "3-6 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 3,
+      "max": 6
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Cucumber", "Eggplant", "Peppers", "Sweet Potatoes"],
+    "incompatible_plants": [],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Onion",
@@ -542,11 +842,14 @@
       "max": 9
     },
     "harvest_season": "Summer",
-    "image": "onion.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Onions_in_the_garden.jpg/800px-Onions_in_the_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Moderate",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 100,
     "method": "Direct seed, sets, or start indoors and transplant",
     "min_soil_temp": 50,
@@ -554,10 +857,29 @@
     "planting_season": "Spring, Fall",
     "spacing": "4-6 inches",
     "planting_depth": "0.5-1 inch (seed), 1-2 inches (sets)",
-    "height": "1-3 feet",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Loose, well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Carrots",
+      "Lettuce",
+      "Chamomile",
+      "Mint",
+      "Parsley",
+      "Tomatoes",
+      "Broccoli",
+      "Cabbage"
+    ],
+    "incompatible_plants": ["Beans", "Peas", "Asparagus"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Peas",
@@ -577,11 +899,14 @@
       "max": 9
     },
     "harvest_season": "Spring, Early Summer",
-    "image": "peas.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Garden_peas_on_the_vine.jpg/800px-Garden_peas_on_the_vine.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 60,
     "method": "Direct seed",
     "min_soil_temp": 45,
@@ -589,10 +914,27 @@
     "planting_season": "Spring",
     "spacing": "1-3 inches",
     "planting_depth": "1 inch",
-    "height": "2-6 feet (bush/pole)",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 1,
+      "max": 6
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Carrots",
+      "Corn",
+      "Cucumber",
+      "Radish",
+      "Beans (bush)",
+      "Turnips"
+    ],
+    "incompatible_plants": ["Onion", "Garlic", "Leeks", "Shallots"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Peppers",
@@ -612,11 +954,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "peppers.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bell_pepper_plant.jpg/800px-Bell_pepper_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 60,
     "method": "Start indoors and transplant",
     "min_soil_temp": 65,
@@ -624,10 +969,27 @@
     "planting_season": "Spring",
     "spacing": "18-24 inches",
     "planting_depth": "0.25 inch (seed)",
-    "height": "1-3 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Basil",
+      "Carrots",
+      "Onion",
+      "Tomatoes",
+      "Spinach",
+      "Marigolds"
+    ],
+    "incompatible_plants": ["Beans", "Kohlrabi"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Pumpkin",
@@ -647,11 +1009,14 @@
       "max": 9
     },
     "harvest_season": "Fall",
-    "image": "pumpkin.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pumpkins.jpg/800px-Pumpkins.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 90,
     "method": "Direct seed",
     "min_soil_temp": 65,
@@ -659,10 +1024,20 @@
     "planting_season": "Spring",
     "spacing": "5-10 feet",
     "planting_depth": "1 inch",
-    "height": "1-2 feet (vining)",
-    "width": "10-20 feet",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 10,
+      "max": 20
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Corn", "Beans", "Marigolds", "Nasturtiums"],
+    "incompatible_plants": ["Potatoes"],
+    "type": "Fruit",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Radish",
@@ -682,11 +1057,14 @@
       "max": 11
     },
     "harvest_season": "Spring, Fall",
-    "image": "radish.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Radishes_in_a_garden.jpg/800px-Radishes_in_a_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Consistent",
-    "days_to_germinate": 3,
+    "days_to_germinate": {
+      "min": 3,
+      "max": 7
+    },
     "days_to_harvest": 25,
     "method": "Direct seed",
     "min_soil_temp": 40,
@@ -694,10 +1072,27 @@
     "planting_season": "Spring, Fall",
     "spacing": "1-2 inches",
     "planting_depth": "0.5 inch",
-    "height": "0.5-1 foot",
-    "width": "0.5 foot",
+    "height": {
+      "min": 0.5,
+      "max": 1
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Loose, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Carrots",
+      "Lettuce",
+      "Peas",
+      "Spinach",
+      "Nasturtiums",
+      "Chives"
+    ],
+    "incompatible_plants": ["Hyssop", "Grapes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Spinach",
@@ -717,11 +1112,14 @@
       "max": 9
     },
     "harvest_season": "Spring, Fall",
-    "image": "spinach.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Spinacia_oleracea_in_kitchen_garden.jpg/800px-Spinacia_oleracea_in_kitchen_garden.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 30,
     "method": "Direct seed",
     "min_soil_temp": 40,
@@ -729,10 +1127,20 @@
     "planting_season": "Spring, Fall",
     "spacing": "4-6 inches",
     "planting_depth": "0.5 inch",
-    "height": "0.5-1 foot",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 0.5,
+      "max": 1
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Strawberries", "Beans", "Peas", "Radish", "Cabbage"],
+    "incompatible_plants": [],
+    "type": "Vegetable",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Squash",
@@ -752,11 +1160,14 @@
       "max": 11
     },
     "harvest_season": "Summer (Summer Squash), Fall (Winter Squash)",
-    "image": "squash.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Zucchini_on_plant.jpg/800px-Zucchini_on_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 50,
     "method": "Direct seed",
     "min_soil_temp": 60,
@@ -764,10 +1175,20 @@
     "planting_season": "Spring",
     "spacing": "3-6 feet",
     "planting_depth": "1 inch",
-    "height": "1-3 feet (bush/vining)",
-    "width": "3-10 feet",
+    "height": {
+      "min": 1,
+      "max": 3
+    },
+    "width": {
+      "min": 3,
+      "max": 10
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Corn", "Beans", "Radish", "Marigolds", "Nasturtiums"],
+    "incompatible_plants": ["Potatoes"],
+    "type": "Vegetable",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Swiss Chard",
@@ -787,11 +1208,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "swiss-chard.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Swiss_Chard_%28Beta_vulgaris_subsp._vulgaris%29.jpg/800px-Swiss_Chard_%28Beta_vulgaris_subsp._vulgaris%29.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Moderate",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 10
+    },
     "days_to_harvest": 30,
     "method": "Direct seed",
     "min_soil_temp": 50,
@@ -799,10 +1223,27 @@
     "planting_season": "Spring, Summer, Fall",
     "spacing": "6-12 inches",
     "planting_depth": "0.5 inch",
-    "height": "1-2 feet",
-    "width": "1-1.5 feet",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 1,
+      "max": 1.5
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Beans",
+      "Cabbage",
+      "Carrots",
+      "Radish",
+      "Lettuce",
+      "Onion"
+    ],
+    "incompatible_plants": [],
+    "type": "Vegetable",
+    "set_out_after_frost": "2-4 weeks before last frost"
   },
   {
     "Common name": "Tomato",
@@ -822,11 +1263,14 @@
       "max": 11
     },
     "harvest_season": "Summer to Fall",
-    "image": "tomato.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Tomato_plant_with_ripe_fruit.jpg/800px-Tomato_plant_with_ripe_fruit.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 70,
     "method": "Start indoors and transplant",
     "min_soil_temp": 60,
@@ -834,10 +1278,35 @@
     "planting_season": "Spring",
     "spacing": "24-36 inches",
     "planting_depth": "0.25 inch (seed), deep (transplant)",
-    "height": "3-8 feet (determinate/indeterminate)",
-    "width": "2-4 feet",
+    "height": {
+      "min": 3,
+      "max": 8
+    },
+    "width": {
+      "min": 2,
+      "max": 4
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Basil",
+      "Carrots",
+      "Onion",
+      "Parsley",
+      "Peppers",
+      "Marigolds",
+      "Nasturtiums"
+    ],
+    "incompatible_plants": [
+      "Broccoli",
+      "Cabbage",
+      "Cauliflower",
+      "Corn",
+      "Fennel",
+      "Kohlrabi"
+    ],
+    "type": "Fruit",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Basil",
@@ -857,11 +1326,14 @@
       "max": 11
     },
     "harvest_season": "Summer",
-    "image": "basil.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Basil_plant.jpg/800px-Basil_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Consistent",
-    "days_to_germinate": 7,
+    "days_to_germinate": {
+      "min": 5,
+      "max": 10
+    },
     "days_to_harvest": 30,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 65,
@@ -869,10 +1341,20 @@
     "planting_season": "Spring",
     "spacing": "6-12 inches",
     "planting_depth": "0.25 inch",
-    "height": "1-2 feet",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 1,
+      "max": 2
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Well-drained, fertile",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Tomatoes", "Peppers", "Asparagus"],
+    "incompatible_plants": ["Rue", "Sage"],
+    "type": "Herb",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Chamomile",
@@ -892,11 +1374,14 @@
       "max": 9
     },
     "harvest_season": "Summer",
-    "image": "chamomile.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Chamomile_flowers.jpg/800px-Chamomile_flowers.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Low to Moderate",
-    "days_to_germinate": 10,
+    "days_to_germinate": {
+      "min": 7,
+      "max": 14
+    },
     "days_to_harvest": 60,
     "method": "Direct seed",
     "min_soil_temp": 60,
@@ -904,10 +1389,20 @@
     "planting_season": "Spring",
     "spacing": "6-12 inches",
     "planting_depth": "Surface (lightly press)",
-    "height": "0.5-2 feet",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 0.5,
+      "max": 2
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": ["Cabbage", "Onions", "Cucumbers", "Mint"],
+    "incompatible_plants": [],
+    "type": "Herb",
+    "set_out_after_frost": "After last frost"
   },
   {
     "Common name": "Parsley",
@@ -927,11 +1422,14 @@
       "max": 9
     },
     "harvest_season": "Spring, Summer, Fall",
-    "image": "parsley.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Parsley_plant.jpg/800px-Parsley_plant.jpg",
     "poisonous": false,
     "sunlight": "Full sun to partial shade",
     "watering": "Consistent",
-    "days_to_germinate": 14,
+    "days_to_germinate": {
+      "min": 14,
+      "max": 28
+    },
     "days_to_harvest": 70,
     "method": "Direct seed or start indoors and transplant",
     "min_soil_temp": 50,
@@ -939,10 +1437,27 @@
     "planting_season": "Spring, Fall",
     "spacing": "6-9 inches",
     "planting_depth": "0.25 inch",
-    "height": "0.5-1 foot",
-    "width": "0.5-1 foot",
+    "height": {
+      "min": 0.5,
+      "max": 1
+    },
+    "width": {
+      "min": 0.5,
+      "max": 1
+    },
     "soil_type": "Rich, well-drained",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Tomatoes",
+      "Carrots",
+      "Asparagus",
+      "Chives",
+      "Corn",
+      "Roses"
+    ],
+    "incompatible_plants": ["Lettuce"],
+    "type": "Herb",
+    "set_out_after_frost": "4-6 weeks before last frost"
   },
   {
     "Common name": "Sage",
@@ -962,11 +1477,14 @@
       "max": 10
     },
     "harvest_season": "Spring, Summer, Fall",
-    "image": "sage.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Salvia_officinalis_%28W_S_Hare%29.jpg/800px-Salvia_officinalis_%28W_S_Hare%29.jpg",
     "poisonous": false,
     "sunlight": "Full sun",
     "watering": "Low",
-    "days_to_germinate": 14,
+    "days_to_germinate": {
+      "min": 10,
+      "max": 21
+    },
     "days_to_harvest": 75,
     "method": "Start indoors and transplant (or cuttings)",
     "min_soil_temp": 60,
@@ -974,9 +1492,25 @@
     "planting_season": "Spring",
     "spacing": "18-24 inches",
     "planting_depth": "0.25 inch (seed)",
-    "height": "1-2.5 feet",
-    "width": "1-2 feet",
+    "height": {
+      "min": 1,
+      "max": 2.5
+    },
+    "width": {
+      "min": 1,
+      "max": 2
+    },
     "soil_type": "Well-drained, sandy",
-    "source": "General gardening knowledge"
+    "source": "General gardening knowledge",
+    "companion_plants": [
+      "Carrots",
+      "Rosemary",
+      "Cabbage",
+      "Broccoli",
+      "Cauliflower"
+    ],
+    "incompatible_plants": ["Cucumber", "Onion", "Rue"],
+    "type": "Herb",
+    "set_out_after_frost": "After last frost"
   }
 ]
