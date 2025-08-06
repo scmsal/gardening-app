@@ -4,7 +4,7 @@ import { API_KEY } from "../config";
 import { PerenualAPISearchEndpoint } from "../config";
 import placeholderImg from "../assets/icons8-plant-80.png";
 import delay from "../../utils/delay";
-import { API_CALLS_ENABLED } from "../config";
+// Async thunk to load starter plants from a local JSON file
 
 export const loadStarterPlants = createAsyncThunk(
   "plants/loadStarterPlants",
