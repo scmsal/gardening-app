@@ -28,7 +28,7 @@ const VeggiesList = () => {
             className="custom-hover"
             variant={selectedPlant === plant ? "success" : "outline-success"}
             onClick={() => {
-              dispatch(handlePlantSelect(plant));
+              handlePlantSelect(plant);
             }}
           >
             {plant.general_name || plant.common_name || "unnamed plant"}
