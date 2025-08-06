@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import plantReducer from "./features/plantsSlice";
-import persistPlantData from "./middleware/persistPlantData";
 import hardinessZoneReducer from "./features/zoneSlice";
 import { loadState } from "../utils/localStorageHelpers";
 
@@ -11,8 +10,7 @@ const store = configureStore({
     plants: plantReducer,
     hardinessZone: hardinessZoneReducer,
   },
-  middleware: (getDefaultMiddleWare) =>
-    getDefaultMiddleWare().concat(persistPlantData),
+
   preloadedState,
 });
 
