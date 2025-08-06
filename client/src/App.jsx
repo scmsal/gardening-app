@@ -7,11 +7,7 @@ import PlantFetcher from "./components/PlantFetcher";
 import LinksToResources from "./components/LinksToResources";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import {
-  // addBasicPlantDetails,
-  enrichAllPlantDetails,
-  loadStarterPlants,
-} from "./features/plantsSlice";
+import { loadStarterPlants } from "./features/plantsSlice";
 import { useDispatch } from "react-redux";
 import FindZoneByZip from "./components/FindZoneByZip";
 
