@@ -29,7 +29,6 @@
     "color-name": "^1.1.4",
     "combined-stream": "^1.0.8",
     "concat-map": "^0.0.1",
-    "concurrently": "^9.2.0",
     "content-disposition": "^1.0.0",
     "content-type": "^1.0.5",
     "convert-source-map": "^2.0.0",
@@ -220,10 +219,14 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
 }

@@ -4,15 +4,21 @@ import dotenv from "dotenv"; // Importing dotenv to manage environment variables
 import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
 dotenv.config(); // Loading environment variables from .env file
 
-//Connecting to the database
-import connectDatabase from "./app/database/databaseInit"; // Importing database connection function
-const PORT = process.env.PORT || 5000; // Importing server port constant
+// Importing database connection function
+import connectDatabase from "./app/database/databaseInit.js";
+
+// Importing server port constant
+const PORT = process.env.PORT || 5000;
 
 // Importing necessary modules and middleware
 
-import errorHandler from "./app/middleware/errorHandlers"; // Importing error handling middleware
+/*TO DO:
+- Implement error handling middleware
+- Implement food plant routes*/
 
-import foodPlantRouter from "./app/routes/foodPlantRoutes"; // Importing food plant routes
+// import errorHandler from "./app/middleware/errorHandlers"; // Importing error handling middleware
+
+// import foodPlantRouter from "./app/routes/foodPlantRoutes"; // Importing food plant routes
 
 const app = express();
 
