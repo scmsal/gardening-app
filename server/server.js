@@ -1,14 +1,14 @@
-import express from "express"; // Importing necessary modules
 import dotenv from "dotenv"; // Importing dotenv to manage environment variables
-
-import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
 dotenv.config(); // Loading environment variables from .env file
+import express from "express"; // Importing necessary modules
+import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
 
 // Importing database connection function
 import connectDatabase from "./app/database/databaseInit.js";
 
 // Importing server port constant
 const PORT = process.env.PORT || 5000;
+console.log("SERVER PORT:", PORT);
 
 // Importing necessary modules and middleware
 
@@ -30,9 +30,11 @@ app.use(cors());
 
 // Parsing incoming requests as JSON and handling errors
 app.use(express.json());
-app.use(errorHandler);
 
-var requestBodyParser = require("body-parser");
+//TODO: Implement error handling middleware
+// app.use(errorHandler);
+
+import requestBodyParser from "body-parser";
 
 // Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));
@@ -45,7 +47,7 @@ app.use(
 );
 
 // Using routers for different API endpoints
-app.use("/foodPlants", foodPlantRouter);
+// app.use("/foodPlants", foodPlantRouter);
 
 //=> external API endpoints
 
@@ -58,5 +60,5 @@ app.get("/PING", (_, res) => {
 
 // Starting the server
 app.listen(PORT, () => {
-  console.log(`Server is running at port : ${SERVER_PORT}`);
+  console.log(`Server is running at port : ${PORT}`);
 });
