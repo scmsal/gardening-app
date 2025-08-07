@@ -176,7 +176,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "scmsal",
   "license": "ISC",
   "type": "module"
 }
