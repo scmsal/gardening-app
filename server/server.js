@@ -3,6 +3,10 @@ dotenv.config(); // Loading environment variables from .env file
 import express from "express"; // Importing necessary modules
 import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
 
+import requestBodyParser from "body-parser";
+
+import errorHandler from "./app/middleware/errorHandlers.js"; // Importing error handling middleware
+
 // Importing database connection function
 import connectDatabase from "./app/database/databaseInit.js";
 
@@ -33,8 +37,6 @@ app.use(express.json());
 
 //TODO: Implement error handling middleware
 // app.use(errorHandler);
-
-import requestBodyParser from "body-parser";
 
 // Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));
