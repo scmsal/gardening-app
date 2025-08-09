@@ -24,7 +24,19 @@ app.use(express.json());
 app.use(cors());
 
 // Connecting to the database
-connectDatabase();
+//Make sure the server does not connect to the real database during tests. It should only use the sample database using mongodb-memory-server in the test files.
+if (process.env.NODE_ENV !== "test") {
+  try {
+    connectDatabase();
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+// In dev mode morgan will log request/response bodies and headers. ChatGPT-suggested disabling morgan in tests to prevent responses from being downgraded to text.
+if (process.env.NODE_ENV !== "test") {
+  app.use(morgan("dev"));
+}
 
 // Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));
@@ -54,5 +66,4 @@ app.get("/PING", (_, res) => {
 
 //Error handling middleware
 app.use(errorHandler);
-
 export default app;

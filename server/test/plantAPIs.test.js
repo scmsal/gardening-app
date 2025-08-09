@@ -39,24 +39,37 @@ beforeEach(async () => {
 
 //=== VITEST TESTS ===
 describe("Food Plant API Tests", () => {
-  // Test for fetching all food plants
+  // Testing that the server is working
   it("ping route should work", async () => {
     const response = await request(app).get("/PING");
     console.log("Ping response: ", response.body);
     expect(response.body).toBe("PONG");
   });
 
+  //Testing that the sample dat has loaded
   it("should return a number greater than zero for the plant count", async () => {
     const response = await request(app).get("/api/allFoodPlants");
-    console.log("Response: ", response);
+    console.log(response.headers["content-type"]);
+
     expect(response.status).toBe(200); //assert status code
     expect(response.body.length).toBeGreaterThan(0); //assert db is not empty
   });
 
+  //Test for fetching all the food plants
   it("should fetch all food plants", async () => {
     const response = await request(app).get("/api/allFoodPlants");
     expect(response.status).toBe(200); //assert status code
-    expect(response.body).toHaveProperty("data");
+    // console.log("Fetch all plants response: ", response);
+    expect(response.body).toBeInstanceOf(Array);
+  });
+
+  //Test for fetching a list of all the food plant names
+  it("should fetch a list of all the food plant names", async () => {
+    const response = await request(app).get("/api/listAllNames");
+    expect(response.status).toBe(200);
+    console.log("List of plant names: ", response.body);
+    expect(response.body).toBeInstanceOf(Array);
+    expect(response.body).toContain("Beans");
   });
 
   // Test for fetching a food plant by common name

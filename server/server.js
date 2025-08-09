@@ -6,6 +6,9 @@ import app from "./app";
 const PORT = process.env.PORT || 5000;
 console.log("SERVER PORT:", PORT);
 
-app.listen(PORT, () => {
-  console.log(`Server is running at port : ${PORT}`);
-});
+// Starting the server --PUT BACK IN FOR PRODUCTION
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => {
+    console.log(`Server is running at port : ${PORT}`);
+  });
+}
