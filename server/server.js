@@ -1,6 +1,6 @@
 //This file is for starting the app in dev/production stage
 
-import app from "./app";
+import app from "./app.js";
 
 // Importing server port constant
 const PORT = process.env.PORT || 5000;
