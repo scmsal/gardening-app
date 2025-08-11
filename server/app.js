@@ -2,10 +2,9 @@ import dotenv from "dotenv"; // Importing dotenv to manage environment variables
 dotenv.config(); // Loading environment variables from .env file
 import express from "express"; // Importing necessary modules
 import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
-import mongoose from "mongoose";
 
 //importing router
-import foodPlantRouter from "./app/routes/foodPlantRoutes.js";
+import foodPlantRouter from "./app/routes/foodPlantRouter.js";
 
 // Importing necessary modules and middleware
 import requestBodyParser from "body-parser";
@@ -50,8 +49,6 @@ app.use(
 
 // mounting routers for different API endpoints
 app.use("/api/", foodPlantRouter);
-
-//=> external API endpoints
 
 // Endpoint to check if the server is running
 app.get("/PING", (_, res) => {
