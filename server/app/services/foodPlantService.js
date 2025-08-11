@@ -32,7 +32,7 @@ const fetchFoodPlantByCommonName = async (commonName) => {
     const err = new Error(
       `Food plant with common name ${commonName} not found`
     );
-    err.statusCode(404);
+    err.statusCode = 404;
     throw err;
   }
   return plant;
