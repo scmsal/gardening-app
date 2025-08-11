@@ -75,7 +75,10 @@ describe("Food Plant API Tests", () => {
   // Test for fetching a food plant by common name
   it("should fetch a food plant by common name", async () => {
     const commonName = "Cabbage";
-    const response = await request(app).get(`/api/${commonName}`);
+    const response = await request(app)
+      .get("/api/getFoodPlantByCommonName")
+      .query({ common_name: commonName }); //supertest syntax for query parameters
+
     expect(response.status).toBe(200); //assert status code
     expect(response.body).toHaveProperty("common_name", commonName);
   });
@@ -83,7 +86,9 @@ describe("Food Plant API Tests", () => {
   // Test for fetching a non-existent food plant
   it("should return 404 for non-existent food plant", async () => {
     const commonName = "NonExistentPlant";
-    const response = await request(app).get(`/${commonName}`);
+    const response = await request(app).get("/getFoodPlantByCommonName", {
+      params: { common_name: commonName },
+    });
     expect(response.status).toBe(404); //assert status code
   });
 });
