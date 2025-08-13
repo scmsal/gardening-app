@@ -3,14 +3,16 @@ import foodPlantModel from "./models/plantModel.js";
 
 //Function to fetch all food plants
 const fetchAllFoodPlants = async () => {
-  const foodPlants = await foodPlantModel.find();
+  const foodPlants = await foodPlantModel.find().sort({ common_name: 1 });
   return foodPlants;
 };
 
 //function to fetch an array of all the food plant names
 
 const fetchAllFoodPlantNames = async () => {
-  const foodPlants = await foodPlantModel.find({}, "common_name");
+  const foodPlants = await foodPlantModel
+    .find({}, "common_name")
+    .sort({ common_name: 1 });
   return foodPlants.map((plant) => plant.common_name);
 };
 
@@ -20,9 +22,25 @@ const fetchFoodPlantByCommonName = async (commonName) => {
   return foodPlant;
 };
 
+const fetchHerbs = async () => {
+  const herbs = await foodPlantModel
+    .find({ type: "Herb" })
+    .sort({ common_name: 1 });
+  return herbs;
+};
+
+const fetchVegetables = async () => {
+  const herbs = await foodPlantModel
+    .find({ type: "Vegetable" })
+    .sort({ common_name: 1 });
+  return herbs;
+};
+
 // Exporting the functions to be used in other parts of the application and for testing
 export {
   fetchAllFoodPlants,
   fetchAllFoodPlantNames,
   fetchFoodPlantByCommonName,
+  fetchHerbs,
+  fetchVegetables,
 };

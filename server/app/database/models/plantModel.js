@@ -79,4 +79,4 @@ const plantSchema = new mongoose.Schema({
   incompatible_plants: [String],
 });
 
-export default mongoose.model("Plant", plantSchema);
+export default mongoose.model("Plant", plantSchema, "food");

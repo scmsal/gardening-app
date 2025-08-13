@@ -1,36 +1,98 @@
+//==IMPORTS==
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY } from "../config";
-import { PerenualAPISearchEndpoint } from "../config";
-import placeholderImg from "../assets/icons8-plant-80.png";
-import delay from "../../utils/delay";
+import { BACKEND_URL_ENDPOINT } from "../constants/backend";
+
+//==ASYNC THUNKS==
 // Async thunk to load starter plants from a local JSON file
 
 export const loadStarterPlants = createAsyncThunk(
   "plants/loadStarterPlants",
-  async (_, thunkAPI) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("/starterPlants.json");
-      if (!response.ok) {
-        throw new Error(`Failed to load: ${response.statusText}`);
-      }
-      const data = await response.json();
-
-      return data;
+      const response = await axios.get("/starterPlants.json");
+      return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      //If there is an error in the backend
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      //If there is a network or unexpected error
+      return rejectWithValue(error.message);
     }
   }
 );
 
+export const getAllFoodPlants = createAsyncThunk(
+  "plants/getAllFoodPlants",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        BACKEND_URL_ENDPOINT + "/getAllFoodPlants"
+      );
+
+      return response.data;
+    } catch (error) {
+      //If there is an error in the backend
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      //If there is a network or unexpected error
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const listAllNames = createAsyncThunk(
+  "plants/listAllNames",
+  async (_, { rejectWithValue }) => {
+    console.log("Path: ", BACKEND_URL_ENDPOINT + "/listAllNames");
+    try {
+      console.log("listAllNames fired.");
+      const response = await axios.get(BACKEND_URL_ENDPOINT + "/listAllNames");
+      console.log("Path: ", BACKEND_URL_ENDPOINT + "/listAllNames");
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      //If there is an error in the backend
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      //If there is a network or unexpected error
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getFoodPlantByCommonName = createAsyncThunk(
+  "plants/getFoodPlantByCommonName",
+  async (commonName, { rejectWithValue }) => {
+    try {
+      const response = await axios.get("/getFoodPlantByCommonName", {
+        params: { common_name: commonName },
+      });
+      return response.data;
+    } catch (error) {
+      //If there is an error in the backend
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      //If there is a network or unexpected error
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+//==INITIAL STATE==
 const initialState = {
-  plantData: null, //will be an array of plant objects
+  plantNames: [], //will be an array of strings
   selectedPlant: null,
+  plantData: null, //not currently in use.
   loading: false,
   error: null,
 };
 
-//create the slice
+//==DEFINE THE SLICE==
 const plantsSlice = createSlice({
   name: "plants",
   initialState,
@@ -38,9 +100,14 @@ const plantsSlice = createSlice({
     setSelectedPlant: (state, action) => {
       state.selectedPlant = action.payload;
     },
+    //No longer necessary with extra reducer .addCase(listAllNames.fulfilled
+    // setPlantNames: (state, action) => {
+    //   state.plantNames = action.payload;
+    // },
   },
   extraReducers: (builder) => {
     builder
+      //for loadStarterPlants
       .addCase(loadStarterPlants.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -54,17 +121,56 @@ const plantsSlice = createSlice({
       .addCase(loadStarterPlants.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+      })
+      //for loadAllFoodPlants
+      .addCase(getAllFoodPlants.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getAllFoodPlants.fulfilled, (state, action) => {
+        state.loading = false;
+        state.plantData = action.payload; //EDIT
+        state.error = null;
+      })
+
+      .addCase(getAllFoodPlants.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      //for listAllNames
+      .addCase(listAllNames.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(listAllNames.fulfilled, (state, action) => {
+        state.loading = false;
+        state.plantNames = action.payload;
+        state.error = null;
+      })
+
+      .addCase(listAllNames.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || action.error.message;
+      })
+      //for getFoodPlantByCommonName
+      .addCase(getFoodPlantByCommonName.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getFoodPlantByCommonName.fulfilled, (state, action) => {
+        state.loading = false;
+        state.plantData = action.payload;
+        state.error = null;
+      })
+
+      .addCase(getFoodPlantByCommonName.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
       });
   },
 });
-// Export the actions for use in components
-export const {
-  setSelectedPlant,
-  addPlant,
-  removePlant,
-  setDetailsEnriched,
-  incrementAPICallCount,
-} = plantsSlice.actions;
+// Export the action(s) for use in components
+export const { setSelectedPlant, setPlantNames } = plantsSlice.actions;
 
 // Export the reducer to use in configureStore()
 export default plantsSlice.reducer;

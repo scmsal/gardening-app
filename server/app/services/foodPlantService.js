@@ -3,11 +3,14 @@ import {
   fetchAllFoodPlants as getAllFoodPlantsFromRepo,
   fetchAllFoodPlantNames as getAllFoodPlantNamesFromRepo,
   fetchFoodPlantByCommonName as getFoodPlantByCommonNameFromRepo,
+  fetchHerbs as getHerbsFromRepo,
+  fetchVegetables as getVegetablesFromRepo,
 } from "../database/foodPlantRepository.js";
 
 const fetchAllFoodPlants = async () => {
   const plants = await getAllFoodPlantsFromRepo();
   if (!plants || plants.length === 0) {
+    console.log("Fetching all food plants from DB");
     const err = new Error("No plants found");
     err.statusCode = 404;
     throw err;
@@ -38,11 +41,25 @@ const fetchFoodPlantByCommonName = async (commonName) => {
   return plant;
 };
 
-//testing that the functions are exporting as functions
-console.log("typeof fetchAllFoodPlants:", typeof fetchAllFoodPlants);
+const fetchAllHerbs = async () => {
+  const herbs = await getHerbsFromRepo();
+  if (!herbs || herbs.length === 0) {
+    const err = new Error("No herbs found");
+    err.statusCode = 404;
+    throw err;
+  }
+  return herbs;
+};
 
-console.log("✅ foodPlantService.js loaded");
-console.log("fetchAllFoodPlants:", typeof fetchAllFoodPlants);
+const fetchAllVegetables = async () => {
+  const vegetables = await getVegetablesFromRepo();
+  if (!vegetables || vegetables.length === 0) {
+    const err = new Error("No vegetables found");
+    err.statusCode = 404;
+    throw err;
+  }
+  return vegetables;
+};
 
 // Exporting the functions for use in routes
 
@@ -50,4 +67,6 @@ export {
   fetchAllFoodPlants,
   fetchAllFoodPlantNames,
   fetchFoodPlantByCommonName,
+  fetchAllHerbs,
+  fetchAllVegetables,
 };

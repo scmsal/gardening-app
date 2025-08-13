@@ -2,32 +2,15 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import VeggiesList from "./components/VeggiesList";
-import DisplayGroup from "./components/DisplayGroup";
 import PlantFetcher from "./components/PlantFetcher";
 import LinksToResources from "./components/LinksToResources";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { loadStarterPlants } from "./features/plantsSlice";
+
 import { useDispatch } from "react-redux";
 import FindZoneByZip from "./components/FindZoneByZip";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const loadAndEnrich = async () => {
-      try {
-        await dispatch(loadStarterPlants()).unwrap();
-        console.log("Starterplants loaded.");
-
-        //   await dispatch(enrichAllPlantDetails()).unwrap();
-      } catch (error) {
-        console.log("Error during loading:", error); //change to "loading or enriching" when previous line enabled
-      }
-    };
-
-    loadAndEnrich();
-  }, []);
   //to clear cache for testing
   //localStorage.removeItem("enrichedPlantData");
 
