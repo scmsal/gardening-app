@@ -3,6 +3,8 @@ dotenv.config(); // Loading environment variables from .env file
 import express from "express"; // Importing necessary modules
 import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
 
+// import morgan from 'morgan';
+
 //importing router
 import foodPlantRouter from "./app/routes/foodPlantRouter.js";
 
@@ -19,6 +21,12 @@ const app = express();
 // Parsing incoming requests as JSON and handling errors
 app.use(express.json());
 
+//logging to make sure server is receiving requests
+app.use((req, res, next) => {
+  console.log("Request received: ", req.method, req.url);
+  next();
+});
+
 // Using CORS middleware to allow cross-origin requests
 app.use(cors());
 
@@ -33,9 +41,9 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 // In dev mode morgan will log request/response bodies and headers. ChatGPT-suggested disabling morgan in tests to prevent responses from being downgraded to text.
-if (process.env.NODE_ENV !== "test") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV !== "test") {
+//   app.use(morgan("dev"));
+// }
 
 // Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));

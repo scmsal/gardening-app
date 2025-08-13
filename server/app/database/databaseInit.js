@@ -7,10 +7,9 @@ const DATABASE_URI = process.env.DATABASE_URI;
 const connectDatabase = async () => {
   try {
     const connection = await mongoose.connect(DATABASE_URI);
-
-    // console.log(
-    //   `Database is connected have ${connection.connection.host} as host and ${connection.connection.port} as port`
-    // ); PUT IN TEST
+    console.log(
+      `Database is connected have ${connection.connection.host} as host and ${connection.connection.port} as port`
+    );
   } catch (error) {
     console.error(`Error : ${error.message}`);
     process.exit(1);
