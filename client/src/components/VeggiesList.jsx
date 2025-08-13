@@ -2,8 +2,15 @@ import { Container, ListGroup, ListGroupItem, Spinner } from "react-bootstrap";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { setSelectedPlant } from "../features/plantsSlice";
-import { getAllFoodPlants, listAllNames } from "../features/plantsSlice";
+import {
+  setSelectedPlantName,
+  setSelectedPlantData,
+} from "../features/plantsSlice";
+import {
+  getAllFoodPlants,
+  listAllNames,
+  getFoodPlantByCommonName,
+} from "../features/plantsSlice";
 import SearchBar from "./SearchBar";
 
 const VeggiesList = () => {
@@ -21,17 +28,37 @@ const VeggiesList = () => {
     fetchAndSetNames();
   }, [dispatch]);
 
-  //List of plant names
-  const { plantNames, loading } = useSelector((state) => state.plants);
+  const { plantNames, loading, selectedPlantName, selectedPlantData } =
+    useSelector((state) => state.plants);
 
   console.log("Plant names: ", plantNames);
 
-  //Plant selected
-  const selectedPlant = useSelector((state) => state.plants.selectedPlant);
+  useEffect(() => {
+    console.log("Updated selectedPlantName:", selectedPlantName);
+  }, [selectedPlantName]);
 
+  useEffect(() => {
+    console.log("Updated selectedPlantData:", selectedPlantData);
+  }, [selectedPlantData]);
+
+  //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
-    dispatch(setSelectedPlant(plantName === selectedPlant ? null : plantName));
-    console.log("Selected plant in handlePlantSelect:", selectedPlant);
+    console.log("Plant that was clicked:", plantName);
+
+    if (plantName === selectedPlantName) {
+      dispatch(setSelectedPlantName(null));
+      dispatch(setSelectedPlantData(null));
+      return;
+    }
+    //otherwise set selected plant name in state
+    dispatch(setSelectedPlantName(plantName));
+
+    //get data of selected plant name
+
+    //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
+    if (!selectedPlantData || selectedPlantData.common_name !== plantName) {
+      dispatch(getFoodPlantByCommonName(plantName));
+    }
   };
 
   if (loading || !plantNames) {
@@ -53,7 +80,7 @@ const VeggiesList = () => {
             action
             className="custom-hover"
             variant={
-              selectedPlant === plantName ? "success" : "outline-success"
+              selectedPlantName === plantName ? "success" : "outline-success"
             }
             onClick={() => {
               handlePlantSelect(plantName);

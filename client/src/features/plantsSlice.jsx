@@ -68,9 +68,12 @@ export const getFoodPlantByCommonName = createAsyncThunk(
   "plants/getFoodPlantByCommonName",
   async (commonName, { rejectWithValue }) => {
     try {
-      const response = await axios.get("/getFoodPlantByCommonName", {
-        params: { common_name: commonName },
-      });
+      const response = await axios.get(
+        BACKEND_URL_ENDPOINT + "/getFoodPlantByCommonName",
+        {
+          params: { common_name: commonName },
+        }
+      );
       return response.data;
     } catch (error) {
       //If there is an error in the backend
@@ -86,8 +89,8 @@ export const getFoodPlantByCommonName = createAsyncThunk(
 //==INITIAL STATE==
 const initialState = {
   plantNames: [], //will be an array of strings
-  selectedPlant: null,
-  plantData: null, //not currently in use.
+  selectedPlantName: null, //will be a string
+  selectedPlantData: null, //will be an object
   loading: false,
   error: null,
 };
@@ -97,13 +100,12 @@ const plantsSlice = createSlice({
   name: "plants",
   initialState,
   reducers: {
-    setSelectedPlant: (state, action) => {
-      state.selectedPlant = action.payload;
+    setSelectedPlantName: (state, action) => {
+      state.selectedPlantName = action.payload;
     },
-    //No longer necessary with extra reducer .addCase(listAllNames.fulfilled
-    // setPlantNames: (state, action) => {
-    //   state.plantNames = action.payload;
-    // },
+    setSelectedPlantData: (state, action) => {
+      state.selectedPlantData = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -159,7 +161,7 @@ const plantsSlice = createSlice({
       })
       .addCase(getFoodPlantByCommonName.fulfilled, (state, action) => {
         state.loading = false;
-        state.plantData = action.payload;
+        state.selectedPlantData = action.payload;
         state.error = null;
       })
 
@@ -170,7 +172,8 @@ const plantsSlice = createSlice({
   },
 });
 // Export the action(s) for use in components
-export const { setSelectedPlant, setPlantNames } = plantsSlice.actions;
+export const { setSelectedPlantName, setSelectedPlantData, setPlantNames } =
+  plantsSlice.actions;
 
 // Export the reducer to use in configureStore()
 export default plantsSlice.reducer;
