@@ -15,7 +15,7 @@ const FindZoneByZip = () => {
   };
 
   return (
-    <div>
+    <div className="mx-3">
       <SearchBar
         onSearch={handleSearch}
         placeholder="Enter zip code"
