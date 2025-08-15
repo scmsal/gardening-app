@@ -7,6 +7,8 @@ const SearchBar = ({
   loading,
   placeholder = "Enter search term",
   label,
+  clearBtn = false,
+  clearBtnClick,
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -19,16 +21,16 @@ const SearchBar = ({
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="mx-3">
-      <InputGroup className="mb-3 d-flex align-items-center">
+    <Form onSubmit={handleSubmit} className="">
+      <InputGroup className="mb-2 d-flex align-items-center">
         <Form.Label className="me-1">{label} </Form.Label>
         <Form.Control
-          type="text"
+          type="search"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder={placeholder}
           className="w-25"
-          disabled={loading} //check this here and inside Button
+          disabled={loading}
         />
 
         <Button type="submit" variant="outline-success" disabled={loading}>
@@ -38,6 +40,11 @@ const SearchBar = ({
             <FaSearch />
           )}
         </Button>
+        {clearBtn && (
+          <Button variant="outline-secondary " onClick={clearBtnClick}>
+            Clear
+          </Button>
+        )}
       </InputGroup>
     </Form>
   );
