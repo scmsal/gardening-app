@@ -2,3 +2,7 @@
   background-color: #198754 !important;
   color: white !important;
 }
+
+.h-md-fit {
+  height: 60vh;
+}
