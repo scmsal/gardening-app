@@ -8,6 +8,7 @@ import {
   fetchFoodPlantByCommonName,
   fetchAllHerbs,
   fetchAllVegetables,
+  fetchNamesImgs,
 } from "../services/foodPlantService.js";
 
 const foodPlantRouter = express.Router();
@@ -22,6 +23,14 @@ foodPlantRouter.get(
   })
 );
 
+foodPlantRouter.get(
+  "/namesImgs",
+  asyncHandler(async (req, res) => {
+    const data = await fetchNamesImgs();
+    console.log("Route hit");
+    res.status(200).json(data);
+  })
+);
 foodPlantRouter.get(
   "/listAllNames",
   asyncHandler(async (req, res) => {

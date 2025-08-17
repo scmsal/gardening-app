@@ -5,10 +5,22 @@ import {
   fetchFoodPlantByCommonName as getFoodPlantByCommonNameFromRepo,
   fetchHerbs as getHerbsFromRepo,
   fetchVegetables as getVegetablesFromRepo,
+  fetchNamesImgs as fetchNamesImgsFromRepo,
 } from "../database/foodPlantRepository.js";
 
 const fetchAllFoodPlants = async () => {
   const plants = await getAllFoodPlantsFromRepo();
+  if (!plants || plants.length === 0) {
+    console.log("Fetching all food plants from DB");
+    const err = new Error("No plants found");
+    err.statusCode = 404;
+    throw err;
+  }
+  return plants;
+};
+
+const fetchNamesImgs = async () => {
+  const plants = await fetchNamesImgsFromRepo();
   if (!plants || plants.length === 0) {
     console.log("Fetching all food plants from DB");
     const err = new Error("No plants found");
@@ -65,6 +77,7 @@ const fetchAllVegetables = async () => {
 
 export {
   fetchAllFoodPlants,
+  fetchNamesImgs,
   fetchAllFoodPlantNames,
   fetchFoodPlantByCommonName,
   fetchAllHerbs,

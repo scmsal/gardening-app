@@ -16,6 +16,22 @@ const fetchAllFoodPlantNames = async () => {
   return foodPlants.map((plant) => plant.common_name);
 };
 
+const fetchNamesImgs = async () => {
+  const namesImgs = await foodPlantModel.aggregate([
+    {
+      $project: { common_name: 1, image_url: "$image_info.image_url", _id: 0 },
+    },
+  ]);
+  console.log("Names and images fetched from DB: ", namesImgs);
+  console.log("other debugging: ", JSON.stringify(namesImgs, null, 2));
+
+  return namesImgs.map((plant) => {
+    return {
+      common_name: plant.common_name,
+      image_url: plant.image_url || null,
+    };
+  });
+};
 //function to fetch a food plant by its common name
 const fetchFoodPlantByCommonName = async (commonName) => {
   const foodPlant = await foodPlantModel.findOne({ common_name: commonName });
@@ -36,6 +52,7 @@ const fetchVegetables = async () => {
   return herbs;
 };
 
+fetchNamesImgs();
 // Exporting the functions to be used in other parts of the application and for testing
 export {
   fetchAllFoodPlants,
@@ -43,4 +60,5 @@ export {
   fetchFoodPlantByCommonName,
   fetchHerbs,
   fetchVegetables,
+  fetchNamesImgs,
 };
