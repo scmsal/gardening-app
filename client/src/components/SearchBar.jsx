@@ -41,7 +41,11 @@ const SearchBar = ({
           )}
         </Button>
         {clearBtn && (
-          <Button variant="outline-secondary " onClick={clearBtnClick}>
+          <Button
+            className="px-1"
+            variant="outline-success "
+            onClick={clearBtnClick}
+          >
             Clear
           </Button>
         )}
