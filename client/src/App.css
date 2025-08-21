@@ -6,3 +6,23 @@
 .h-md-fit {
   height: 60vh;
 }
+
+.h-sm-fit {
+  height: 30vh;
+}
+
+/* Navbar link styling */
+.custom-nav-link {
+  font-size: 1.5rem;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.custom-nav-link:hover {
+  font-size: 1.6rem !important; /* Example: Blue on hover */
+  text-decoration: none !important;
+}
+
+.custom-nav-link.active {
+  font-weight: bold !important;
+}
