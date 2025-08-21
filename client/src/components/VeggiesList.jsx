@@ -18,10 +18,11 @@ import {
   getFoodPlantByCommonName,
 } from "../features/plantsSlice";
 import SearchBar from "./SearchBar";
-import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 const VeggiesList = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAndSetNames = async () => {
@@ -37,16 +38,6 @@ const VeggiesList = () => {
 
   const { plantNames, loading, selectedPlantName, selectedPlantData } =
     useSelector((state) => state.plants);
-
-  console.log("Plant names: ", plantNames);
-
-  useEffect(() => {
-    console.log("Updated selectedPlantName:", selectedPlantName);
-  }, [selectedPlantName]);
-
-  useEffect(() => {
-    console.log("Updated selectedPlantData:", selectedPlantData);
-  }, [selectedPlantData]);
 
   //I got help from ChatGPT for the search and search mode logic, to display the full list if
   const [searchTerm, setSearchTerm] = useState("");
@@ -68,6 +59,11 @@ const VeggiesList = () => {
   const clearFilter = () => {
     setSearchTerm("");
   };
+  //Navigate to selected plant details page
+  const goToPlantDetails = (plantName) => {
+    navigate(`/plants/${plantName}`);
+  };
+
   //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
     console.log("Plant that was clicked:", plantName);
@@ -84,8 +80,10 @@ const VeggiesList = () => {
 
     //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
     if (!selectedPlantData || selectedPlantData.common_name !== plantName) {
+      dispatch(setSelectedPlantData(null));
       dispatch(getFoodPlantByCommonName(plantName));
     }
+    goToPlantDetails(plantName);
   };
 
   if (loading || !plantNames) {
@@ -99,18 +97,17 @@ const VeggiesList = () => {
 
   const listToRender = searchTerm === "" || null ? plantNames : filtered;
   return (
-    <Container className="mx-3 mb-3 ">
+    <div className=" mb-3 ">
       <div className="flex flex-row gap-1">
         <SearchBar
-          placeholder="Search for a vegetable or herb"
+          placeholder="Find a plant"
           onSearch={handleSearch}
           clearBtn
           clearBtnClick={clearFilter}
         />
       </div>
-
-      <h2 className="text-success ms-3">Some ideas...</h2>
-      <ListGroup className=" h-md-fit overflow-auto grid grid-cols-2">
+      {/* <p className="">Select a plant from the list to see more details</p> */}
+      <ListGroup className=".h-sm-fit h-md-fit overflow-auto grid grid-cols-2">
         {listToRender?.map((plantName) => (
           <ListGroupItem
             key={plantName}
@@ -127,7 +124,7 @@ const VeggiesList = () => {
           </ListGroupItem>
         ))}
       </ListGroup>
-    </Container>
+    </div>
   );
 };
 
