@@ -20,7 +20,6 @@ function App() {
       <main className="flex-grow-1 pt-3">
         <Row className="px-4">
           <Col className="col-sm-12 col-md-6 col-lg-4">
-            <h2 className="text-success ms-3">Some ideas...</h2>
             <VeggiesList />
           </Col>
           <Col className="col-sm-12 col-md-6 col-lg-4">
