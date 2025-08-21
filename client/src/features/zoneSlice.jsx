@@ -1,5 +1,7 @@
 //Credit: https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone
 
+//This slice is from when my garden app was frontend only. I will eventually move the API call logic to the backend
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RAPDAPI_KEY } from "../config";
@@ -10,11 +12,6 @@ const HARDINESS_API_URL =
 export const fetchHardinessZone = createAsyncThunk(
   "hardinessZone/fetchHardinessZone",
   async (zip, thunkAPI) => {
-    // if (!API_CALLS_ENABLED) {
-    //   console.warn("API calls are currently disabled.");
-    //   return thunkAPI.rejectWithValue("API calls disabled manually.");
-    // }
-
     //zip comes from user input
     try {
       const options = {
