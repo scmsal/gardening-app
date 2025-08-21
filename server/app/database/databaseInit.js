@@ -2,10 +2,14 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config(); // Load environment variables from .env file
 
-const DATABASE_URI = process.env.DATABASE_URI;
+const DATABASE_URI =
+  process.env.NODE_ENV !== "dev"
+    ? process.env.DATABASE_URI
+    : process.env.LOCAL_DATABASE_URI;
 
 const connectDatabase = async () => {
   try {
+    console.log(DATABASE_URI);
     const connection = await mongoose.connect(DATABASE_URI);
     console.log(
       `Database is connected have ${connection.connection.host} as host and ${connection.connection.port} as port`
