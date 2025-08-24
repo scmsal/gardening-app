@@ -1,15 +1,21 @@
+/*Highlight list items in VeggiesList on hover */
 .custom-hover:hover {
   background-color: #198754 !important;
   color: white !important;
 }
 
-.h-md-fit {
-  height: 60vh;
-}
-
-.h-sm-fit {
+/* Responsive height class for VeggiesList. I consulted ChatGPT for this idea*/
+.h-fit {
   height: 30vh;
 }
+
+@media (min-width: 768px) {
+  .h-md-fit {
+    height: 50vh;
+  }
+}
+
+/* Responsive width*/
 
 /* Navbar link styling */
 .custom-nav-link {
