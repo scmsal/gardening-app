@@ -1,26 +1,32 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Container, Card, Button, Image } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Button,
+  Image,
+  ListGroup,
+  ListGroupItem,
+  Table,
+  CardBody,
+} from "react-bootstrap";
+import { useState } from "react";
 import placeholderImg from "../assets/icons8-potted-plant-96.png";
 import gardenImg from "../assets/garden-7028181_1280.jpg";
 
 function PlantFetcher() {
-  const selectedPlant = useSelector((state) => state.plants.selectedPlant);
-
-  console.log("Selected Plant: ", selectedPlant);
+  const selectedPlant = useSelector((state) => state.plants.selectedPlantData);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   if (!selectedPlant) {
     return (
-      <Container className="mx-3 mb-3 auto">
-        <p className="text-center">
-          Select a plant from the list to see more details
-        </p>
+      <div className="mb-3 w-50">
         <Image
           src={gardenImg}
           alt="vegetable garden with a wheelbarrow"
-          className="img-fluid mx-auto d-block w-75"
+          className="img-fluid"
         />
-        <p className="text-center">
+        <p className="text-center fs-6">
           Image by{" "}
           <a href="https://pixabay.com/users/alison506-4668088/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7028181">
             Alison Innes
@@ -30,25 +36,38 @@ function PlantFetcher() {
             Pixabay
           </a>
         </p>
-      </Container>
+      </div>
     );
   }
 
-  const { common_name, scientific_name, image, guideURL } = selectedPlant;
+  const {
+    common_name,
+    scientific_name,
+    image_info: { image_url: image },
+    guideURL,
+  } = selectedPlant;
 
   console.log("image: ", image);
 
   return (
-    <Container className="mx-3 mb-3">
+    <div className="mx-3 mb-3 w-60%">
       <Card>
-        <Card.Img
-          variant="top"
-          src={image || placeholderImg}
-          alt={image ? { common_name } : "Fallback plant image"}
-          className="img-fluid mx-auto d-block w-100 h-50"
-          style={{ maxHeight: "300px", objectFit: "cover" }}
-        />
-
+        <div>
+          <Card.Img
+            variant="top"
+            src={image}
+            alt={{ common_name } || "Fallback plant image"}
+            className="img-fluid w-100 object-fit-cover"
+            onLoad={() => {
+              setImageLoaded(true);
+            }}
+            onError={(e) => {
+              e.target.src = placeholderImg;
+            }}
+            style={{ height: "250px" }}
+          />
+        </div>
+        {!imageLoaded && <p>Loading image...</p>}
         {!image && (
           <div className="text-center mt-2">
             <small className="d-block">Image not available</small>
@@ -70,19 +89,54 @@ function PlantFetcher() {
             </a>
           </div>
         )}
-        <Card.Body>
-          <Card.Title className="text-center">{common_name}</Card.Title>
-          <h6 className="text-center">{scientific_name}</h6>
-          <div className="d-flex justify-content-center">
-            <a href={guideURL} target="_blank" rel="noopener noreferrer">
-              <Button src={guideURL} variant="outline-success" className="">
+        {imageLoaded && (
+          <Card.Body>
+            <Card.Title className="text-center text-success">
+              {common_name}
+            </Card.Title>
+            <h6 className="text-center fst-italic">{scientific_name}</h6>
+            <div className="d-flex justify-content-center">
+              <a href={guideURL} target="_blank" rel="noopener noreferrer">
+                {/* <Button src={guideURL} variant="outline-success" className="">
                 Go to Plant Guide
-              </Button>
-            </a>
-          </div>
-        </Card.Body>
+              </Button> */}
+              </a>
+            </div>
+            <Table className="mb-1" size="sm">
+              <tbody>
+                <tr>
+                  <td>
+                    <b>{`Growth rate: `} </b> {selectedPlant.growth_rate}
+                  </td>
+                  <td>
+                    <b>{`Care level: `} </b> {selectedPlant.care_level}{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>{`Hardiness zone: `}</b>
+                    {`${selectedPlant.hardiness_zone.min} - ${selectedPlant.hardiness_zone.max}`}
+                  </td>
+                  <td>
+                    <b>{`Cycle: `} </b> {selectedPlant.cycle}{" "}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>{`Plant in: `}</b>
+                    {selectedPlant.planting_season}
+                  </td>
+                  <td>
+                    <b>{`Sunlight: `}</b>
+                    {selectedPlant.sunlight}
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Card.Body>
+        )}
       </Card>
-    </Container>
+    </div>
   );
 }
 
