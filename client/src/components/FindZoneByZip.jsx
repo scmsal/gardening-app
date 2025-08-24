@@ -16,12 +16,13 @@ const FindZoneByZip = () => {
 
   return (
     <div className="w-50">
+      <h4 className="text-success">Plant Hardiness Zone</h4>
       <SearchBar
         onSearch={handleSearch}
         placeholder="Enter zip code"
         label="Find my zone:"
       />
-      <div className="text-end">
+      <div className="text-end small">
         <span>Powered by </span>{" "}
         <a
           href="https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone"
