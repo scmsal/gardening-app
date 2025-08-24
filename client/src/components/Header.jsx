@@ -17,7 +17,7 @@ const Header = () => {
         className="d-flex bg-success justify-content-between px-4"
       >
         <div className="d-flex align-items-center">
-          <div className="w-10">
+          <div style={{ width: "3rem", height: "auto" }}>
             {/* <iframe
             src={"https://giphy.com/embed/EGzDfFUauCo6nDgfpk"}
             width="100"
@@ -25,10 +25,7 @@ const Header = () => {
             className="giphy-embed ms-1"
             allowFullScreen
           ></iframe> */}
-            <Image
-              src={"/vegetables.jpg" || ""}
-              style={{ width: "5rem", height: "auto" }}
-            />
+            <Image src={"/vegetables.jpg" || ""} fluid />
           </div>
 
           <h1 className="text-white ms-3 mb-0">What Can I Grow Now?</h1>
