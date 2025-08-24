@@ -13,14 +13,14 @@ function HomePage() {
 
   return (
     <>
-      <h3 className="text-success">Vegetables and Herbs</h3>
       <Row className="justify-content-between ">
         <Col className="col-12 col-md-4">
           <VeggiesList />
+
+          <FindZoneByZip />
         </Col>
         <Col className="d-flex flex-column justify-content-center align-items-center col-12 col-md-8">
           <FrontPlaceholder />
-          <FindZoneByZip />
         </Col>
       </Row>
     </>
