@@ -39,7 +39,7 @@ const VeggiesList = () => {
   const { plantNames, loading, selectedPlantName, selectedPlantData } =
     useSelector((state) => state.plants);
 
-  //I got help from ChatGPT for the search and search mode logic, to display the full list if
+  //I got conceptual guidance from ChatGPT for the search and search mode logic, to display the full list of plants
   const [searchTerm, setSearchTerm] = useState("");
 
   const filtered = (plantNames || []).filter((common_name) =>
@@ -58,12 +58,16 @@ const VeggiesList = () => {
 
   const clearFilter = () => {
     setSearchTerm("");
+    goToHome();
   };
   //Navigate to selected plant details page
   const goToPlantDetails = (plantName) => {
     navigate(`/plants/${plantName}`);
   };
 
+  const goToHome = () => {
+    navigate("/");
+  };
   //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
     console.log("Plant that was clicked:", plantName);
@@ -72,6 +76,7 @@ const VeggiesList = () => {
     if (plantName === selectedPlantName) {
       dispatch(setSelectedPlantName(null));
       dispatch(setSelectedPlantData(null));
+      goToHome();
       return;
     }
 
@@ -94,10 +99,11 @@ const VeggiesList = () => {
       </div>
     );
   }
-
+  //sets list to full (no selected plant) or filtered to show search result
   const listToRender = searchTerm === "" || null ? plantNames : filtered;
   return (
     <div className=" mb-3 ">
+      <h4 className="text-success">Vegetables and Herbs</h4>
       <div className="flex flex-row gap-1">
         <SearchBar
           placeholder="Find a plant"
@@ -107,23 +113,27 @@ const VeggiesList = () => {
         />
       </div>
       {/* <p className="">Select a plant from the list to see more details</p> */}
-      <ListGroup className=".h-sm-fit h-md-fit overflow-auto grid grid-cols-2">
-        {listToRender?.map((plantName) => (
-          <ListGroupItem
-            key={plantName}
-            action
-            className="custom-hover"
-            variant={
-              selectedPlantName === plantName ? "success" : "outline-success"
-            }
-            onClick={() => {
-              handlePlantSelect(plantName);
-            }}
-          >
-            {plantName || "unnamed plant"}
-          </ListGroupItem>
-        ))}
-      </ListGroup>
+      {listToRender.length === 0 || listToRender === null ? (
+        <p>No plants found</p>
+      ) : (
+        <ListGroup className="h-fit h-md-fit overflow-auto grid grid-cols-2">
+          {listToRender?.map((plantName) => (
+            <ListGroupItem
+              key={plantName}
+              action
+              className="custom-hover"
+              variant={
+                selectedPlantName === plantName ? "success" : "outline-success"
+              }
+              onClick={() => {
+                handlePlantSelect(plantName);
+              }}
+            >
+              {plantName || "unnamed plant"}
+            </ListGroupItem>
+          ))}
+        </ListGroup>
+      )}
     </div>
   );
 };
