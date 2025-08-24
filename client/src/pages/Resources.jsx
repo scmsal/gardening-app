@@ -1,5 +1,7 @@
+import LinksToResources from "../components/LinksToResources";
+
 const ResourcesPage = () => {
-  return <h2>Resources page</h2>;
+  return <LinksToResources />;
 };
 
 export default ResourcesPage;
