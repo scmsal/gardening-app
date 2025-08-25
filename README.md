@@ -20,7 +20,7 @@ A **full stack web application** providing selected vegetable and herb gardening
 
 ## Live Demo
 
-- **Frontend (Vercel)**: https://ssal-portfolio-4lwv1en4r-scmsals-projects.vercel.app/
+- **Frontend (Vercel)**: https://ssalifu-portfolio.vercel.app/
 - **Backend API (Render)**: [link-to-backend]
 
 ## Features
