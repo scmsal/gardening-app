@@ -1,5 +1,5 @@
 {
-  "name": "hacker-project",
+  "name": "gardening-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,8 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.3",
     "@reduxjs/toolkit": "^2.7.0",
     "axios": "^1.8.4",
+    "bootstrap": "^5.3.7",
     "react": "^19.0.0",
-    "react-bootstrap": "^2.10.9",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
