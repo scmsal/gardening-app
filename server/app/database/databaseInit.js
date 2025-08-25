@@ -9,7 +9,9 @@ const DATABASE_URI =
 
 const connectDatabase = async () => {
   try {
-    const connection = await mongoose.connect(DATABASE_URI);
+    const connection = await mongoose.connect(DATABASE_URI, {
+      serverSelectionTimeoutMS: 5000,
+    });
     console.log(
       `Database is connected have ${connection.connection.host} as host and ${connection.connection.port} as port`
     );
