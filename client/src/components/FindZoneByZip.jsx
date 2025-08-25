@@ -15,7 +15,7 @@ const FindZoneByZip = () => {
   };
 
   return (
-    <div className="w-50">
+    <div className="w-100">
       <h4 className="text-success">Plant Hardiness Zone</h4>
       <SearchBar
         onSearch={handleSearch}
