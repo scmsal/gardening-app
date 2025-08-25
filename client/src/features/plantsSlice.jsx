@@ -46,11 +46,10 @@ export const getAllFoodPlants = createAsyncThunk(
 export const listAllNames = createAsyncThunk(
   "plants/listAllNames",
   async (_, { rejectWithValue }) => {
-    console.log("Path: ", BACKEND_URL_ENDPOINT + "/listAllNames");
     try {
       console.log("listAllNames fired.");
       const response = await axios.get(BACKEND_URL_ENDPOINT + "/listAllNames");
-      console.log("Path: ", BACKEND_URL_ENDPOINT + "/listAllNames");
+
       console.log(response.data);
       return response.data;
     } catch (error) {
