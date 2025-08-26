@@ -51,8 +51,16 @@ app.use(
 );
 
 // mounting routers for different API endpoints
-app.use("/api/", foodPlantRouter);
-
+//Endpoint for backend landing
+app.get("/", (_, res) => {
+  try {
+    res.status(200).json("Welcome to the Gardening App API");
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal Server Error",
+    });
+  }
+});
 // Endpoint to check if the server is running
 app.get("/PING", (_, res) => {
   try {
@@ -64,16 +72,8 @@ app.get("/PING", (_, res) => {
   }
 });
 
-//Endpoint for backend landing
-app.get("/", (_, res) => {
-  try {
-    res.status(200).json("Welcome to the Gardening App API");
-  } catch (error) {
-    res.status(500).json({
-      message: "Internal Server Error",
-    });
-  }
-});
+//general api endpoints
+app.use("/api/", foodPlantRouter);
 
 //Error handling middleware
 app.use(errorHandler);
