@@ -1,6 +1,6 @@
 # Gardening App 🌱
 
-A **full stack web application** providing selected vegetable and herb gardening resources.
+My first **full stack web application** built from scratch. It provides selected vegetable and herb gardening resources.
 
 ## Overview
 
@@ -20,8 +20,9 @@ A **full stack web application** providing selected vegetable and herb gardening
 
 ## Live Demo
 
-- **Frontend (Vercel)**: https://ssalifu-portfolio.vercel.app/
-- **Backend API (Render)**: [link-to-backend]
+- **Frontend (Vercel)**: https://gardening-app-gules.vercel.app
+- **Backend API (Render)**: https://gardening-app-hurn.onrender.com
+- **Note**: Please allow up to a minute for the backend to wake up
 
 ## Features
 
@@ -52,7 +53,7 @@ A **full stack web application** providing selected vegetable and herb gardening
 - This is intentional because:
     - Additional data cleaning is necessary.
     - The data (excluding manually enriched images) was AI-generated and may contain errors or inconsistencies.
-- For local testing, you may use a small **demo dataset** (see below).
+- For local testing, you may use a small **demo dataset** included in the server/test folder.
 
 ## Getting Started
 
@@ -67,41 +68,43 @@ A **full stack web application** providing selected vegetable and herb gardening
 1. **Clone the repository**
     
     ```bash
-    git clone <https://github.com/yourusername/gardening-app.git>
+    git clone [<https://github.com/yourusername/gardening-app.git>](https://github.com/scmsal/gardening-app)
     cd gardening-app
     
     ```
     
 2. **Install dependencies**
-
+```bash
 npm install
+```
 
-1. **Environment setup**
+3. **Environment setup**
 Create a .env file in the backend folder with:
-
-MONGODB_URI=your-mongodb-connection-string
+``bash
+DATABASE_URI=your-mongodb-connection-string
 PORT=5050
-
-1. **Seed data**
+``
+4. **Seed data**
 
 ⚠️ The full dataset used in production is private.
 
 To test locally, upload the samplePlantData.json file in the server/database folder to your own MongoDB database.
 
-1. **Run frontend and backend concurrently**
+5. **Run frontend and backend concurrently**
 From the root folder:
-
+```bash
 npm run dev
-
+```
 This will start:
 
 - React frontend on [http://localhost:3000](http://localhost:3000/)
 - Express backend on [http://localhost:5050](http://localhost:5050/)
-1. **Deployment**
 
-Frontend: Deployed to Vercel by connecting the frontend folder and configuring build settings (npm run build).
+### Deployment
 
-Backend: Deployed to Render with environment variables set in the dashboard (MONGODB_URI, PORT).
+Frontend (client folder): Deployed to Vercel by configuring build settings (npm run build) and environment variables set in the dashboard (VITE_BACKEND_URL, NODE_ENV).
+
+Backend (server folder): Deployed to Render with environment variables set in the dashboard (DATABASE_URI, NODE_ENV). PORT is set automatically.
 
 **NOTE**
-README file drafted by ChatGPT.
+README file drafted by ChatGPT and edited manually.
