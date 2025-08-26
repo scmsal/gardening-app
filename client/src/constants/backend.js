@@ -1,17 +1,6 @@
-// Backend API URL
-import.meta.env.VITE_BACKEND_URL;
+// Backend API URL with option for production (deployed on Render) or local development
 
-// === hardcoded option ===
-// const LOCAL_BACKEND_URL = "http://localhost:5050/api";
-
-// const PRODUCTION_BACKEND_URL = "https://gardening-app-hurn.onrender.com/api";
-
-// const BACKEND_URL_ENDPOINT =
-//   window.location.localhost === "localhost"
-//     ? LOCAL_BACKEND_URL
-//     : PRODUCTION_BACKEND_URL;
-
-//=== with env variables ===
-const BACKEND_URL_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_URL_ENDPOINT =
+  import.meta.env.VITE_BACKEND_URL || "https://localhost:5050/api";
 
 export { BACKEND_URL_ENDPOINT };
