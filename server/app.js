@@ -54,7 +54,7 @@ app.use(
 //Endpoint for backend landing
 app.get("/", (_, res) => {
   try {
-    res.status(200).send("Welcome to the Gardening App API");
+    res.status(200).json({ message: "Welcome to the Gardening App API" });
   } catch (error) {
     res.status(500).json({
       message: "Internal Server Error",
