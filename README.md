@@ -80,10 +80,10 @@ npm install
 
 3. **Environment setup**
 Create a .env file in the backend folder with:
-
+``bash
 DATABASE_URI=your-mongodb-connection-string
 PORT=5050
-
+``
 4. **Seed data**
 
 ⚠️ The full dataset used in production is private.
