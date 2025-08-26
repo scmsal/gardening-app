@@ -75,6 +75,12 @@ app.get("/PING", (_, res) => {
 //general api endpoints
 app.use("/api/", foodPlantRouter);
 
+//debugging
+app.use((req, res, next) => {
+  console.log("Hit unmatched route:", req.originalUrl);
+  next();
+});
+
 //Error handling middleware
 app.use(errorHandler);
 export default app;
