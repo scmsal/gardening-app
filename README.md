@@ -22,6 +22,7 @@ A **full stack web application** providing selected vegetable and herb gardening
 
 - **Frontend (Vercel)**: https://gardening-app-gules.vercel.app
 - **Backend API (Render)**: https://gardening-app-hurn.onrender.com
+- **Note**: Please allow up to a minute for the backend to wake up
 
 ## Features
 
