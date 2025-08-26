@@ -5,7 +5,7 @@ import app from "./app.js";
 // Importing server port constant
 const PORT = process.env.PORT || 5050;
 
-// Starting the server --PUT BACK IN FOR PRODUCTION
+// Starting the server in dev/production mode
 if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
     console.log(`Server is running at port : ${PORT}`);

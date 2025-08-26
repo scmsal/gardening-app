@@ -40,11 +40,6 @@ if (process.env.NODE_ENV !== "test") {
   }
 }
 
-// In dev mode morgan will log request/response bodies and headers. ChatGPT-suggested disabling morgan in tests to prevent responses from being downgraded to text.
-// if (process.env.NODE_ENV !== "test") {
-//   app.use(morgan("dev"));
-// }
-
 // Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));
 app.use(
@@ -62,6 +57,17 @@ app.use("/api/", foodPlantRouter);
 app.get("/PING", (_, res) => {
   try {
     res.status(200).json("PONG");
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal Server Error",
+    });
+  }
+});
+
+//Endpoint for backend landing
+app.get("/", (_, res) => {
+  try {
+    res.status(200).json("Welcome to the Gardening App API");
   } catch (error) {
     res.status(500).json({
       message: "Internal Server Error",
