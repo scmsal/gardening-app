@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHardinessZone } from "../features/zoneSlice";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Container } from "react-bootstrap";
 
 const FindZoneByZip = () => {
   const dispatch = useDispatch();
@@ -14,24 +14,29 @@ const FindZoneByZip = () => {
     dispatch(fetchHardinessZone(zipCode));
   };
 
-  //plant hardiness zone API widget at https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php
+  //
 
   return (
-    <iframe
-      src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
-      name="Find the USDA Hardiness Zone for your Zipocde and Map it"
-      width="210"
-      scrolling="No"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-    >
-      [Your browser doesn't support IFrames.{" "}
-      <a href="//www.plantmaps.com/hardiness-zone-zipcode.php" target="_blank">
-        Click here
-      </a>{" "}
-      to find the USDA hardiness zone for your zipcode.]
-    </iframe>
+    <Container className="d-flex justify-content-center">
+      <h4 className="text-success">Plant Hardiness Zone</h4>
+      {/* plant hardiness zone API widget copied from https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php and edited for sizing*/}
+      <iframe
+        src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
+        name="Find the USDA Hardiness Zone for your Zipocde and Map it"
+        width="310"
+        scrolling="No"
+        frameborder="0"
+      >
+        [Your browser doesn't support IFrames.{" "}
+        <a
+          href="//www.plantmaps.com/hardiness-zone-zipcode.php"
+          target="_blank"
+        >
+          Click here
+        </a>{" "}
+        to find the USDA hardiness zone for your zipcode.]
+      </iframe>
+    </Container>
   );
 
   //=== I have commented this out because the API server is unreliable
