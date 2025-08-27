@@ -15,27 +15,51 @@
   }
 }
 
-/* Responsive width*/
+/* Responsive width for home page placeholder image*/
+.w-fit {
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .w-md-fit {
+    width: 80%;
+  }
+}
 
-/* Navbar brand styling */
+/* Navbar brand text styling */
 
 .brand-text {
-  font-size: 3rem !important;
+  font-size: 1.2rem !important;
   font-weight: bold !important;
   color: white;
 }
+
+@media (min-width: 768px) {
+  .brand-text {
+    font-size: 2rem !important;
+  }
+}
+/* For responsiveness I could also use font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); */
+
 /* Navbar link styling */
 .custom-nav-link {
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
   color: white !important;
   text-decoration: none !important;
 }
 
 .custom-nav-link:hover {
-  font-size: 1.7rem !important; /* Example: Blue on hover */
+  font-size: 1.5rem !important; /* Example: Blue on hover */
   text-decoration: none !important;
 }
 
+@media (min-width: 768px) {
+  .custom-nav-link {
+    font-size: 1.5rem !important;
+  }
+  .custom-nav-link:hover {
+    font-size: 1.7rem !important;
+  }
+}
 .custom-nav-link.active {
   font-weight: bold !important;
   text-decoration: underline !important;

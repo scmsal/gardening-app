@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, Image } from "react-bootstrap";
+import { Nav, Navbar, Image } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
       collapseOnSelect
       expand="md"
       variant="dark"
-      className="bg-success px-4 justify-content-between"
+      className="bg-success px-4 justify-content-between "
     >
       <div className="d-flex flex-row align-items-center">
         <div style={{ width: "3rem", height: "auto" }}>
@@ -21,7 +21,7 @@ const Header = () => {
           <Image src={"/vegetables.jpg" || ""} fluid />
         </div>
 
-        <Navbar.Brand className="text-white fs-2 ms-3 mb-0">
+        <Navbar.Brand as={NavLink} to="/" className="brand-text ms-3 mb-0">
           What Can I Grow Now?
         </Navbar.Brand>
       </div>
