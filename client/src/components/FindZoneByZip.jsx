@@ -17,26 +17,28 @@ const FindZoneByZip = () => {
   //
 
   return (
-    <Container className="d-flex justify-content-center">
+    <div className="d-flex flex-column  mt-4">
       <h4 className="text-success">Plant Hardiness Zone</h4>
-      {/* plant hardiness zone API widget copied from https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php and edited for sizing*/}
-      <iframe
-        src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
-        name="Find the USDA Hardiness Zone for your Zipocde and Map it"
-        width="310"
-        scrolling="No"
-        frameborder="0"
-      >
-        [Your browser doesn't support IFrames.{" "}
-        <a
-          href="//www.plantmaps.com/hardiness-zone-zipcode.php"
-          target="_blank"
+      <Container className="justify-content-center">
+        {/* plant hardiness zone API widget copied from https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php and edited for sizing*/}
+        <iframe
+          src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
+          name="Find the USDA Hardiness Zone for your Zipocde and Map it"
+          width="310"
+          scrolling="No"
+          frameborder="0"
         >
-          Click here
-        </a>{" "}
-        to find the USDA hardiness zone for your zipcode.]
-      </iframe>
-    </Container>
+          [Your browser doesn't support IFrames.{" "}
+          <a
+            href="//www.plantmaps.com/hardiness-zone-zipcode.php"
+            target="_blank"
+          >
+            Click here
+          </a>{" "}
+          to find the USDA hardiness zone for your zipcode.]
+        </iframe>
+      </Container>
+    </div>
   );
 
   //=== I have commented this out because the API server is unreliable
