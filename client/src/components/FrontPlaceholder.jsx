@@ -5,7 +5,7 @@ import gardenImg from "../assets/garden-7028181_1280.jpg";
 function FrontPlaceholder() {
   //need to fix responsive size of image div
   return (
-    <div className="mb-3 w-100 w-md-75">
+    <div className="mb-3 w-fit w-md-fit">
       <Image
         src={gardenImg}
         alt="vegetable garden with a wheelbarrow"
