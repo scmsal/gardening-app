@@ -17,18 +17,26 @@
 
 /* Responsive width*/
 
+/* Navbar brand styling */
+
+.brand-text {
+  font-size: 3rem !important;
+  font-weight: bold !important;
+  color: white;
+}
 /* Navbar link styling */
 .custom-nav-link {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   color: white !important;
   text-decoration: none !important;
 }
 
 .custom-nav-link:hover {
-  font-size: 1.6rem !important; /* Example: Blue on hover */
+  font-size: 1.7rem !important; /* Example: Blue on hover */
   text-decoration: none !important;
 }
 
 .custom-nav-link.active {
   font-weight: bold !important;
+  text-decoration: underline !important;
 }
