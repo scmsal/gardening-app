@@ -1,6 +1,6 @@
-//Credit: https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone
+//This slice is from when my garden app was frontend only. I will eventually move the API call logic to the backend.
 
-//This slice is from when my garden app was frontend only. I will eventually move the API call logic to the backend
+//It was designed to work with the API at https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone, which would fetch the plant hardiness zone corresponding to a user inputted zip code. Plants could then eventually be filtered by zone. However, as the API server repeatedly failed to connect, I substituted that code in the FindZoneByZip component with another more reliable API widget.
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
