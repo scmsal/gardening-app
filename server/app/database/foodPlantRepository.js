@@ -16,6 +16,7 @@ const fetchAllFoodPlantNames = async () => {
   return foodPlants.map((plant) => plant.common_name);
 };
 
+//Function to fetch names and images of food plants for display in UI as cards. Still needs debugging. Not in use yet.
 const fetchNamesImgs = async () => {
   const namesImgs = await foodPlantModel.aggregate([
     {
