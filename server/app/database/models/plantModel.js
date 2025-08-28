@@ -63,11 +63,11 @@ const plantSchema = new mongoose.Schema({
   spacing: { type: String },
   set_out_after_frost: { type: String },
 
-  height: {
+  height_inches: {
     min: { type: Number },
     max: { type: Number },
   },
-  width: {
+  width_inches: {
     min: { type: Number },
     max: { type: Number },
   },
@@ -77,6 +77,16 @@ const plantSchema = new mongoose.Schema({
 
   companion_plants: [String],
   incompatible_plants: [String],
+
+  image_info: {
+    image_url: { type: String },
+    page_url: { type: String },
+    license_url: { type: String },
+    attribution: { type: String },
+    photographer: { type: String },
+    license: { type: String },
+    platform: { type: String },
+  },
 });
 
 export default mongoose.model("Plant", plantSchema, "food");
