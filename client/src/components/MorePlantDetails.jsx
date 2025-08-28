@@ -5,30 +5,30 @@ const MorePlantDetails = () => {
   const selectedPlant = useSelector((state) => state.plants.selectedPlantData);
   if (selectedPlant) {
     return (
-      <Card className="mx-3 mb-3 w-60% p-4">
+      <Card className="mx-3 mb-3 p-4">
         <h5 className="text-success text-center">Planting instructions </h5>
         <div className="ms-1 mb-3">
-          <p className="mb-0">
+          <p className="ms-2 mb-0">
             <span>
-              <b className="ms-2 me-1 ">Method: </b>
+              <b className="me-1 ">Method: </b>
             </span>
             <span>{selectedPlant.method}</span>
           </p>
-          <p className="mb-0">
+          <p className="ms-2 mb-0">
             <span>
-              <b className="mb-0 ms-2  me-1 ">Spacing: </b>
+              <b className="mb-0 me-1 ">Spacing: </b>
             </span>
             <span>{selectedPlant.spacing}</span>
           </p>
-          <p className="mb-0">
+          <p className="ms-2 mb-0">
             <span>
-              <b className="mb-0 ms-2 me-1 ">Planting depth: </b>
+              <b className="mb-0 me-1 ">Planting depth: </b>
             </span>
             <span>{selectedPlant.planting_depth}</span>
           </p>
-          <p className="mb-0">
+          <p className="ms-2 mb-0">
             <span>
-              <b className="mb-2 ms-2 me-1 ">Soil type: </b>
+              <b className="mb-2  me-1 ">Soil type: </b>
             </span>
             <span>{selectedPlant.soil_type}</span>
           </p>

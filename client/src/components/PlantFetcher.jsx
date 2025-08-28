@@ -60,7 +60,7 @@ function PlantFetcher() {
           <Card.Title className="text-center text-success fs-3">
             {common_name}
           </Card.Title>
-          <h6 className="text-center fst-italic">{scientific_name}</h6>
+          <h6 className="text-center fst-italic px-2">{scientific_name}</h6>
         </div>
         {!imageLoaded && <p>Loading image...</p>}
         {!image && (
