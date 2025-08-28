@@ -1,15 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  Container,
-  Card,
-  Button,
-  Image,
-  ListGroup,
-  ListGroupItem,
-  Table,
-  CardBody,
-} from "react-bootstrap";
+import { Card, Image, Table } from "react-bootstrap";
 import { useState } from "react";
 import placeholderImg from "../assets/icons8-potted-plant-96.png";
 import gardenImg from "../assets/garden-7028181_1280.jpg";
@@ -66,6 +57,10 @@ function PlantFetcher() {
             }}
             style={{ height: "250px" }}
           />
+          <Card.Title className="text-center text-success fs-3">
+            {common_name}
+          </Card.Title>
+          <h6 className="text-center fst-italic">{scientific_name}</h6>
         </div>
         {!imageLoaded && <p>Loading image...</p>}
         {!image && (
@@ -91,10 +86,6 @@ function PlantFetcher() {
         )}
         {imageLoaded && (
           <Card.Body>
-            <Card.Title className="text-center text-success">
-              {common_name}
-            </Card.Title>
-            <h6 className="text-center fst-italic">{scientific_name}</h6>
             <div className="d-flex justify-content-center">
               <a href={guideURL} target="_blank" rel="noopener noreferrer">
                 {/* <Button src={guideURL} variant="outline-success" className="">
@@ -131,8 +122,38 @@ function PlantFetcher() {
                     {selectedPlant.sunlight}
                   </td>
                 </tr>
+                <tr>
+                  <td>
+                    <b>{`Height: `}</b>
+                    {`${selectedPlant.height_inches.min} to ${selectedPlant.height_inches.max} inches`}
+                  </td>
+                  <td>
+                    <b>{`Width: `}</b>
+                    {`${selectedPlant.width_inches.min} to ${selectedPlant.width_inches.max} inches`}
+                  </td>
+                </tr>
               </tbody>
             </Table>
+            <label className="small">
+              {`Photo by ${selectedPlant.image_info.photographer}, `}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`"${selectedPlant.image_info.license_url} "`}
+                className="link-success"
+              >
+                {selectedPlant.image_info.license}
+              </a>{" "}
+              via{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`"${selectedPlant.image_info._url} "`}
+                className="link-success"
+              >
+                {selectedPlant.image_info.platform}
+              </a>
+            </label>
           </Card.Body>
         )}
       </Card>

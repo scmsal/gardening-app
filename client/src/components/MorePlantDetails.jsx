@@ -6,7 +6,7 @@ const MorePlantDetails = () => {
   if (selectedPlant) {
     return (
       <Card className="mx-3 mb-3 w-60% p-4">
-        <h6 className="text-success text-center">Planting instructions </h6>
+        <h5 className="text-success text-center">Planting instructions </h5>
         <div className="ms-1 mb-3">
           <p className="mb-0">
             <span>
@@ -34,7 +34,7 @@ const MorePlantDetails = () => {
           </p>
         </div>
 
-        <h6 className="text-success text-center">Companion Planting</h6>
+        <h5 className="text-success text-center">Companion Planting</h5>
         <div className="d-flex flex-wrap ms-2 mb-3">
           <span>
             <b className="mb-1 me-1">Companion plants: </b>
@@ -43,7 +43,7 @@ const MorePlantDetails = () => {
             return (
               <span
                 key={plantName}
-                className="border border-success me-2 mb-1 px-1 text-nowrap"
+                className="border border-success rounded me-2 mb-1 px-1 text-nowrap"
               >
                 {plantName}
               </span>
@@ -59,7 +59,7 @@ const MorePlantDetails = () => {
             return (
               <span
                 key={plantName}
-                className="border border-danger me-2 mb-1 px-1 text-nowrap"
+                className="border border-danger rounded me-2 mb-1 px-1 text-nowrap"
               >
                 {plantName}
               </span>
