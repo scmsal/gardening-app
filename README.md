@@ -68,7 +68,7 @@ My first **full stack web application** built from scratch. It provides selected
 1. **Clone the repository**
     
     ```bash
-    git clone [<https://github.com/yourusername/gardening-app.git>](https://github.com/scmsal/gardening-app)
+    git clone https://github.com/scmsal/gardening-app
     cd gardening-app
     
     ```
