@@ -28,7 +28,6 @@ const VeggiesList = () => {
     const fetchAndSetNames = async () => {
       try {
         const resultAction = await dispatch(listAllNames());
-        console.log("Fetched names:", resultAction);
       } catch (err) {
         console.error("Failed to fetch plant names:", err);
       }

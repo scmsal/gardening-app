@@ -23,7 +23,6 @@ export const fetchHardinessZone = createAsyncThunk(
         },
       };
       const response = await axios.request(options);
-      console.log(response.data); //update?
       return response.data.hardiness_zone; //double check shape of actual response data
     } catch (error) {
       console.error(error);

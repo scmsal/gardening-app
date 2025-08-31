@@ -23,8 +23,6 @@ const fetchNamesImgs = async () => {
       $project: { common_name: 1, image_url: "$image_info.image_url", _id: 0 },
     },
   ]);
-  console.log("Names and images fetched from DB: ", namesImgs);
-  console.log("other debugging: ", JSON.stringify(namesImgs, null, 2));
 
   return namesImgs.map((plant) => {
     return {

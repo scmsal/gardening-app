@@ -18,7 +18,7 @@ foodPlantRouter.get(
   "/allFoodPlants",
   asyncHandler(async (req, res) => {
     const data = await fetchAllFoodPlants();
-    console.log("Route hit");
+    console.log("foodPlantRouter/allFoodPlants hit");
     res.status(200).json(data);
   })
 );
@@ -27,7 +27,7 @@ foodPlantRouter.get(
   "/namesImgs",
   asyncHandler(async (req, res) => {
     const data = await fetchNamesImgs();
-    console.log("Route hit");
+    console.log("foodPlantRouter/namesImgs hit");
     res.status(200).json(data);
   })
 );
@@ -35,7 +35,7 @@ foodPlantRouter.get(
   "/listAllNames",
   asyncHandler(async (req, res) => {
     const data = await fetchAllFoodPlantNames();
-    console.log("Route hit");
+    console.log("foodPlantRouter/listAllNames hit");
     res.status(200).json(data);
   })
 );

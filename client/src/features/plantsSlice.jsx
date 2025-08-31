@@ -49,8 +49,6 @@ export const listAllNames = createAsyncThunk(
     try {
       console.log("listAllNames fired.");
       const response = await axios.get(BACKEND_URL_ENDPOINT + "/listAllNames");
-
-      console.log(response.data);
       return response.data;
     } catch (error) {
       //If there is an error in the backend
