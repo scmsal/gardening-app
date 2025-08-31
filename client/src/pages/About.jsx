@@ -2,36 +2,34 @@ import { Container } from "react-bootstrap";
 
 const AboutPage = () => {
   return (
-    <Container className="w-75">
+    <Container className="px-5">
       <h2 className="text-success text-center mt-5 mb-3">About this website</h2>
       <p className="fs-5 mb-3">
-        This project was inspired by two questions I had in the spring of 2025.
-        One was,
+        This project began in spring 2025 with two simple questions:
       </p>
-      <p className="text-success fst-italic fs-5 mb-3 text-center">
+      <p className="text-success fst-italic fs-5 mb-3">
         "What web application can I build now to strengthen and display my
-        software development skills?"
+        software development skills?"{" "}
+        <span className="text-body fst-normal">and</span>
       </p>
       <p className="fs-5 mb-3">
-        I was also asking myself,
         <span className="text-success fst-italic fs-5 ">
           {" "}
           "What can I plant now?"
         </span>{" "}
       </p>
       <p className="fs-5 ">
-        My vegetable garden and my GitHub repository were waiting.{" "}
+        Both my vegetable garden and my GitHub repository were waiting.{" "}
       </p>
       <p className="fs-5">
-        After researching and experimenting with available plant database APIs,
-        I decided to create my own with the help of Google Gemini. As with all
-        AI-generated material, please note that there may be errors. I manually
-        populated the plant image links and sources. The image in the header and
-        favicon was produced by CanvaAI.
+        I built this app after researching plant database APIs and experimenting
+        with different approaches. Plant images and sources were curated
+        manually. The header and future content placeholder image were created
+        using AI tools.
       </p>
       <p className="fs-5">
-        This is still a work in progress as I plan to add other features and
-        keep improving the design.
+        This app is still evolving - I plan to add new features and continue
+        refining the design.
       </p>
     </Container>
   );
