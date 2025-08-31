@@ -25,8 +25,8 @@ const FindZoneByZip = () => {
         src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
         name="Find the USDA Hardiness Zone for your Zipocde and Map it"
         width="290"
-        scrolling="No"
-        frameborder="0"
+        //frameborder is deprecated so I replaced it with this CSS:
+        style="border: none"
       >
         [Your browser doesn't support IFrames.{" "}
         <a
