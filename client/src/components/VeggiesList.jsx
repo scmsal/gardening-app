@@ -94,7 +94,7 @@ const VeggiesList = () => {
     return (
       <div className="flex flex-col">
         <Spinner />
-        <p>Loading plant list. It might take 50 seconds... </p>
+        <p>Loading plant list... It might take a minute. </p>
       </div>
     );
   }
