@@ -26,7 +26,7 @@ const FindZoneByZip = () => {
         name="Find the USDA Hardiness Zone for your Zipocde and Map it"
         width="290"
         //frameborder is deprecated so I replaced it with this CSS:
-        style={{ border: none }}
+        style={{ border: 0 }}
       >
         [Your browser doesn't support IFrames.{" "}
         <a
