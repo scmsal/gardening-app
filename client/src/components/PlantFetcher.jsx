@@ -38,8 +38,6 @@ function PlantFetcher() {
     guideURL,
   } = selectedPlant;
 
-  console.log("image: ", image);
-
   return (
     <div className="mx-3 mb-3 w-60%">
       <Card>
@@ -139,7 +137,7 @@ function PlantFetcher() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`"${selectedPlant.image_info.license_url} "`}
+                href={selectedPlant.image_info.license_url}
                 className="link-success"
               >
                 {selectedPlant.image_info.license}
@@ -148,7 +146,7 @@ function PlantFetcher() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`"${selectedPlant.image_info._url} "`}
+                href={selectedPlant.image_info.page_url}
                 className="link-success"
               >
                 {selectedPlant.image_info.platform}
