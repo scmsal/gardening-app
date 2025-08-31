@@ -27,7 +27,7 @@ const VeggiesList = () => {
   useEffect(() => {
     const fetchAndSetNames = async () => {
       try {
-        const resultAction = await dispatch(listAllNames());
+        await dispatch(listAllNames());
       } catch (err) {
         console.error("Failed to fetch plant names:", err);
       }
@@ -69,13 +69,11 @@ const VeggiesList = () => {
   };
   //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
-    console.log("Plant that was clicked:", plantName);
-    console.log("Selected plant:", selectedPlantName);
     //deselect
     if (plantName === selectedPlantName) {
+      goToHome();
       dispatch(setSelectedPlantName(null));
       dispatch(setSelectedPlantData(null));
-      goToHome();
       return;
     }
 
@@ -84,7 +82,6 @@ const VeggiesList = () => {
 
     //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
     if (!selectedPlantData || selectedPlantData.common_name !== plantName) {
-      dispatch(setSelectedPlantData(null));
       dispatch(getFoodPlantByCommonName(plantName));
     }
     goToPlantDetails(plantName);
