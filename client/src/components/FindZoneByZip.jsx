@@ -19,7 +19,9 @@ const FindZoneByZip = () => {
   return (
     <div className="d-flex flex-column  mt-4">
       <h4 className="text-success">Plant Hardiness Zone</h4>
-
+      <label className="small">
+        Average annual extreme minimum temperatures for an area.
+      </label>
       {/* plant hardiness zone API widget copied from https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php and edited for sizing*/}
       <iframe
         src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
@@ -37,9 +39,6 @@ const FindZoneByZip = () => {
         </a>{" "}
         to find the USDA hardiness zone for your zipcode. .]
       </iframe>
-      <label className="small">
-        Average annual extreme minimum temperatures for an area.
-      </label>
     </div>
   );
 
