@@ -1,4 +1,4 @@
-##README of original frontend app, before I reworked it as a full stack app.
+## README of original frontend app, before I reworked it as a full stack app.
 
 Although I have completed a number of projects as coursework or as extensions of coursework, I am creating this project from scratch. The aim is to practice using React, Redux, Bootstrap, and APIs. I extensively used ChatGPT as a mentor and pair-programmer to help me implement my ideas, be more incisive in my debugging, and answer my questions regarding concepts and best practices.
 
@@ -10,5 +10,5 @@ Updates 5/21/25:
 - Unfortunately, it turned out to only contain essentially a list of plants' common and scientific names. I'll have to find another solution for data for my project. Nonetheless, I did get to experience working with Docker, MongoDB shell, and MongoDB Compass, as well as being introduced to Ruby on Rails and Vagrant. You can see my fork at https://github.com/scmsal/OpenFarm.
 - I provided AI (Gemini) with an object structure and a list of plants. It produced a json file sourced from "general gardening knowledge", that can be the starting point for building my own small database for this project.
 
-##Update 08/28/2025:
+## Update 08/28/2025:
 The MVP of the full stack app is now ready. See the README file of the root folder.
