@@ -10,14 +10,20 @@ function PlantDetailPage() {
   return (
     <div className="d-grid pt-3">
       <Row className="justify-content-between ">
-        <Col className="col-12 col-md-4">
+        <Col id="first-col" className="col-12 col-md-4">
           <VeggiesList />
           <FindZoneByZip />
         </Col>
-        <Col className="d-flex flex-column align-items-center col-12 col-md-8 col-lg-4">
+        <Col
+          id="middle-col"
+          className="d-flex flex-column align-items-center col-12 col-md-8 col-lg-4"
+        >
           <PlantFetcher />
         </Col>
-        <Col className="d-flex flex-column col-12 col-md-8 justify-content-between col-lg-4">
+        <Col
+          id="3rd-col"
+          className="d-flex flex-column col-12 col-md-8 justify-content-between col-lg-4"
+        >
           <MorePlantDetails />
           <MoreContentToCome />
         </Col>

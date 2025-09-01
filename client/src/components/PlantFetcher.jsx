@@ -55,10 +55,6 @@ function PlantFetcher() {
             }}
             style={{ height: "250px" }}
           />
-          <Card.Title className="text-center text-success fs-3">
-            {common_name}
-          </Card.Title>
-          <h6 className="text-center fst-italic px-2">{scientific_name}</h6>
         </div>
         {!imageLoaded && <p>Loading image...</p>}
         {!image && (
@@ -83,76 +79,75 @@ function PlantFetcher() {
           </div>
         )}
         {imageLoaded && (
-          <Card.Body>
-            <div className="d-flex justify-content-center">
-              <a href={guideURL} target="_blank" rel="noopener noreferrer">
-                {/* <Button src={guideURL} variant="outline-success" className="">
-                Go to Plant Guide
-              </Button> */}
-              </a>
-            </div>
-            <Table className="mb-1" size="sm">
-              <tbody>
-                <tr>
-                  <td>
-                    <b>{`Growth rate: `} </b> {selectedPlant.growth_rate}
-                  </td>
-                  <td>
-                    <b>{`Care level: `} </b> {selectedPlant.care_level}{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>{`Hardiness zone: `}</b>
-                    {`${selectedPlant.hardiness_zone.min} - ${selectedPlant.hardiness_zone.max}`}
-                  </td>
-                  <td>
-                    <b>{`Cycle: `} </b> {selectedPlant.cycle}{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>{`Plant in: `}</b>
-                    {selectedPlant.planting_season}
-                  </td>
-                  <td>
-                    <b>{`Sunlight: `}</b>
-                    {selectedPlant.sunlight}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>{`Height: `}</b>
-                    {`${selectedPlant.height_inches.min} to ${selectedPlant.height_inches.max} inches`}
-                  </td>
-                  <td>
-                    <b>{`Width: `}</b>
-                    {`${selectedPlant.width_inches.min} to ${selectedPlant.width_inches.max} inches`}
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-            <label className="small">
-              {`Photo by ${selectedPlant.image_info.photographer}, `}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={selectedPlant.image_info.license_url}
-                className="link-success"
-              >
-                {selectedPlant.image_info.license}
-              </a>{" "}
-              via{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={selectedPlant.image_info.page_url}
-                className="link-success"
-              >
-                {selectedPlant.image_info.platform}
-              </a>
-            </label>
-          </Card.Body>
+          <div>
+            <Card.Title className="text-center text-success fs-3">
+              {common_name}
+            </Card.Title>
+            <h6 className="text-center fst-italic px-2">{scientific_name}</h6>
+            <Card.Body>
+              <Table className="mb-1" size="sm">
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>{`Growth rate: `} </b> {selectedPlant.growth_rate}
+                    </td>
+                    <td>
+                      <b>{`Care level: `} </b> {selectedPlant.care_level}{" "}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>{`Hardiness zone: `}</b>
+                      {`${selectedPlant.hardiness_zone.min} - ${selectedPlant.hardiness_zone.max}`}
+                    </td>
+                    <td>
+                      <b>{`Cycle: `} </b> {selectedPlant.cycle}{" "}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>{`Plant in: `}</b>
+                      {selectedPlant.planting_season}
+                    </td>
+                    <td>
+                      <b>{`Sunlight: `}</b>
+                      {selectedPlant.sunlight}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>{`Height: `}</b>
+                      {`${selectedPlant.height_inches.min} to ${selectedPlant.height_inches.max} inches`}
+                    </td>
+                    <td>
+                      <b>{`Width: `}</b>
+                      {`${selectedPlant.width_inches.min} to ${selectedPlant.width_inches.max} inches`}
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+              <label className="small">
+                {`Photo by ${selectedPlant.image_info.photographer}, `}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={selectedPlant.image_info.license_url}
+                  className="link-success"
+                >
+                  {selectedPlant.image_info.license}
+                </a>{" "}
+                via{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={selectedPlant.image_info.page_url}
+                  className="link-success"
+                >
+                  {selectedPlant.image_info.platform}
+                </a>
+              </label>
+            </Card.Body>
+          </div>
         )}
       </Card>
     </div>

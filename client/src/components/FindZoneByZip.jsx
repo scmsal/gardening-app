@@ -17,7 +17,7 @@ const FindZoneByZip = () => {
   //
 
   return (
-    <div className="d-flex flex-column  mt-4">
+    <div className="d-flex flex-column  mx-3 mt-4">
       <h4 className="text-success">Plant Hardiness Zone</h4>
       <label className="small">
         Average annual extreme minimum temperatures for an area.

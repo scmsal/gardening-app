@@ -98,7 +98,7 @@ const VeggiesList = () => {
   //sets list to full (no selected plant) or filtered to show search result
   const listToRender = searchTerm === "" || null ? plantNames : filtered;
   return (
-    <div className=" mb-3 ">
+    <div className=" mx-3 mb-3 ">
       <h4 className="text-success">Vegetables and Herbs</h4>
       <div className="flex flex-row gap-1">
         <SearchBar
