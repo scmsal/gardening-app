@@ -9,19 +9,21 @@ import {
   fetchAllHerbs,
   fetchAllVegetables,
   fetchNamesImgs,
+  displayWelcome,
 } from "../services/foodPlantService.js";
 
 const foodPlantRouter = express.Router();
 
 //Routes
-foodPlantRouter.get(
-  "/allFoodPlants",
-  asyncHandler(async (req, res) => {
-    const data = await fetchAllFoodPlants();
-    console.log("foodPlantRouter/allFoodPlants hit");
-    res.status(200).json(data);
-  })
-);
+//This route is not currently in use until data cleaning is complete
+// foodPlantRouter.get(
+//   "/allFoodPlants",
+//   asyncHandler(async (req, res) => {
+//     const data = await fetchAllFoodPlants();
+//     console.log("foodPlantRouter/allFoodPlants hit");
+//     res.status(200).json(data);
+//   })
+// );
 
 foodPlantRouter.get(
   "/namesImgs",
@@ -61,6 +63,14 @@ foodPlantRouter.get(
   asyncHandler(async (req, res) => {
     const data = await fetchAllVegetables();
     res.status(200).json(data);
+  })
+);
+
+foodPlantRouter.get(
+  "/welcome",
+  asyncHandler(async (req, res) => {
+    const data = await displayWelcome();
+    res.status(200).send(data);
   })
 );
 export default foodPlantRouter;
