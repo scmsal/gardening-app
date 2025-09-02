@@ -66,11 +66,4 @@ foodPlantRouter.get(
   })
 );
 
-foodPlantRouter.get(
-  "/welcome",
-  asyncHandler(async (req, res) => {
-    const data = await displayWelcome();
-    res.status(200).send(data);
-  })
-);
 export default foodPlantRouter;

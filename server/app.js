@@ -2,11 +2,13 @@ import dotenv from "dotenv"; // Importing dotenv to manage environment variables
 dotenv.config(); // Loading environment variables from .env file
 import express from "express"; // Importing necessary modules
 import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
-
-// import morgan from 'morgan';
+import asyncHandler from "express-async-handler";
 
 //importing router
 import foodPlantRouter from "./app/routes/foodPlantRouter.js";
+
+//import service for server landing page
+import { displayWelcome } from "./app/services/foodPlantService.js";
 
 // Importing necessary modules and middleware
 import requestBodyParser from "body-parser";
@@ -30,7 +32,7 @@ app.use((req, res, next) => {
 // Using CORS middleware to allow cross-origin requests
 app.use(cors());
 
-// Connecting to the database
+//=== Connecting to the database===
 //Make sure the server does not connect to the real database during tests. It should only use the sample database using mongodb-memory-server in the test files.
 if (process.env.NODE_ENV !== "test") {
   try {
@@ -50,17 +52,21 @@ app.use(
   })
 );
 
-// mounting routers for different API endpoints
+// ===mounting routers for different API endpoints===
 //Endpoint for backend landing
-app.get("/", (_, res) => {
-  try {
-    res.status(200).json({ message: "Welcome to the Gardening App API" });
-  } catch (error) {
-    res.status(500).json({
-      message: "Internal Server Error",
-    });
-  }
-});
+app.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    try {
+      const data = await displayWelcome();
+      res.status(200).send(data);
+    } catch (error) {
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  })
+);
 // Endpoint to check if the server is running
 app.get("/PING", (_, res) => {
   try {
