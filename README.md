@@ -31,19 +31,19 @@ My first **full stack web application** built from scratch. It provides selected
 - **Search Feature**: Quickly find plants by name.
 - **Plant List Display**: Browse a list of vegetable and herb names from the database.
 - **Plant Details View**: Each entry includes:
-    - Common name & scientific name
-    - Planting season and instructions
-    - Sunlight requirements
-    - Plant hardiness zone
-    - Companion planting information
+  - Common name & scientific name
+  - Planting season and instructions
+  - Sunlight requirements
+  - Plant hardiness zone
+  - Companion planting information
 
 ### Planned
 
 - **Filtering**: Display plants by:
-    - Planting season
-    - Type (vegetable vs. herb)
-    - Sunlight requirement
-    - Indoor start vs. direct seeding
+  - Planting season
+  - Type (vegetable vs. herb)
+  - Sunlight requirement
+  - Indoor start vs. direct seeding
 - **Planting & Harvest Calculator**: Calculate planting and harvesting times based on location and season.
 - **Ornamental Plants Section**: A separate database collection and page for non-edible plants.
 
@@ -51,8 +51,8 @@ My first **full stack web application** built from scratch. It provides selected
 
 - The full production dataset is **not included in this repository**.
 - This is intentional because:
-    - Additional data cleaning is necessary.
-    - The data (excluding manually enriched images) was AI-generated and may contain errors or inconsistencies.
+  - Additional data cleaning is necessary.
+  - The data (excluding manually enriched images) was AI-generated and may contain errors or inconsistencies.
 - For local testing, you may use a small **demo dataset** included in the server/test folder.
 
 ## Getting Started
@@ -66,24 +66,25 @@ My first **full stack web application** built from scratch. It provides selected
 ### Local Development
 
 1. **Clone the repository**
-    
-    ```bash
-    git clone https://github.com/scmsal/gardening-app
-    cd gardening-app
-    
-    ```
-    
+
+   ```bash
+   git clone https://github.com/scmsal/gardening-app
+   cd gardening-app
+
+   ```
+
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Environment setup**
-Create a .env file in the backend folder with:
-``bash
+   Create a .env file in the backend folder with:
+   `bash
 DATABASE_URI=your-mongodb-connection-string
 PORT=5050
-``
+`
 4. **Seed data**
 
 ⚠️ The full dataset used in production is private.
@@ -91,10 +92,12 @@ PORT=5050
 To test locally, upload the samplePlantData.json file in the server/database folder to your own MongoDB database.
 
 5. **Run frontend and backend concurrently**
-From the root folder:
+   From the root folder:
+
 ```bash
 npm run dev
 ```
+
 This will start:
 
 - React frontend on [http://localhost:3000](http://localhost:3000/)
