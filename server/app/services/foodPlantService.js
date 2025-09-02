@@ -95,7 +95,6 @@ const displayWelcome = () => {
         <p>Author: Stephanie Salifu</p>
         <p>Explore available endpoints to find information about various edible plants you can grow in your own garden.</p>
         <ul>
-          <li><a href="/api/allFoodPlants">Full Edible Plant List</a></li>
           <li><a href="/api/listAllNames">Edible Plant Names</a></li>
           <li><a href="/api/getFoodPlantByCommonName?common_name=Tomato">Get Plant by Common Name (e.g., Tomato)</a></li>
           <li><a href="/api/namesImgs">Edible Plant Names and Images</a></li>
