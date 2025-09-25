@@ -1,60 +1,25 @@
-import {
-  Container,
-  ListGroup,
-  ListGroupItem,
-  Spinner,
-  Button,
-} from "react-bootstrap";
-import "../App.css";
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { ListGroup, ListGroupItem, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import "../App.css";
 
-import { selectPlantByName } from "../features/plantsSlice";
-
-import SearchBar from "./SearchBar";
 import { useNavigate } from "react-router-dom";
+import { useSelectedPlant } from "../utils/useSelectedPlant";
+import SearchBar from "./SearchBar";
 
 const VeggiesList = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const params = useParams();
 
-  //pull current plant name from the url
-  const plantName = params.plantName;
-
-  console.log(
-    "allPlantData in VeggiesList:",
-    useSelector((state) => state.plants.allPlantData)
-  );
-  //use selector from plantsSlice to get plant object
-  const selectedPlant = useSelector((state) => {
-    return selectPlantByName(state, plantName);
-  });
-  console.log("In VeggiesList, selectedPlant:", selectedPlant);
-  // const plantNames = useSelector((state) => state.plants.allPlantData.map(plant => plant.common_name));
-
-  // useEffect(() => {
-  //   const fetchAndSetNames = async () => {
-  //     try {
-  //       await dispatch(listAllNames());
-  //     } catch (err) {
-  //       console.error("Failed to fetch plant names:", err);
-  //     }
-  //   };
-  //   fetchAndSetNames();
-  // }, [dispatch]);
+  const selectedPlant = useSelectedPlant();
 
   const { allPlantData, loading } = useSelector((state) => state.plants);
 
-  //I got conceptual guidance from ChatGPT for the search and search mode logic, to display the full list of plants
   const [searchTerm, setSearchTerm] = useState("");
 
   const filtered = (allPlantData || []).filter((plant) =>
     plant.common_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  //Navigate to selected plant details page
   const goToPlantDetails = (plantName) => {
     navigate(`/plants/${plantName}`);
   };
@@ -81,10 +46,8 @@ const VeggiesList = () => {
   //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
     //deselect
-    if (plantName === params.plantName) {
+    if (plantName === selectedPlant.common_name) {
       goToHome();
-      // dispatch(setSelectedPlantName(null));
-      // dispatch(setSelectedPlantData(null));
       return;
     }
 
@@ -130,7 +93,7 @@ const VeggiesList = () => {
               action
               className="custom-hover"
               variant={
-                params.plantName === plant.common_name
+                selectedPlant?.common_name === plant.common_name
                   ? "success"
                   : "outline-success"
               }

@@ -25,50 +25,6 @@ export const getAllFoodPlants = createAsyncThunk(
   }
 );
 
-// export const listAllNames = createAsyncThunk(
-//   "plants/listAllNames",
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       console.log("listAllNames fired.");
-//       console.log("backend url:", BACKEND_URL_ENDPOINT);
-
-//       const response = await axios.get(BACKEND_URL_ENDPOINT + "/listAllNames");
-//       return response.data;
-//     } catch (error) {
-//       //If there is an error in the backend
-//       if (error.response && error.response.data) {
-//         return rejectWithValue(error.response.data);
-//       }
-//       //If there is a network or unexpected error
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const getFoodPlantByCommonName = createAsyncThunk(
-//   "plants/getFoodPlantByCommonName",
-//   async (commonName, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.get(
-//         BACKEND_URL_ENDPOINT + "/getFoodPlantByCommonName",
-//         {
-//           params: { common_name: commonName },
-//         }
-//       );
-//       return response.data;
-//     } catch (error) {
-//       //If there is an error in the backend
-//       if (error.response && error.response.data) {
-//         return rejectWithValue(error.response.data);
-//       }
-//       //If there is a network or unexpected error
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-//==INITIAL STATE==
-
 //==SELECTORS==
 
 export const selectPlantByName = (state, plantName) => {
@@ -84,11 +40,6 @@ export const selectPlantByName = (state, plantName) => {
 //==INITIAL STATE==
 const initialState = {
   allPlantData: [],
-  // plantNames: [], //will be an array of strings
-  // selectedPlantName: null, //will be a string
-  // selectedPlantData: null, //will be an object
-  // displayedPlantName: null, //will be a string
-  // displayedPlantData: null, //will be an object
   loading: false,
   error: null,
 };
@@ -97,20 +48,9 @@ const initialState = {
 const plantsSlice = createSlice({
   name: "plants",
   initialState,
-  reducers: {
-    // setSelectedPlantName: (state, action) => {
-    //   state.selectedPlantName = action.payload;
-    // },
-    // setSelectedPlantData: (state, action) => {
-    //   state.selectedPlantData = action.payload;
-    // },
-    // setDisplayedPlantName: (state, action) => {
-    //   state.displayedPlantName = action.payload;
-    // },
-    // setDisplayedPlantData: (state, action) => {
-    //   state.displayedPlantData = action.payload;
-    // },
-  },
+  // reducers: {
+
+  // },
   extraReducers: (builder) => {
     builder
 
