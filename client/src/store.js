@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import plantReducer from "./features/plantsSlice";
 import hardinessZoneReducer from "./features/zoneSlice";
-import { loadState } from "../utils/localStorageHelpers";
+// import { loadState } from "../utils/localStorageHelpers";
 
-const preloadedState = loadState();
+// const preloadedState = loadState();
 
 const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ const store = configureStore({
     hardinessZone: hardinessZoneReducer,
   },
 
-  preloadedState,
+  // preloadedState,
 });
 
 export default store;
