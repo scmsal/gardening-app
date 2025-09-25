@@ -1,16 +1,12 @@
 import "../App.css";
 import VeggiesList from "../components/VeggiesList";
 
-// import LinksToResources from "./components/LinksToResources";
 import { Container, Row, Col } from "react-bootstrap";
 
 import FindZoneByZip from "../components/FindZoneByZip";
 import FrontPlaceholder from "../components/FrontPlaceholder";
 
 function HomePage() {
-  //to clear cache for testing
-  //localStorage.removeItem("enrichedPlantData");
-
   return (
     <div className="d-grid">
       <Row className="justify-content-between ">

@@ -1,5 +1,3 @@
-//This file contains the routes and http response messages
-
 import express from "express";
 import asyncHandler from "express-async-handler";
 import {
@@ -19,7 +17,6 @@ foodPlantRouter.get(
   "/allFoodPlants",
   asyncHandler(async (req, res) => {
     const data = await fetchAllFoodPlants();
-    console.log("foodPlantRouter/allFoodPlants hit");
     res.status(200).json(data);
   })
 );
@@ -28,7 +25,6 @@ foodPlantRouter.get(
   "/namesImgs",
   asyncHandler(async (req, res) => {
     const data = await fetchNamesImgs();
-    console.log("foodPlantRouter/namesImgs hit");
     res.status(200).json(data);
   })
 );
@@ -36,7 +32,6 @@ foodPlantRouter.get(
   "/listAllNames",
   asyncHandler(async (req, res) => {
     const data = await fetchAllFoodPlantNames();
-    console.log("foodPlantRouter/listAllNames hit");
     res.status(200).json(data);
   })
 );

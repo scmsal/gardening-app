@@ -11,10 +11,9 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const ResourcesPage = lazy(() => import("./pages/Resources"));
 const AboutPage = lazy(() => import("./pages/About"));
 const PlantDetailPage = lazy(() => import("./pages/PlantDetailPage"));
-// const OrnamentalPlantsPage = lazy(() => import("./pages/ornamental"));
+// TODO const OrnamentalPlantsPage = lazy(() => import("./pages/ornamental"));
 const Footer = lazy(() => import("./components/Footer"));
 
-//Main app, my own implementation
 function App() {
   const dispatch = useDispatch();
 
@@ -67,7 +66,7 @@ function App() {
                 </Suspense>
               }
             />
-            {/* <Route
+            {/* TODO <Route
             path="/ornamental"
             element={
               <Suspense fallback={<div>Loading...</div>}>

@@ -29,13 +29,7 @@ const VeggiesList = () => {
   };
 
   const handleSearch = (searchTerm) => {
-    console.log("Search term:", searchTerm);
     setSearchTerm(searchTerm);
-    // dispatch(setSelectedPlantName(null));
-    // dispatch(setSelectedPlantData(null));
-    // dispatch(setSelectedPlantName(searchTerm));
-
-    // dispatch(getFoodPlantByCommonName(searchTerm));
   };
 
   const clearFilter = () => {
@@ -43,21 +37,12 @@ const VeggiesList = () => {
     goToHome();
   };
 
-  //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
-    //deselect
     if (plantName === selectedPlant.common_name) {
       goToHome();
       return;
     }
 
-    //otherwise set selected plant name in state
-    // dispatch(setSelectedPlantName(plantName));
-
-    //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
-    // if (!params.plantName || params.plantName !== plantName) {
-    //   dispatch(getFoodPlantByCommonName(plantName));
-    // }
     goToPlantDetails(plantName);
   };
 
@@ -69,7 +54,7 @@ const VeggiesList = () => {
       </div>
     );
   }
-  //sets list to full (no selected plant) or filtered to show search result
+
   const listToRender = searchTerm === "" || null ? allPlantData : filtered;
   return (
     <div className=" mx-3 mb-3 ">
@@ -82,7 +67,7 @@ const VeggiesList = () => {
           clearBtnClick={clearFilter}
         />
       </div>
-      {/* <p className="">Select a plant from the list to see more details</p> */}
+
       {listToRender.length === 0 || listToRender === null ? (
         <p>No plants found</p>
       ) : (

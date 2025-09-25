@@ -1,13 +1,12 @@
-// Backend API URL with option for production (deployed on Render) or local development
-
 let BACKEND_URL_ENDPOINT;
 
-//in development, use the deployed backend url but fall back to localhost. I had two other code blocks before but got a recommendaton from ChatGPT to choose one and add a check.
+// in development, use the deployed backend url but fall back to localhost.
 if (import.meta.env.VITE_ENV === "development") {
   BACKEND_URL_ENDPOINT =
-    "http://localhost:5050" || import.meta.env.VITE_BACKEND_URL;
+    import.meta.env.VITE_REMOTE_API === "true"
+      ? import.meta.env.VITE_BACKEND_URL
+      : "http://localhost:5050";
 } else {
-  // in production, require backend URL to be set in environment variables
   if (!import.meta.env.VITE_BACKEND_URL) {
     throw new Error("VITE_BACKEND_URL must be set for production.");
   }

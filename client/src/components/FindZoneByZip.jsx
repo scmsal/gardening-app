@@ -22,12 +22,12 @@ const FindZoneByZip = () => {
       <label className="small">
         Average annual extreme minimum temperatures for an area.
       </label>
-      {/* plant hardiness zone API widget copied from https://www.plantmaps.com/hardiness-zone-zipcode-search-widget.php and edited for sizing*/}
+
       <iframe
         src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
         name="Find the USDA Hardiness Zone for your Zipocde and Map it"
         width="290"
-        //frameborder is deprecated so I replaced it with this CSS:
+        // frameborder is deprecated so I replaced it with this CSS:
         style={{ border: 0 }}
       >
         [Your browser doesn't support IFrames.{" "}
@@ -41,42 +41,6 @@ const FindZoneByZip = () => {
       </iframe>
     </div>
   );
-
-  //=== I have commented this out because the API server is unreliable
-  // return (
-  //   <div className="w-100">
-  //     <h4 className="text-success">Plant Hardiness Zone</h4>
-  //     <SearchBar
-  //       onSearch={handleSearch}
-  //       placeholder="Enter zip code"
-  //       label="Find my zone:"
-  //     />
-  //     <div className="text-end small">
-  //       <span>Powered by </span>{" "}
-  //       <a
-  //         href="https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //         className="link-success"
-  //       >
-  //         Plant Hardiness Zone API
-  //       </a>
-  //     </div>
-  //     {loading && <Spinner as="span" animation="border" size="sm" />}
-  //     {zone && (
-  //       <div className="mt-3">
-  //         <p className="ms-3">
-  //           The hardiness zone for zip {zipInput} is <b>{zone}</b>
-  //         </p>
-  //       </div>
-  //     )}
-  //     {error && (
-  //       <Alert variant="danger" className="mt-3">
-  //         Error: {error}
-  //       </Alert>
-  //     )}
-  //   </div>
-  // );
 };
 
 export default FindZoneByZip;

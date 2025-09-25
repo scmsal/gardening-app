@@ -11,13 +11,6 @@ const Header = () => {
     >
       <div className="d-flex flex-row align-items-center">
         <div style={{ width: "3rem", height: "auto" }}>
-          {/* <iframe
-            src={"https://giphy.com/embed/EGzDfFUauCo6nDgfpk"}
-            width="100"
-            height="70"
-            className="giphy-embed ms-1"
-            allowFullScreen
-          ></iframe> */}
           <Image src={"/vegetables.jpg" || ""} fluid />
         </div>
 

@@ -14,10 +14,10 @@ function PlantFetcher() {
         ? selectedPlant?.image_info?.image_url
         : null;
     const url = rawUrl || null;
-    //currentSrc resets each time the object changes;
-    console.log("useEffect new url:", url);
+    // currentSrc resets each time the object changes;
+
     setCurrentSrc(url);
-    //reset imageLoaded each time image src changes so the "loading" message can show when applicable.
+    // reset imageLoaded each time image src changes so the "loading" message can show when applicable.
     setImageLoaded(false);
   }, [selectedPlant?.image_info?.image_url, selectedPlant]);
 
@@ -28,7 +28,6 @@ function PlantFetcher() {
   return (
     <div className="mx-3 mb-3 w-60%">
       <Card>
-        {/* "Loading" display */}
         {!imageLoaded && (
           <div
             className="d-flex flex-column bg-light align-items-center justify-content-center"
@@ -38,7 +37,6 @@ function PlantFetcher() {
             <p className="mt-4">Loading image</p>
           </div>
         )}
-        {/* place the placeholder attribution "https://icons8.com" somewhere else */}
 
         <div>
           <Card.Img
@@ -51,14 +49,11 @@ function PlantFetcher() {
             }`}
             style={{ height: "250px", transition: "opacity 150ms ease" }}
             onLoad={() => {
-              console.log("onLoad fired");
               setImageLoaded(true);
             }}
             onError={(e) => {
               e.target.src = placeholderImg;
               setImageLoaded(true);
-              console.log("onError fired");
-              console.log("imageLoaded:", imageLoaded);
             }}
           />
         </div>

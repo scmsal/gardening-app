@@ -1,13 +1,7 @@
-//UNIT TESTING of repository functions
-
-import mongoose from "mongoose"; // Importing mongoose for MongoDB interactions
+import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { describe, it, expect, beforeAll, beforeEach, afterAll } from "vitest";
-
-//Import sample data
 import plantData from "./testData.json";
-
-//Import the unit for testing
 import {
   fetchAllFoodPlants,
   fetchAllFoodPlantNames,
@@ -43,7 +37,6 @@ describe("Food repository tests", () => {
   it("should return all the food plant objects in the collection"),
     async () => {
       const response = await fetchAllFoodPlants();
-      console.log("Food plants: ", response);
       expect(response.status).toBe(200);
       expect(response).toBeInstanceOf(Array);
       expect(response.length).toBeGreaterThan(0);

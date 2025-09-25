@@ -16,7 +16,7 @@ const SearchBar = ({
     e.preventDefault();
     if (inputValue.trim() !== "") {
       onSearch(inputValue);
-      setInputValue(""); //clears search bar after search
+      setInputValue("");
     }
   };
 
