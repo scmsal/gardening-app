@@ -7,58 +7,53 @@ import {
 } from "react-bootstrap";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import {
-  setSelectedPlantName,
-  setSelectedPlantData,
-} from "../features/plantsSlice";
-import {
-  getAllFoodPlants,
-  listAllNames,
-  getFoodPlantByCommonName,
-} from "../features/plantsSlice";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { selectPlantByName } from "../features/plantsSlice";
+
 import SearchBar from "./SearchBar";
 import { useNavigate } from "react-router-dom";
 
 const VeggiesList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const params = useParams();
 
-  useEffect(() => {
-    const fetchAndSetNames = async () => {
-      try {
-        await dispatch(listAllNames());
-      } catch (err) {
-        console.error("Failed to fetch plant names:", err);
-      }
-    };
-    fetchAndSetNames();
-  }, [dispatch]);
+  //pull current plant name from the url
+  const plantName = params.plantName;
 
-  const { plantNames, loading, selectedPlantName, selectedPlantData } =
-    useSelector((state) => state.plants);
+  console.log(
+    "allPlantData in VeggiesList:",
+    useSelector((state) => state.plants.allPlantData)
+  );
+  //use selector from plantsSlice to get plant object
+  const selectedPlant = useSelector((state) => {
+    return selectPlantByName(state, plantName);
+  });
+  console.log("In VeggiesList, selectedPlant:", selectedPlant);
+  // const plantNames = useSelector((state) => state.plants.allPlantData.map(plant => plant.common_name));
+
+  // useEffect(() => {
+  //   const fetchAndSetNames = async () => {
+  //     try {
+  //       await dispatch(listAllNames());
+  //     } catch (err) {
+  //       console.error("Failed to fetch plant names:", err);
+  //     }
+  //   };
+  //   fetchAndSetNames();
+  // }, [dispatch]);
+
+  const { allPlantData, loading } = useSelector((state) => state.plants);
 
   //I got conceptual guidance from ChatGPT for the search and search mode logic, to display the full list of plants
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filtered = (plantNames || []).filter((common_name) =>
-    common_name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filtered = (allPlantData || []).filter((plant) =>
+    plant.common_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSearch = (searchTerm) => {
-    console.log("Search term:", searchTerm);
-    setSearchTerm(searchTerm);
-    dispatch(setSelectedPlantName(null));
-    dispatch(setSelectedPlantData(null));
-    dispatch(setSelectedPlantName(searchTerm));
-
-    dispatch(getFoodPlantByCommonName(searchTerm));
-  };
-
-  const clearFilter = () => {
-    setSearchTerm("");
-    goToHome();
-  };
   //Navigate to selected plant details page
   const goToPlantDetails = (plantName) => {
     navigate(`/plants/${plantName}`);
@@ -67,27 +62,43 @@ const VeggiesList = () => {
   const goToHome = () => {
     navigate("/");
   };
+
+  const handleSearch = (searchTerm) => {
+    console.log("Search term:", searchTerm);
+    setSearchTerm(searchTerm);
+    // dispatch(setSelectedPlantName(null));
+    // dispatch(setSelectedPlantData(null));
+    // dispatch(setSelectedPlantName(searchTerm));
+
+    // dispatch(getFoodPlantByCommonName(searchTerm));
+  };
+
+  const clearFilter = () => {
+    setSearchTerm("");
+    goToHome();
+  };
+
   //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
   const handlePlantSelect = (plantName) => {
     //deselect
-    if (plantName === selectedPlantName) {
+    if (plantName === params.plantName) {
       goToHome();
-      dispatch(setSelectedPlantName(null));
-      dispatch(setSelectedPlantData(null));
+      // dispatch(setSelectedPlantName(null));
+      // dispatch(setSelectedPlantData(null));
       return;
     }
 
     //otherwise set selected plant name in state
-    dispatch(setSelectedPlantName(plantName));
+    // dispatch(setSelectedPlantName(plantName));
 
     //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
-    if (!selectedPlantData || selectedPlantData.common_name !== plantName) {
-      dispatch(getFoodPlantByCommonName(plantName));
-    }
+    // if (!params.plantName || params.plantName !== plantName) {
+    //   dispatch(getFoodPlantByCommonName(plantName));
+    // }
     goToPlantDetails(plantName);
   };
 
-  if (loading || !plantNames) {
+  if (loading || !allPlantData) {
     return (
       <div className="flex flex-col">
         <Spinner />
@@ -96,7 +107,7 @@ const VeggiesList = () => {
     );
   }
   //sets list to full (no selected plant) or filtered to show search result
-  const listToRender = searchTerm === "" || null ? plantNames : filtered;
+  const listToRender = searchTerm === "" || null ? allPlantData : filtered;
   return (
     <div className=" mx-3 mb-3 ">
       <h4 className="text-success">Vegetables and Herbs</h4>
@@ -113,19 +124,21 @@ const VeggiesList = () => {
         <p>No plants found</p>
       ) : (
         <ListGroup className="h-fit h-md-fit overflow-auto grid grid-cols-2">
-          {listToRender?.map((plantName) => (
+          {listToRender?.map((plant) => (
             <ListGroupItem
-              key={plantName}
+              key={plant.common_name}
               action
               className="custom-hover"
               variant={
-                selectedPlantName === plantName ? "success" : "outline-success"
+                params.plantName === plant.common_name
+                  ? "success"
+                  : "outline-success"
               }
               onClick={() => {
-                handlePlantSelect(plantName);
+                handlePlantSelect(plant.common_name);
               }}
             >
-              {plantName || "unnamed plant"}
+              {plant.common_name || "unnamed plant"}
             </ListGroupItem>
           ))}
         </ListGroup>
