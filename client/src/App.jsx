@@ -3,7 +3,6 @@ import { lazy, Suspense } from "react";
 
 import { getAllFoodPlants } from "./features/plantsSlice";
 import { useEffect } from "react";
-import { get } from "mongoose";
 import { useDispatch } from "react-redux";
 
 const Header = lazy(() => import("./components/Header"));
