@@ -1,39 +1,24 @@
-import dotenv from "dotenv"; // Importing dotenv to manage environment variables
-dotenv.config(); // Loading environment variables from .env file
-import express from "express"; // Importing necessary modules
-import cors from "cors"; // Importing CORS middleware for handling cross-origin requests
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import cors from "cors";
 import asyncHandler from "express-async-handler";
-
-//importing router
 import foodPlantRouter from "./app/routes/foodPlantRouter.js";
-
-//import service for server landing page
 import { displayWelcome } from "./app/services/foodPlantService.js";
-
-// Importing necessary modules and middleware
 import requestBodyParser from "body-parser";
-
-import errorHandler from "./app/middleware/errorHandlers.js"; // Importing error handling middleware
-
-// Importing database connection function
+import errorHandler from "./app/middleware/errorHandlers.js";
 import connectDatabase from "./app/database/databaseInit.js";
 
-// Creating an Express application instance
 const app = express();
-// Parsing incoming requests as JSON and handling errors
+app.use(cors());
 app.use(express.json());
-
-//logging to make sure server is receiving requests
 app.use((req, res, next) => {
-  console.log("Request received: ", req.method, req.url);
+  console.info("Request received: ", req.method, req.url);
   next();
 });
 
-// Using CORS middleware to allow cross-origin requests
-app.use(cors());
-
 //=== Connecting to the database===
-//Make sure the server does not connect to the real database during tests. It should only use the sample database using mongodb-memory-server in the test files.
+// Make sure the server does not connect to the real database during tests. It should only use the sample database using mongodb-memory-server in the test files.
 if (process.env.NODE_ENV !== "test") {
   try {
     connectDatabase();
@@ -42,7 +27,6 @@ if (process.env.NODE_ENV !== "test") {
   }
 }
 
-// Parsing request bodies
 app.use(requestBodyParser.json({ limit: "5mb" }));
 app.use(
   requestBodyParser.urlencoded({
@@ -53,7 +37,6 @@ app.use(
 );
 
 // ===mounting routers for different API endpoints===
-//Endpoint for backend landing
 app.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -67,6 +50,7 @@ app.get(
     }
   })
 );
+
 // Endpoint to check if the server is running
 app.get("/PING", (_, res) => {
   try {
@@ -78,9 +62,6 @@ app.get("/PING", (_, res) => {
   }
 });
 
-//general api endpoints
 app.use("/api/", foodPlantRouter);
-
-//Error handling middleware
 app.use(errorHandler);
 export default app;

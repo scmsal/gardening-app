@@ -1,12 +1,18 @@
 import "../App.css";
+import { Row, Col } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { selectPlantByName } from "../features/plantsSlice";
+import { useSelector } from "react-redux";
+
 import VeggiesList from "../components/VeggiesList";
 import MorePlantDetails from "../components/MorePlantDetails";
 import PlantFetcher from "../components/PlantFetcher";
 import FindZoneByZip from "../components/FindZoneByZip";
 import MoreContentToCome from "../components/MoreContentToCome";
-import { Row, Col } from "react-bootstrap";
+import { useSelectedPlant } from "../utils/useSelectedPlant";
 
 function PlantDetailPage() {
+  const selectedPlant = useSelectedPlant();
   return (
     <div className="d-grid pt-3">
       <Row className="justify-content-between ">
@@ -24,8 +30,7 @@ function PlantDetailPage() {
           id="3rd-col"
           className="d-flex flex-column col-12 col-md-8 justify-content-between col-lg-4"
         >
-          <MorePlantDetails />
-          <MoreContentToCome />
+          {selectedPlant ? <MorePlantDetails /> : <MoreContentToCome />}
         </Col>
       </Row>
     </div>

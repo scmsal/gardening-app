@@ -1,13 +1,9 @@
-// DATA ACCESS LAYER: This module provides functions to interact with the food plant database
 import foodPlantModel from "./models/plantModel.js";
 
-//Function to fetch all food plants
 const fetchAllFoodPlants = async () => {
   const foodPlants = await foodPlantModel.find().sort({ common_name: 1 });
   return foodPlants;
 };
-
-//function to fetch an array of all the food plant names
 
 const fetchAllFoodPlantNames = async () => {
   const foodPlants = await foodPlantModel
@@ -16,7 +12,6 @@ const fetchAllFoodPlantNames = async () => {
   return foodPlants.map((plant) => plant.common_name);
 };
 
-//Function to fetch names and images of food plants for display in UI as cards. Still needs debugging. Not in use yet.
 const fetchNamesImgs = async () => {
   const namesImgs = await foodPlantModel.aggregate([
     {
@@ -31,7 +26,7 @@ const fetchNamesImgs = async () => {
     };
   });
 };
-//function to fetch a food plant by its common name
+
 const fetchFoodPlantByCommonName = async (commonName) => {
   const foodPlant = await foodPlantModel.findOne({ common_name: commonName });
   return foodPlant;
@@ -51,8 +46,6 @@ const fetchVegetables = async () => {
   return herbs;
 };
 
-fetchNamesImgs();
-// Exporting the functions to be used in other parts of the application and for testing
 export {
   fetchAllFoodPlants,
   fetchAllFoodPlantNames,

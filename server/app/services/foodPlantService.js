@@ -1,4 +1,3 @@
-//This file provides the service layer for food plants, handling read operations and error management. It throws errors that bubble to middleware
 import {
   fetchAllFoodPlants as getAllFoodPlantsFromRepo,
   fetchAllFoodPlantNames as getAllFoodPlantNamesFromRepo,
@@ -11,7 +10,6 @@ import {
 const fetchAllFoodPlants = async () => {
   const plants = await getAllFoodPlantsFromRepo();
   if (!plants || plants.length === 0) {
-    console.log("Fetching all food plants from DB");
     const err = new Error("No plants found");
     err.statusCode = 404;
     throw err;
@@ -22,7 +20,6 @@ const fetchAllFoodPlants = async () => {
 const fetchNamesImgs = async () => {
   const plants = await fetchNamesImgsFromRepo();
   if (!plants || plants.length === 0) {
-    console.log("Fetching all food plants from DB");
     const err = new Error("No plants found");
     err.statusCode = 404;
     throw err;
@@ -107,8 +104,6 @@ const displayWelcome = () => {
     </html>
     `;
 };
-
-// Exporting the functions for use in routes
 
 export {
   fetchAllFoodPlants,

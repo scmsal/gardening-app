@@ -1,16 +1,33 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
+import { getAllFoodPlants } from "./features/plantsSlice";
+import { useEffect } from "react";
+import { get } from "mongoose";
+import { useDispatch } from "react-redux";
+
 const Header = lazy(() => import("./components/Header"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ResourcesPage = lazy(() => import("./pages/Resources"));
 const AboutPage = lazy(() => import("./pages/About"));
 const PlantDetailPage = lazy(() => import("./pages/PlantDetailPage"));
-// const OrnamentalPlantsPage = lazy(() => import("./pages/ornamental"));
+// TODO const OrnamentalPlantsPage = lazy(() => import("./pages/ornamental"));
 const Footer = lazy(() => import("./components/Footer"));
 
-//Main app, my own implementation
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchAndSetPlantData = async () => {
+      try {
+        await dispatch(getAllFoodPlants());
+      } catch (err) {
+        console.error("Failed to fetch plant data:", err);
+      }
+    };
+    fetchAndSetPlantData();
+  }, [dispatch]);
+
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
@@ -49,7 +66,7 @@ function App() {
                 </Suspense>
               }
             />
-            {/* <Route
+            {/* TODO <Route
             path="/ornamental"
             element={
               <Suspense fallback={<div>Loading...</div>}>

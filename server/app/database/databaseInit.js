@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-dotenv.config(); // Load environment variables from .env file
+dotenv.config();
 
 const DATABASE_URI =
   process.env.NODE_ENV !== "dev"
@@ -12,7 +12,7 @@ const connectDatabase = async () => {
     const connection = await mongoose.connect(DATABASE_URI, {
       serverSelectionTimeoutMS: 5000,
     });
-    console.log(
+    console.info(
       `Database is connected have ${connection.connection.host} as host and ${connection.connection.port} as port`
     );
   } catch (error) {

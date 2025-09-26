@@ -1,65 +1,25 @@
-import {
-  Container,
-  ListGroup,
-  ListGroupItem,
-  Spinner,
-  Button,
-} from "react-bootstrap";
+import { useState } from "react";
+import { ListGroup, ListGroupItem, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import "../App.css";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import {
-  setSelectedPlantName,
-  setSelectedPlantData,
-} from "../features/plantsSlice";
-import {
-  getAllFoodPlants,
-  listAllNames,
-  getFoodPlantByCommonName,
-} from "../features/plantsSlice";
-import SearchBar from "./SearchBar";
+
 import { useNavigate } from "react-router-dom";
+import { useSelectedPlant } from "../utils/useSelectedPlant";
+import SearchBar from "./SearchBar";
 
 const VeggiesList = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchAndSetNames = async () => {
-      try {
-        await dispatch(listAllNames());
-      } catch (err) {
-        console.error("Failed to fetch plant names:", err);
-      }
-    };
-    fetchAndSetNames();
-  }, [dispatch]);
+  const selectedPlant = useSelectedPlant();
 
-  const { plantNames, loading, selectedPlantName, selectedPlantData } =
-    useSelector((state) => state.plants);
+  const { allPlantData, loading } = useSelector((state) => state.plants);
 
-  //I got conceptual guidance from ChatGPT for the search and search mode logic, to display the full list of plants
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filtered = (plantNames || []).filter((common_name) =>
-    common_name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filtered = (allPlantData || []).filter((plant) =>
+    plant.common_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSearch = (searchTerm) => {
-    console.log("Search term:", searchTerm);
-    setSearchTerm(searchTerm);
-    dispatch(setSelectedPlantName(null));
-    dispatch(setSelectedPlantData(null));
-    dispatch(setSelectedPlantName(searchTerm));
-
-    dispatch(getFoodPlantByCommonName(searchTerm));
-  };
-
-  const clearFilter = () => {
-    setSearchTerm("");
-    goToHome();
-  };
-  //Navigate to selected plant details page
   const goToPlantDetails = (plantName) => {
     navigate(`/plants/${plantName}`);
   };
@@ -67,27 +27,26 @@ const VeggiesList = () => {
   const goToHome = () => {
     navigate("/");
   };
-  //When a plantName on the list is clicked, the app should fetch the corresponding data (object)
+
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  };
+
+  const clearFilter = () => {
+    setSearchTerm("");
+    goToHome();
+  };
+
   const handlePlantSelect = (plantName) => {
-    //deselect
-    if (plantName === selectedPlantName) {
+    if (plantName === selectedPlant.common_name) {
       goToHome();
-      dispatch(setSelectedPlantName(null));
-      dispatch(setSelectedPlantData(null));
       return;
     }
 
-    //otherwise set selected plant name in state
-    dispatch(setSelectedPlantName(plantName));
-
-    //If there is not already a selectedPlantData in the store or it's not for the selected plant, fetch the data. The extra reducer will set it as selectedPlantData
-    if (!selectedPlantData || selectedPlantData.common_name !== plantName) {
-      dispatch(getFoodPlantByCommonName(plantName));
-    }
     goToPlantDetails(plantName);
   };
 
-  if (loading || !plantNames) {
+  if (loading || !allPlantData) {
     return (
       <div className="flex flex-col">
         <Spinner />
@@ -95,8 +54,8 @@ const VeggiesList = () => {
       </div>
     );
   }
-  //sets list to full (no selected plant) or filtered to show search result
-  const listToRender = searchTerm === "" || null ? plantNames : filtered;
+
+  const listToRender = searchTerm === "" || null ? allPlantData : filtered;
   return (
     <div className=" mx-3 mb-3 ">
       <h4 className="text-success">Vegetables and Herbs</h4>
@@ -108,24 +67,26 @@ const VeggiesList = () => {
           clearBtnClick={clearFilter}
         />
       </div>
-      {/* <p className="">Select a plant from the list to see more details</p> */}
+
       {listToRender.length === 0 || listToRender === null ? (
         <p>No plants found</p>
       ) : (
         <ListGroup className="h-fit h-md-fit overflow-auto grid grid-cols-2">
-          {listToRender?.map((plantName) => (
+          {listToRender?.map((plant) => (
             <ListGroupItem
-              key={plantName}
+              key={plant.common_name}
               action
               className="custom-hover"
               variant={
-                selectedPlantName === plantName ? "success" : "outline-success"
+                selectedPlant?.common_name === plant.common_name
+                  ? "success"
+                  : "outline-success"
               }
               onClick={() => {
-                handlePlantSelect(plantName);
+                handlePlantSelect(plant.common_name);
               }}
             >
-              {plantName || "unnamed plant"}
+              {plant.common_name || "unnamed plant"}
             </ListGroupItem>
           ))}
         </ListGroup>

@@ -12,7 +12,6 @@ const HARDINESS_API_URL =
 export const fetchHardinessZone = createAsyncThunk(
   "hardinessZone/fetchHardinessZone",
   async (zip, thunkAPI) => {
-    //zip comes from user input
     try {
       const options = {
         method: "GET",
@@ -23,10 +22,10 @@ export const fetchHardinessZone = createAsyncThunk(
         },
       };
       const response = await axios.request(options);
-      return response.data.hardiness_zone; //double check shape of actual response data
+      return response.data.hardiness_zone;
     } catch (error) {
       console.error(error);
-      return rejectWithValue(error.response?.data || error.message); //check as it might just stop the whole app.
+      return rejectWithValue(error.response?.data || error.message);
     }
   }
 );
@@ -59,6 +58,6 @@ const hardinessZoneSlice = createSlice({
 
 export default hardinessZoneSlice.reducer;
 
-//eventually integrate data from here: https://github.com/waldoj/frostline to a) get temperatures for each zone and b) generate maps.
+// TODO eventually integrate data from here: https://github.com/waldoj/frostline to a) get temperatures for each zone and b) generate maps.
 
-//otherwise, link to https://planthardiness.ars.usda.gov/ that shows all that info searchable by zip code.
+// TODO otherwise, link to https://planthardiness.ars.usda.gov/ that shows all that info searchable by zip code.
