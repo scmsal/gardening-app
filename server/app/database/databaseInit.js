@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const DATABASE_URI =
-  process.env.NODE_ENV !== "dev"
+  process.env.NODE_ENV !== "development"
     ? process.env.DATABASE_URI
     : process.env.LOCAL_DATABASE_URI;
 
