@@ -20,6 +20,7 @@ function App() {
     const fetchAndSetPlantData = async () => {
       try {
         await dispatch(getAllFoodPlants());
+        console.log("getAllFoodPlants ran");
       } catch (err) {
         console.error("Failed to fetch plant data:", err);
       }
