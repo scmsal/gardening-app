@@ -1,14 +1,11 @@
+import { Col, Row } from "react-bootstrap";
 import "../App.css";
-import { Row, Col } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { selectPlantByName } from "../features/plantsSlice";
-import { useSelector } from "react-redux";
 
-import VeggiesList from "../components/VeggiesList";
-import MorePlantDetails from "../components/MorePlantDetails";
-import PlantFetcher from "../components/PlantFetcher";
 import FindZoneByZip from "../components/FindZoneByZip";
 import MoreContentToCome from "../components/MoreContentToCome";
+import MorePlantDetails from "../components/MorePlantDetails";
+import PlantFetcher from "../components/PlantFetcher";
+import VeggiesList from "../components/VeggiesList";
 import { useSelectedPlant } from "../utils/useSelectedPlant";
 
 function PlantDetailPage() {
@@ -30,7 +27,12 @@ function PlantDetailPage() {
           id="3rd-col"
           className="d-flex flex-column col-12 col-md-8 justify-content-between col-lg-4"
         >
-          {selectedPlant ? <MorePlantDetails /> : <MoreContentToCome />}
+          {selectedPlant && (
+            <>
+              <MorePlantDetails />
+              <MoreContentToCome />
+            </>
+          )}
         </Col>
       </Row>
     </div>
