@@ -38,7 +38,13 @@ const VeggiesList = () => {
   };
 
   const handlePlantSelect = (plantName) => {
-    if (plantName === selectedPlant.common_name) {
+    if (plantName === selectedPlant?.common_name) {
+      console.log(
+        "in handlePlantSelect, selectedPlantName.common_name:",
+        selectedPlant.common_name,
+        "plantName:",
+        plantName
+      );
       goToHome();
       return;
     }
