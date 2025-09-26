@@ -46,6 +46,8 @@ const fetchVegetables = async () => {
   return herbs;
 };
 
+//debugging
+console.log(fetchAllFoodPlants());
 export {
   fetchAllFoodPlants,
   fetchAllFoodPlantNames,
