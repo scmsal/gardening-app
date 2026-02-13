@@ -14,6 +14,7 @@ function PlantFetcher() {
         ? selectedPlant?.image_info?.image_url
         : null;
     const url = rawUrl || null;
+
     // currentSrc resets each time the object changes;
 
     setCurrentSrc(url);
