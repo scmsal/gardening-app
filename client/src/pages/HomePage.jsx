@@ -1,5 +1,6 @@
 import "../App.css";
 import VeggiesList from "../components/VeggiesList";
+import GeocodeZip from "../components/GeocodeZip";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -13,6 +14,7 @@ function HomePage() {
         <Col className="col-12 col-md-4">
           <VeggiesList />
           <FindZoneByZip />
+          <GeocodeZip />
         </Col>
         <Col className="d-flex flex-column justify-content-center align-items-center col-12 col-md-8">
           <FrontPlaceholder />
