@@ -4,8 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 const GeocodeZip = () => {
   const [zipInput, setZipInput] = useState("");
-  const [results, setResults] = useState();
-  const [elevation, setElevation] = useState();
+  const [geoResults, setGeoResults] = useState();
 
   //put frost dates into store?
   const [frostDates, setFrostDates] = useState();
@@ -24,26 +23,18 @@ const GeocodeZip = () => {
     if (data.results && data.results.length > 0) {
       const res = data.results[0];
       console.log("handleSubmit res:", res);
-      setResults({
+      setGeoResults({
         lat: res.latitude,
         lng: res.longitude,
+        elevation: res.elevation,
         city: res.name,
-        state: res.admin1,
+        state: res.admin1, //Note: additional info available like county, country
       });
       //can't I use lat and lng from setResults? Or it won't update in time? So then when am I using that state?
       const forecastURL = `https://api.open-meteo.com/v1/forecast?latitude=${res.latitude}&longitude=${res.longitude}&hourly=temperature_2m,soil_temperature_0cm,soil_temperature_6cm,soil_temperature_18cm&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch`;
       const forecastRes = await fetch(forecastURL);
       const forecastData = await forecastRes.json();
-      console.log("forecase data:", forecastData);
-
-      const frostDatesURL = `https://farmsense.net/api/frost-date-api/`;
-
-      const elevationURL = `https://api.open-elevation.com/api/v1/lookup?locations=${res.latitude},${res.longitude}`;
-      const elevationRes = await fetch(elevationURL);
-      const elevationData = await elevationRes.json();
-      console.log("elevation all:", elevationData);
-      console.log("elevation only:", elevationData.results[0].elevation);
-      setElevation(elevationData.results[0].elevation);
+      console.log("forecast data:", forecastData);
     }
   };
   return (
@@ -62,12 +53,12 @@ const GeocodeZip = () => {
             <FaSearch />
           </button>
         </form>
-        {results && (
+        {geoResults && (
           <div>
             <p>
-              {results.city}, {results.state}
+              {geoResults.city}, {geoResults.state}
             </p>
-            <p>elevation: {elevation}</p>
+            <p>elevation: {geoResults.elevation}</p>
           </div>
         )}
       </div>
