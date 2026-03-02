@@ -3,6 +3,7 @@ import { fetchHardinessZone } from "../features/zoneSlice";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { Spinner, Container } from "react-bootstrap";
+import FrostDates from "./FrostDates";
 
 const FindZoneByZip = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const FindZoneByZip = () => {
         </a>{" "}
         to find the USDA hardiness zone for your zipcode. .]
       </iframe>
+      <FrostDates />
     </div>
   );
 };
